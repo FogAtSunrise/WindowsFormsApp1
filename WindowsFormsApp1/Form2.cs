@@ -30,5 +30,15 @@ namespace WindowsFormsApp1
             z.Show();
         }
     }
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void помощьToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Описание");
+        }
+    }
 }
 //
