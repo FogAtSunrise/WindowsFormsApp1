@@ -17,6 +17,14 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-     
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void помощьToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Описание");
+        }
     }
 }
