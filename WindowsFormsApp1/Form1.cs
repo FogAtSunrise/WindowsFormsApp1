@@ -19,17 +19,18 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form2 y = new Form2();
-           y.Show();
-            this.Hide();
-           
-        }
+       
 
         private void button_help_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Описание");
+        }
+
+        private void button_vhod_Click(object sender, EventArgs e)
+        {
+            Form2 y = new Form2();
+            y.Show();
+            this.Hide();
         }
     }
 }

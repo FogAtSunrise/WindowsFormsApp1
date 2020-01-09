@@ -122,6 +122,7 @@
             this.button_vhod.TabIndex = 6;
             this.button_vhod.Text = "Войти";
             this.button_vhod.UseVisualStyleBackColor = true;
+            this.button_vhod.Click += new System.EventHandler(this.button_vhod_Click);
             // 
             // button_reg
             // 
