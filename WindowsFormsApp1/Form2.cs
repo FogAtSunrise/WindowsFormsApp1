@@ -17,6 +17,17 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-     
+        private void создатьОтчетToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            CreateDoc y = new CreateDoc();
+            y.Show();
+            
+        }
+
+        private void добавитьЗадачуToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddForm z = new AddForm();
+            z.Show();
+        }
     }
 }

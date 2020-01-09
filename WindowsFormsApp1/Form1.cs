@@ -37,6 +37,11 @@ namespace WindowsFormsApp1
         {
             MessageBox.Show("Описание");
         }
+
+        private void button_vhod_reg_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

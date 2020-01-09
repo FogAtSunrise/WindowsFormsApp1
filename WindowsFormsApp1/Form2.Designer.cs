@@ -45,6 +45,7 @@
             this.button_WEEK = new System.Windows.Forms.Button();
             this.button_MONTH = new System.Windows.Forms.Button();
             this.button1_user = new System.Windows.Forms.Button();
+            this.добавитьЗадачуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_DAY.SuspendLayout();
             this.panel_menu_dlya_paneli_day.SuspendLayout();
             this.main_menuStrip1.SuspendLayout();
@@ -56,52 +57,58 @@
             this.panel_DAY.Controls.Add(this.label_date);
             this.panel_DAY.Controls.Add(this.panel_gde_budut_zapisi);
             this.panel_DAY.Controls.Add(this.panel_menu_dlya_paneli_day);
-            this.panel_DAY.Location = new System.Drawing.Point(0, 67);
+            this.panel_DAY.Location = new System.Drawing.Point(0, 54);
+            this.panel_DAY.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel_DAY.Name = "panel_DAY";
-            this.panel_DAY.Size = new System.Drawing.Size(937, 458);
+            this.panel_DAY.Size = new System.Drawing.Size(703, 372);
             this.panel_DAY.TabIndex = 0;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(210, 11);
+            this.dateTimePicker1.Location = new System.Drawing.Point(158, 9);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(271, 34);
+            this.dateTimePicker1.Size = new System.Drawing.Size(204, 28);
             this.dateTimePicker1.TabIndex = 3;
             // 
             // label_date
             // 
             this.label_date.AutoSize = true;
             this.label_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_date.Location = new System.Drawing.Point(108, 10);
+            this.label_date.Location = new System.Drawing.Point(81, 8);
+            this.label_date.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_date.Name = "label_date";
-            this.label_date.Size = new System.Drawing.Size(67, 29);
+            this.label_date.Size = new System.Drawing.Size(54, 24);
             this.label_date.TabIndex = 2;
             this.label_date.Text = "Дата";
             // 
             // panel_gde_budut_zapisi
             // 
-            this.panel_gde_budut_zapisi.Location = new System.Drawing.Point(4, 51);
+            this.panel_gde_budut_zapisi.Location = new System.Drawing.Point(3, 41);
+            this.panel_gde_budut_zapisi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel_gde_budut_zapisi.Name = "panel_gde_budut_zapisi";
-            this.panel_gde_budut_zapisi.Size = new System.Drawing.Size(660, 404);
+            this.panel_gde_budut_zapisi.Size = new System.Drawing.Size(495, 328);
             this.panel_gde_budut_zapisi.TabIndex = 1;
-           
+            // 
             // panel_menu_dlya_paneli_day
             // 
             this.panel_menu_dlya_paneli_day.Controls.Add(this.button3);
             this.panel_menu_dlya_paneli_day.Controls.Add(this.button_OFF_opoveschalku);
             this.panel_menu_dlya_paneli_day.Controls.Add(this.button_ON_opoveschalku);
-            this.panel_menu_dlya_paneli_day.Location = new System.Drawing.Point(664, 0);
+            this.panel_menu_dlya_paneli_day.Location = new System.Drawing.Point(498, 0);
+            this.panel_menu_dlya_paneli_day.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel_menu_dlya_paneli_day.Name = "panel_menu_dlya_paneli_day";
-            this.panel_menu_dlya_paneli_day.Size = new System.Drawing.Size(272, 458);
+            this.panel_menu_dlya_paneli_day.Size = new System.Drawing.Size(204, 372);
             this.panel_menu_dlya_paneli_day.TabIndex = 0;
             // 
             // button3
             // 
             this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.Location = new System.Drawing.Point(0, 104);
+            this.button3.Location = new System.Drawing.Point(0, 84);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(272, 56);
+            this.button3.Size = new System.Drawing.Size(204, 46);
             this.button3.TabIndex = 2;
             this.button3.Text = "Удалить все";
             this.button3.UseVisualStyleBackColor = true;
@@ -109,9 +116,10 @@
             // button_OFF_opoveschalku
             // 
             this.button_OFF_opoveschalku.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button_OFF_opoveschalku.Location = new System.Drawing.Point(0, 51);
+            this.button_OFF_opoveschalku.Location = new System.Drawing.Point(0, 41);
+            this.button_OFF_opoveschalku.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_OFF_opoveschalku.Name = "button_OFF_opoveschalku";
-            this.button_OFF_opoveschalku.Size = new System.Drawing.Size(272, 56);
+            this.button_OFF_opoveschalku.Size = new System.Drawing.Size(204, 46);
             this.button_OFF_opoveschalku.TabIndex = 1;
             this.button_OFF_opoveschalku.Text = "Выключить все оповещения";
             this.button_OFF_opoveschalku.UseVisualStyleBackColor = true;
@@ -120,17 +128,19 @@
             // 
             this.button_ON_opoveschalku.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button_ON_opoveschalku.Location = new System.Drawing.Point(0, 0);
+            this.button_ON_opoveschalku.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_ON_opoveschalku.Name = "button_ON_opoveschalku";
-            this.button_ON_opoveschalku.Size = new System.Drawing.Size(272, 56);
+            this.button_ON_opoveschalku.Size = new System.Drawing.Size(204, 46);
             this.button_ON_opoveschalku.TabIndex = 0;
             this.button_ON_opoveschalku.Text = "Включить все оповещения";
             this.button_ON_opoveschalku.UseVisualStyleBackColor = true;
             // 
             // button_user
             // 
-            this.button_user.Location = new System.Drawing.Point(945, 4);
+            this.button_user.Location = new System.Drawing.Point(709, 3);
+            this.button_user.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_user.Name = "button_user";
-            this.button_user.Size = new System.Drawing.Size(120, 24);
+            this.button_user.Size = new System.Drawing.Size(90, 20);
             this.button_user.TabIndex = 1;
             this.button_user.Text = "Пользователь";
             this.button_user.UseVisualStyleBackColor = true;
@@ -141,72 +151,86 @@
             this.main_menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.создатьОтчетToolStripMenuItem1,
             this.настройкиToolStripMenuItem1,
-            this.помощьToolStripMenuItem1});
+            this.помощьToolStripMenuItem1,
+            this.добавитьЗадачуToolStripMenuItem});
             this.main_menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.main_menuStrip1.Name = "main_menuStrip1";
-            this.main_menuStrip1.Size = new System.Drawing.Size(937, 28);
+            this.main_menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.main_menuStrip1.Size = new System.Drawing.Size(703, 24);
             this.main_menuStrip1.TabIndex = 2;
             this.main_menuStrip1.Text = "menuStrip1";
             // 
             // создатьОтчетToolStripMenuItem1
             // 
             this.создатьОтчетToolStripMenuItem1.Name = "создатьОтчетToolStripMenuItem1";
-            this.создатьОтчетToolStripMenuItem1.Size = new System.Drawing.Size(119, 24);
+            this.создатьОтчетToolStripMenuItem1.Size = new System.Drawing.Size(95, 20);
             this.создатьОтчетToolStripMenuItem1.Text = "Создать отчет";
+            this.создатьОтчетToolStripMenuItem1.Click += new System.EventHandler(this.создатьОтчетToolStripMenuItem1_Click);
             // 
             // настройкиToolStripMenuItem1
             // 
             this.настройкиToolStripMenuItem1.Name = "настройкиToolStripMenuItem1";
-            this.настройкиToolStripMenuItem1.Size = new System.Drawing.Size(98, 24);
+            this.настройкиToolStripMenuItem1.Size = new System.Drawing.Size(79, 20);
             this.настройкиToolStripMenuItem1.Text = "Настройки";
             // 
             // помощьToolStripMenuItem1
             // 
             this.помощьToolStripMenuItem1.Name = "помощьToolStripMenuItem1";
-            this.помощьToolStripMenuItem1.Size = new System.Drawing.Size(83, 24);
+            this.помощьToolStripMenuItem1.Size = new System.Drawing.Size(68, 20);
             this.помощьToolStripMenuItem1.Text = "Помощь";
             // 
             // button_DAY
             // 
-            this.button_DAY.Location = new System.Drawing.Point(0, 31);
+            this.button_DAY.Location = new System.Drawing.Point(0, 25);
+            this.button_DAY.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_DAY.Name = "button_DAY";
-            this.button_DAY.Size = new System.Drawing.Size(306, 36);
+            this.button_DAY.Size = new System.Drawing.Size(230, 29);
             this.button_DAY.TabIndex = 3;
             this.button_DAY.Text = "ДЕНЬ";
             this.button_DAY.UseVisualStyleBackColor = true;
             // 
             // button_WEEK
             // 
-            this.button_WEEK.Location = new System.Drawing.Point(304, 31);
+            this.button_WEEK.Location = new System.Drawing.Point(228, 25);
+            this.button_WEEK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_WEEK.Name = "button_WEEK";
-            this.button_WEEK.Size = new System.Drawing.Size(339, 36);
+            this.button_WEEK.Size = new System.Drawing.Size(254, 29);
             this.button_WEEK.TabIndex = 4;
             this.button_WEEK.Text = "НЕДЕЛЯ";
             this.button_WEEK.UseVisualStyleBackColor = true;
             // 
             // button_MONTH
             // 
-            this.button_MONTH.Location = new System.Drawing.Point(639, 31);
+            this.button_MONTH.Location = new System.Drawing.Point(479, 25);
+            this.button_MONTH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_MONTH.Name = "button_MONTH";
-            this.button_MONTH.Size = new System.Drawing.Size(298, 36);
+            this.button_MONTH.Size = new System.Drawing.Size(224, 29);
             this.button_MONTH.TabIndex = 5;
             this.button_MONTH.Text = "МЕСЯЦ";
             this.button_MONTH.UseVisualStyleBackColor = true;
             // 
             // button1_user
             // 
-            this.button1_user.Location = new System.Drawing.Point(811, 0);
+            this.button1_user.Location = new System.Drawing.Point(608, 0);
+            this.button1_user.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1_user.Name = "button1_user";
-            this.button1_user.Size = new System.Drawing.Size(114, 28);
+            this.button1_user.Size = new System.Drawing.Size(86, 23);
             this.button1_user.TabIndex = 6;
             this.button1_user.Text = "Пользователь";
             this.button1_user.UseVisualStyleBackColor = true;
             // 
+            // добавитьЗадачуToolStripMenuItem
+            // 
+            this.добавитьЗадачуToolStripMenuItem.Name = "добавитьЗадачуToolStripMenuItem";
+            this.добавитьЗадачуToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
+            this.добавитьЗадачуToolStripMenuItem.Text = "Добавить задачу";
+            this.добавитьЗадачуToolStripMenuItem.Click += new System.EventHandler(this.добавитьЗадачуToolStripMenuItem_Click);
+            // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(937, 519);
+            this.ClientSize = new System.Drawing.Size(703, 422);
             this.Controls.Add(this.button1_user);
             this.Controls.Add(this.button_MONTH);
             this.Controls.Add(this.button_WEEK);
@@ -214,7 +238,6 @@
             this.Controls.Add(this.button_user);
             this.Controls.Add(this.main_menuStrip1);
             this.Controls.Add(this.panel_DAY);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form2";
             this.Text = "Form2";
             this.panel_DAY.ResumeLayout(false);
@@ -246,5 +269,6 @@
         private System.Windows.Forms.Button button_WEEK;
         private System.Windows.Forms.Button button_MONTH;
         private System.Windows.Forms.Button button1_user;
+        private System.Windows.Forms.ToolStripMenuItem добавитьЗадачуToolStripMenuItem;
     }
 }
