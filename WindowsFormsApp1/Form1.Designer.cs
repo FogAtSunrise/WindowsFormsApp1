@@ -38,12 +38,14 @@
             this.textBox_loginusing = new System.Windows.Forms.TextBox();
             this.button_help = new System.Windows.Forms.Button();
             this.panel_vhod.SuspendLayout();
+            this.panel_registr.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_vhod
             // 
             this.panel_vhod.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel_vhod.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel_vhod.Controls.Add(this.panel_registr);
             this.panel_vhod.Controls.Add(this.button_reg);
             this.panel_vhod.Controls.Add(this.button_vhod);
             this.panel_vhod.Controls.Add(this.label_pass);
@@ -144,6 +146,119 @@
             this.button_help.UseVisualStyleBackColor = true;
             this.button_help.Click += new System.EventHandler(this.button_help_Click);
             // 
+            // panel_registr
+            // 
+            this.panel_registr.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel_registr.Controls.Add(this.button_vhod_reg);
+            this.panel_registr.Controls.Add(this.label_name_reg);
+            this.panel_registr.Controls.Add(this.textBox_name_reg);
+            this.panel_registr.Controls.Add(this.button_reg_new);
+            this.panel_registr.Controls.Add(this.label_pass_reg);
+            this.panel_registr.Controls.Add(this.label_login_reg);
+            this.panel_registr.Controls.Add(this.label_reg_reg);
+            this.panel_registr.Controls.Add(this.textBox_pass_reg);
+            this.panel_registr.Controls.Add(this.textBox_log_reg);
+            this.panel_registr.Controls.Add(this.button_help_reg);
+            this.panel_registr.Location = new System.Drawing.Point(0, 3);
+            this.panel_registr.Name = "panel_registr";
+            this.panel_registr.Size = new System.Drawing.Size(800, 459);
+            this.panel_registr.TabIndex = 8;
+            // 
+            // button_reg_new
+            // 
+            this.button_reg_new.Location = new System.Drawing.Point(290, 269);
+            this.button_reg_new.Name = "button_reg_new";
+            this.button_reg_new.Size = new System.Drawing.Size(221, 39);
+            this.button_reg_new.TabIndex = 7;
+            this.button_reg_new.Text = "Регистрация";
+            this.button_reg_new.UseVisualStyleBackColor = true;
+            // 
+            // label_pass_reg
+            // 
+            this.label_pass_reg.AutoSize = true;
+            this.label_pass_reg.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_pass_reg.Location = new System.Drawing.Point(185, 204);
+            this.label_pass_reg.Name = "label_pass_reg";
+            this.label_pass_reg.Size = new System.Drawing.Size(99, 29);
+            this.label_pass_reg.TabIndex = 5;
+            this.label_pass_reg.Text = "Пароль";
+            // 
+            // label_login_reg
+            // 
+            this.label_login_reg.AutoSize = true;
+            this.label_login_reg.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.label_login_reg.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_login_reg.Location = new System.Drawing.Point(201, 133);
+            this.label_login_reg.Name = "label_login_reg";
+            this.label_login_reg.Size = new System.Drawing.Size(83, 29);
+            this.label_login_reg.TabIndex = 4;
+            this.label_login_reg.Text = "Логин";
+            // 
+            // label_reg_reg
+            // 
+            this.label_reg_reg.AutoSize = true;
+            this.label_reg_reg.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_reg_reg.Location = new System.Drawing.Point(312, 22);
+            this.label_reg_reg.Name = "label_reg_reg";
+            this.label_reg_reg.Size = new System.Drawing.Size(173, 29);
+            this.label_reg_reg.TabIndex = 3;
+            this.label_reg_reg.Text = "Регистрация";
+            // 
+            // textBox_pass_reg
+            // 
+            this.textBox_pass_reg.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_pass_reg.Location = new System.Drawing.Point(290, 204);
+            this.textBox_pass_reg.Name = "textBox_pass_reg";
+            this.textBox_pass_reg.Size = new System.Drawing.Size(221, 34);
+            this.textBox_pass_reg.TabIndex = 2;
+            // 
+            // textBox_log_reg
+            // 
+            this.textBox_log_reg.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_log_reg.Location = new System.Drawing.Point(290, 133);
+            this.textBox_log_reg.Name = "textBox_log_reg";
+            this.textBox_log_reg.Size = new System.Drawing.Size(221, 34);
+            this.textBox_log_reg.TabIndex = 1;
+            // 
+            // button_help_reg
+            // 
+            this.button_help_reg.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button_help_reg.Location = new System.Drawing.Point(698, 13);
+            this.button_help_reg.Name = "button_help_reg";
+            this.button_help_reg.Size = new System.Drawing.Size(88, 26);
+            this.button_help_reg.TabIndex = 0;
+            this.button_help_reg.Text = "Помощь";
+            this.button_help_reg.UseVisualStyleBackColor = true;
+            this.button_help_reg.Click += new System.EventHandler(this.button_help_reg_Click);
+            // 
+            // textBox_name_reg
+            // 
+            this.textBox_name_reg.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_name_reg.Location = new System.Drawing.Point(290, 76);
+            this.textBox_name_reg.Name = "textBox_name_reg";
+            this.textBox_name_reg.Size = new System.Drawing.Size(221, 34);
+            this.textBox_name_reg.TabIndex = 8;
+            // 
+            // label_name_reg
+            // 
+            this.label_name_reg.AutoSize = true;
+            this.label_name_reg.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.label_name_reg.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_name_reg.Location = new System.Drawing.Point(221, 76);
+            this.label_name_reg.Name = "label_name_reg";
+            this.label_name_reg.Size = new System.Drawing.Size(63, 29);
+            this.label_name_reg.TabIndex = 9;
+            this.label_name_reg.Text = "Имя";
+            // 
+            // button_vhod_reg
+            // 
+            this.button_vhod_reg.Location = new System.Drawing.Point(290, 380);
+            this.button_vhod_reg.Name = "button_vhod_reg";
+            this.button_vhod_reg.Size = new System.Drawing.Size(221, 39);
+            this.button_vhod_reg.TabIndex = 10;
+            this.button_vhod_reg.Text = "Войти";
+            this.button_vhod_reg.UseVisualStyleBackColor = true;
+            // 
             // HelloForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -156,6 +271,8 @@
             this.Load += new System.EventHandler(this.HelloForm_Load);
             this.panel_vhod.ResumeLayout(false);
             this.panel_vhod.PerformLayout();
+            this.panel_registr.ResumeLayout(false);
+            this.panel_registr.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -171,6 +288,17 @@
         private System.Windows.Forms.Label label_vhod;
         private System.Windows.Forms.TextBox textBox_password;
         private System.Windows.Forms.TextBox textBox_loginusing;
+        private System.Windows.Forms.Panel panel_registr;
+        private System.Windows.Forms.Label label_name_reg;
+        private System.Windows.Forms.TextBox textBox_name_reg;
+        private System.Windows.Forms.Button button_reg_new;
+        private System.Windows.Forms.Label label_pass_reg;
+        private System.Windows.Forms.Label label_login_reg;
+        private System.Windows.Forms.Label label_reg_reg;
+        private System.Windows.Forms.TextBox textBox_pass_reg;
+        private System.Windows.Forms.TextBox textBox_log_reg;
+        private System.Windows.Forms.Button button_help_reg;
+        private System.Windows.Forms.Button button_vhod_reg;
     }
 }
 
