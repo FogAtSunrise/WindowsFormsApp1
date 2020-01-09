@@ -32,6 +32,16 @@ namespace WindowsFormsApp1
             y.Show();
             this.Hide();
         }
+
+        private void panel_vhod_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void HelloForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
