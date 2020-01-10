@@ -554,7 +554,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form2";
             this.Text = "Form2";
-            this.Load += new System.EventHandler(this.Form2_Load);
+        
             this.panel_DAY.ResumeLayout(false);
             this.panel_DAY.PerformLayout();
             this.panel_menu_dlya_paneli_day.ResumeLayout(false);

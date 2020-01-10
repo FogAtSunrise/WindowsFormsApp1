@@ -36,10 +36,7 @@ namespace WindowsFormsApp1
             z.Show();
         }
 
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
-        }
+       
 
         //
         //ПЕРЕКЛЮЧЕННИЕ МЕЖДУ ПАНЕЛЯМИ
