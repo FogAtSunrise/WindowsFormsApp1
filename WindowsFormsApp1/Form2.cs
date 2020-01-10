@@ -95,6 +95,16 @@ private void button_MONTH_Click(object sender, EventArgs e)
    if (panel_dlya_nedeliiii.Visible)
        panel_dlya_nedeliiii.Visible = false;
 }*/
+        private void помощьToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Описание");
+        }
+
+        private void добавитьЗадачуToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            AddForm z = new AddForm();
+            z.Show();
+        }
     }
         
 
