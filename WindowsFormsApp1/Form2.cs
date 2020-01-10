@@ -24,21 +24,81 @@ namespace WindowsFormsApp1
             
         }
 
-        private void добавитьЗадачуToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddForm z = new AddForm();
-            z.Show();
-        }
-    }
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void помощьToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Описание");
         }
-    }
+
+        private void добавитьЗадачуToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            AddForm z = new AddForm();
+            z.Show();
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        //
+        //ПЕРЕКЛЮЧЕННИЕ МЕЖДУ ПАНЕЛЯМИ
+        //
+        private void button_DAY_Click(object sender, EventArgs e)
+        {
+            
+                panel_DAY.Show();
+                panel_dlya_nedeliiii.Hide();
+                panel_dlya_mesyaca.Hide();
+        }
+
+        private void button_WEEK_Click(object sender, EventArgs e)
+        {
+           // panel_DAY.Hide();
+            panel_dlya_nedeliiii.Show();
+           // panel_dlya_mesyaca.Hide();
+        }
+
+        private void button_MONTH_Click(object sender, EventArgs e)
+        {
+         //   panel_DAY.Hide();
+            panel_dlya_nedeliiii.Hide();
+            panel_dlya_mesyaca.Show();
+        }
+
+      
+        /*private void button_DAY_Click(object sender, EventArgs e)
+{
+   if (!panel_DAY.Visible)
+       panel_DAY.Visible = true;
+   if (panel_dlya_nedeliiii.Visible)
+       panel_dlya_nedeliiii.Visible = false;
+   if (panel_dlya_mesyaca.Visible)
+       panel_dlya_mesyaca.Visible = false;
 }
-//
+
+private void button_WEEK_Click(object sender, EventArgs e)
+{
+   if (!panel_dlya_nedeliiii.Visible)
+        panel_dlya_nedeliiii.Visible = true;
+        if (panel_DAY.Visible)
+       panel_DAY.Visible = false;
+   if (panel_dlya_mesyaca.Visible)
+       panel_dlya_mesyaca.Visible = false;
+}
+
+private void button_MONTH_Click(object sender, EventArgs e)
+{
+   if (!panel_dlya_mesyaca.Visible)
+       panel_dlya_mesyaca.Visible = true;
+   if (panel_DAY.Visible)
+       panel_DAY.Visible = false;
+   if (panel_dlya_nedeliiii.Visible)
+       panel_dlya_nedeliiii.Visible = false;
+}*/
+    }
+        
+
+       
+    }
+
