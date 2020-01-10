@@ -65,36 +65,34 @@ namespace WindowsFormsApp1
             panel_dlya_mesyaca.Show();
         }
 
-      
-        /*private void button_DAY_Click(object sender, EventArgs e)
-{
-   if (!panel_DAY.Visible)
-       panel_DAY.Visible = true;
-   if (panel_dlya_nedeliiii.Visible)
-       panel_dlya_nedeliiii.Visible = false;
-   if (panel_dlya_mesyaca.Visible)
-       panel_dlya_mesyaca.Visible = false;
-}
 
-private void button_WEEK_Click(object sender, EventArgs e)
-{
-   if (!panel_dlya_nedeliiii.Visible)
-        panel_dlya_nedeliiii.Visible = true;
-        if (panel_DAY.Visible)
-       panel_DAY.Visible = false;
-   if (panel_dlya_mesyaca.Visible)
-       panel_dlya_mesyaca.Visible = false;
-}
+        //
+        //ЗАКРЫЛИ ФОРМУ, НЕ ВЫХОДЯ ИЗ УЧЕТНОЙ ЗАПИСИ, НАДО ФЛАЖОК СДЕЛАТЬ, ЧТО ПРИ СЛЕДУЮЩЕМ ВХОДЕ ОТКРЫЛАСЬ ЭТА УЧЕТНАЯ ЗАПИСЬ
+        //
+        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
 
-private void button_MONTH_Click(object sender, EventArgs e)
-{
-   if (!panel_dlya_mesyaca.Visible)
-       panel_dlya_mesyaca.Visible = true;
-   if (panel_DAY.Visible)
-       panel_DAY.Visible = false;
-   if (panel_dlya_nedeliiii.Visible)
-       panel_dlya_nedeliiii.Visible = false;
-}*/
+        //
+        //Переход в форму пользователя
+        //
+        private void button_user_Click(object sender, EventArgs e)
+        {
+            
+            UserForm y = new UserForm();
+            y.Show();
+        }
+
+        private void button_back_Click(object sender, EventArgs e)
+        {
+            HelloForm frm = (HelloForm)this.Owner;
+            frm.Show();
+            this.Hide();
+        }
+
+
+       
     }
         
 

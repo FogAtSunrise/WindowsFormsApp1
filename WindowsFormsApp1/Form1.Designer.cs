@@ -282,6 +282,7 @@
             this.Controls.Add(this.panel_vhod);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "HelloForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HelloForm_FormClosed);
             this.panel_vhod.ResumeLayout(false);
             this.panel_vhod.PerformLayout();
             this.panel_registr.ResumeLayout(false);
