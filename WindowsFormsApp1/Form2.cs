@@ -47,22 +47,24 @@ namespace WindowsFormsApp1
         private void button_DAY_Click(object sender, EventArgs e)
         {
             
-                panel_DAY.Show();
+              //  panel_DAY.Show();
                 panel_dlya_nedeliiii.Hide();
                 panel_dlya_mesyaca.Hide();
         }
 
         private void button_WEEK_Click(object sender, EventArgs e)
         {
-           // panel_DAY.Hide();
+            //  panel_DAY.Hide();
+           /* if (!panel_dlya_nedeliiii.Visible)
+                panel_dlya_nedeliiii.Visible = true;*/
             panel_dlya_nedeliiii.Show();
-           // panel_dlya_mesyaca.Hide();
+            panel_dlya_mesyaca.Hide();
         }
 
         private void button_MONTH_Click(object sender, EventArgs e)
         {
-         //   panel_DAY.Hide();
-            panel_dlya_nedeliiii.Hide();
+         //  panel_DAY.Hide();
+           panel_dlya_nedeliiii.Hide();
             panel_dlya_mesyaca.Show();
         }
 

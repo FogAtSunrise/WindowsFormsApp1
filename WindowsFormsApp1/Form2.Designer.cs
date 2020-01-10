@@ -41,7 +41,6 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -69,6 +68,7 @@
             this.button_DAY = new System.Windows.Forms.Button();
             this.button_WEEK = new System.Windows.Forms.Button();
             this.button_MONTH = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel_DAY.SuspendLayout();
             this.panel_menu_dlya_paneli_day.SuspendLayout();
             this.panel_dlya_mesyaca.SuspendLayout();
@@ -81,10 +81,10 @@
             // panel_DAY
             // 
             this.panel_DAY.Controls.Add(this.panel_dlya_mesyaca);
+            this.panel_DAY.Controls.Add(this.panel_dlya_nedeliiii);
             this.panel_DAY.Controls.Add(this.dateTimePicker1);
             this.panel_DAY.Controls.Add(this.label_date);
             this.panel_DAY.Controls.Add(this.panel_gde_budut_zapisi);
-            this.panel_DAY.Controls.Add(this.panel4);
             this.panel_DAY.Controls.Add(this.panel_menu_dlya_paneli_day);
             this.panel_DAY.Location = new System.Drawing.Point(4, 62);
             this.panel_DAY.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -116,7 +116,7 @@
             this.panel_gde_budut_zapisi.Location = new System.Drawing.Point(4, 50);
             this.panel_gde_budut_zapisi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel_gde_budut_zapisi.Name = "panel_gde_budut_zapisi";
-            this.panel_gde_budut_zapisi.Size = new System.Drawing.Size(891, 535);
+            this.panel_gde_budut_zapisi.Size = new System.Drawing.Size(887, 535);
             this.panel_gde_budut_zapisi.TabIndex = 1;
             // 
             // panel_menu_dlya_paneli_day
@@ -125,19 +125,19 @@
             this.panel_menu_dlya_paneli_day.Controls.Add(this.button3);
             this.panel_menu_dlya_paneli_day.Controls.Add(this.button_OFF_opoveschalku);
             this.panel_menu_dlya_paneli_day.Controls.Add(this.button_ON_opoveschalku);
-            this.panel_menu_dlya_paneli_day.Location = new System.Drawing.Point(897, 1);
+            this.panel_menu_dlya_paneli_day.Location = new System.Drawing.Point(897, 2);
             this.panel_menu_dlya_paneli_day.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel_menu_dlya_paneli_day.Name = "panel_menu_dlya_paneli_day";
-            this.panel_menu_dlya_paneli_day.Size = new System.Drawing.Size(271, 584);
+            this.panel_menu_dlya_paneli_day.Size = new System.Drawing.Size(278, 590);
             this.panel_menu_dlya_paneli_day.TabIndex = 0;
             // 
             // button3
             // 
             this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.Location = new System.Drawing.Point(0, 102);
+            this.button3.Location = new System.Drawing.Point(-1, 103);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(272, 57);
+            this.button3.Size = new System.Drawing.Size(281, 57);
             this.button3.TabIndex = 2;
             this.button3.Text = "Удалить все";
             this.button3.UseVisualStyleBackColor = true;
@@ -145,10 +145,10 @@
             // button_OFF_opoveschalku
             // 
             this.button_OFF_opoveschalku.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button_OFF_opoveschalku.Location = new System.Drawing.Point(-4, 48);
+            this.button_OFF_opoveschalku.Location = new System.Drawing.Point(-1, 49);
             this.button_OFF_opoveschalku.Margin = new System.Windows.Forms.Padding(4);
             this.button_OFF_opoveschalku.Name = "button_OFF_opoveschalku";
-            this.button_OFF_opoveschalku.Size = new System.Drawing.Size(272, 57);
+            this.button_OFF_opoveschalku.Size = new System.Drawing.Size(281, 57);
             this.button_OFF_opoveschalku.TabIndex = 1;
             this.button_OFF_opoveschalku.Text = "Выключить все оповещения";
             this.button_OFF_opoveschalku.UseVisualStyleBackColor = true;
@@ -156,22 +156,23 @@
             // button_ON_opoveschalku
             // 
             this.button_ON_opoveschalku.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button_ON_opoveschalku.Location = new System.Drawing.Point(-1, -4);
+            this.button_ON_opoveschalku.Location = new System.Drawing.Point(-1, -3);
             this.button_ON_opoveschalku.Margin = new System.Windows.Forms.Padding(4);
             this.button_ON_opoveschalku.Name = "button_ON_opoveschalku";
-            this.button_ON_opoveschalku.Size = new System.Drawing.Size(272, 57);
+            this.button_ON_opoveschalku.Size = new System.Drawing.Size(279, 57);
             this.button_ON_opoveschalku.TabIndex = 0;
             this.button_ON_opoveschalku.Text = "Включить все оповещения";
             this.button_ON_opoveschalku.UseVisualStyleBackColor = true;
             // 
             // panel_dlya_mesyaca
             // 
+            this.panel_dlya_mesyaca.Controls.Add(this.panel4);
             this.panel_dlya_mesyaca.Controls.Add(this.label3);
             this.panel_dlya_mesyaca.Controls.Add(this.comboBox2);
             this.panel_dlya_mesyaca.Controls.Add(this.comboBox1);
             this.panel_dlya_mesyaca.Controls.Add(this.label4);
             this.panel_dlya_mesyaca.Controls.Add(this.panel5);
-            this.panel_dlya_mesyaca.Location = new System.Drawing.Point(0, 4);
+            this.panel_dlya_mesyaca.Location = new System.Drawing.Point(1, 0);
             this.panel_dlya_mesyaca.Margin = new System.Windows.Forms.Padding(4);
             this.panel_dlya_mesyaca.Name = "panel_dlya_mesyaca";
             this.panel_dlya_mesyaca.Size = new System.Drawing.Size(1170, 594);
@@ -244,14 +245,6 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "Месяц";
             // 
-            // panel4
-            // 
-            this.panel4.Location = new System.Drawing.Point(0, 4);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(880, 497);
-            this.panel4.TabIndex = 1;
-            // 
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -260,19 +253,19 @@
             this.panel5.Controls.Add(this.button7);
             this.panel5.Controls.Add(this.button10);
             this.panel5.Controls.Add(this.button11);
-            this.panel5.Location = new System.Drawing.Point(885, 0);
+            this.panel5.Location = new System.Drawing.Point(896, 1);
             this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(285, 590);
+            this.panel5.Size = new System.Drawing.Size(278, 590);
             this.panel5.TabIndex = 0;
             // 
             // button5
             // 
             this.button5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button5.Location = new System.Drawing.Point(-1, 190);
+            this.button5.Location = new System.Drawing.Point(-1, 189);
             this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(285, 69);
+            this.button5.Size = new System.Drawing.Size(278, 69);
             this.button5.TabIndex = 4;
             this.button5.Text = "Выключить все оповещения";
             this.button5.UseVisualStyleBackColor = true;
@@ -280,10 +273,10 @@
             // button6
             // 
             this.button6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button6.Location = new System.Drawing.Point(-1, 127);
+            this.button6.Location = new System.Drawing.Point(-1, 126);
             this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(285, 69);
+            this.button6.Size = new System.Drawing.Size(278, 69);
             this.button6.TabIndex = 3;
             this.button6.Text = "Включить все оповещения";
             this.button6.UseVisualStyleBackColor = true;
@@ -291,10 +284,10 @@
             // button7
             // 
             this.button7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button7.Location = new System.Drawing.Point(-1, 255);
+            this.button7.Location = new System.Drawing.Point(-1, 254);
             this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(285, 69);
+            this.button7.Size = new System.Drawing.Size(278, 69);
             this.button7.TabIndex = 2;
             this.button7.Text = "Удалить все";
             this.button7.UseVisualStyleBackColor = true;
@@ -302,10 +295,10 @@
             // button10
             // 
             this.button10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button10.Location = new System.Drawing.Point(-1, 62);
+            this.button10.Location = new System.Drawing.Point(-1, 61);
             this.button10.Margin = new System.Windows.Forms.Padding(4);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(285, 69);
+            this.button10.Size = new System.Drawing.Size(278, 69);
             this.button10.TabIndex = 1;
             this.button10.Text = "Выключить оповещения";
             this.button10.UseVisualStyleBackColor = true;
@@ -313,10 +306,10 @@
             // button11
             // 
             this.button11.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button11.Location = new System.Drawing.Point(-1, -1);
+            this.button11.Location = new System.Drawing.Point(-1, -2);
             this.button11.Margin = new System.Windows.Forms.Padding(4);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(285, 69);
+            this.button11.Size = new System.Drawing.Size(278, 69);
             this.button11.TabIndex = 0;
             this.button11.Text = "Включить оповещения";
             this.button11.UseVisualStyleBackColor = true;
@@ -329,7 +322,7 @@
             this.panel_dlya_nedeliiii.Controls.Add(this.dateTimePicker2);
             this.panel_dlya_nedeliiii.Controls.Add(this.label1);
             this.panel_dlya_nedeliiii.Controls.Add(this.panel2);
-            this.panel_dlya_nedeliiii.Location = new System.Drawing.Point(4, 62);
+            this.panel_dlya_nedeliiii.Location = new System.Drawing.Point(0, 2);
             this.panel_dlya_nedeliiii.Margin = new System.Windows.Forms.Padding(4);
             this.panel_dlya_nedeliiii.Name = "panel_dlya_nedeliiii";
             this.panel_dlya_nedeliiii.Size = new System.Drawing.Size(1170, 594);
@@ -344,16 +337,16 @@
             this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.button2);
             this.panel3.Controls.Add(this.button4);
-            this.panel3.Location = new System.Drawing.Point(877, 0);
+            this.panel3.Location = new System.Drawing.Point(893, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(302, 590);
+            this.panel3.Size = new System.Drawing.Size(278, 590);
             this.panel3.TabIndex = 0;
             // 
             // button9
             // 
             this.button9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button9.Location = new System.Drawing.Point(-1, 182);
+            this.button9.Location = new System.Drawing.Point(-13, 182);
             this.button9.Margin = new System.Windows.Forms.Padding(4);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(302, 69);
@@ -364,7 +357,7 @@
             // button8
             // 
             this.button8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button8.Location = new System.Drawing.Point(-8, 117);
+            this.button8.Location = new System.Drawing.Point(-20, 117);
             this.button8.Margin = new System.Windows.Forms.Padding(4);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(308, 69);
@@ -375,7 +368,7 @@
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Location = new System.Drawing.Point(-7, 246);
+            this.button1.Location = new System.Drawing.Point(-19, 246);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(308, 69);
@@ -386,7 +379,7 @@
             // button2
             // 
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.Location = new System.Drawing.Point(-7, 56);
+            this.button2.Location = new System.Drawing.Point(-19, 56);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(308, 69);
@@ -397,7 +390,7 @@
             // button4
             // 
             this.button4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button4.Location = new System.Drawing.Point(-8, -3);
+            this.button4.Location = new System.Drawing.Point(-20, -3);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(308, 65);
@@ -450,7 +443,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 63);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(880, 527);
+            this.panel2.Size = new System.Drawing.Size(893, 527);
             this.panel2.TabIndex = 1;
             this.panel2.Visible = false;
             // 
@@ -475,7 +468,7 @@
             this.main_menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.main_menuStrip1.Name = "main_menuStrip1";
             this.main_menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.main_menuStrip1.Size = new System.Drawing.Size(1182, 28);
+            this.main_menuStrip1.Size = new System.Drawing.Size(1182, 30);
             this.main_menuStrip1.TabIndex = 2;
             this.main_menuStrip1.Text = "menuStrip1";
             // 
@@ -539,6 +532,14 @@
             this.button_MONTH.UseVisualStyleBackColor = true;
             this.button_MONTH.Click += new System.EventHandler(this.button_MONTH_Click);
             // 
+            // panel4
+            // 
+            this.panel4.Location = new System.Drawing.Point(0, 60);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(889, 526);
+            this.panel4.TabIndex = 6;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -549,7 +550,6 @@
             this.Controls.Add(this.button_DAY);
             this.Controls.Add(this.button_user);
             this.Controls.Add(this.main_menuStrip1);
-            this.Controls.Add(this.panel_dlya_nedeliiii);
             this.Controls.Add(this.panel_DAY);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form2";
@@ -604,7 +604,6 @@
         private System.Windows.Forms.Panel panel_dlya_mesyaca;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
@@ -614,5 +613,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ToolStripMenuItem добавитьЗадачуToolStripMenuItem;
+        private System.Windows.Forms.Panel panel4;
     }
 }
