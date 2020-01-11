@@ -29,7 +29,7 @@ namespace WindowsFormsApp1
         private void button_vhod_Click(object sender, EventArgs e)
         {
             Form2 y = new Form2();
-            y.Show();
+            y.Show(this);
             this.Hide();
         }
 
@@ -41,6 +41,11 @@ namespace WindowsFormsApp1
         private void button_vhod_reg_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void HelloForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
