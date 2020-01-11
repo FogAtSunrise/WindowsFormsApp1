@@ -17,6 +17,7 @@ namespace WindowsFormsApp1
     {
 
         public static string LogNow;
+        public static int strnum;
         public HelloForm()
         {
             InitializeComponent();
@@ -51,13 +52,13 @@ namespace WindowsFormsApp1
             {
 
                 bool found_log = false;
-                int count_rows = f.dataGridView1.RowCount - 1;
+                int count_rows = FormDopForm.dataGridView1.RowCount-1;
                 int right_row = 0;
                 
                     for (int i = 0; i < count_rows; i++)
                     {
-                        string dop = f.dataGridView1.Rows[i].Cells[2].Value.ToString();
-                        if (dop == login) { found_log = true; right_row = i; }
+                        string dop = FormDopForm.dataGridView1.Rows[i].Cells[2].Value.ToString();
+                        if (dop == login) { found_log = true; right_row = i; strnum = i; }
                     }
 
                     //ПОИСК ЛОГИНА В ТАБЛИЦЕ IF "НЕ НАЙДЕН", ТО LABEL2, ELSE:
@@ -68,7 +69,7 @@ namespace WindowsFormsApp1
                         if (pass == "") // если ввесли пустую строчку для пароля
                             label5.Show();
                         else
-                        if (pass == f.dataGridView1.Rows[right_row].Cells[3].Value.ToString())//пароль верный
+                        if (pass == FormDopForm.dataGridView1.Rows[right_row].Cells[3].Value.ToString())//пароль верный
                         {
                             textBox_password.Clear();
                             textBox_loginusing.Clear();
@@ -164,12 +165,12 @@ namespace WindowsFormsApp1
                 while (!fptr.EndOfStream)
                 {
                     str = fptr.ReadLine();
-                    f.dataGridView1.Rows.Add();
-                    f.dataGridView1.Rows[i].Cells[0].Value = (i + 1);//пронумеровать (id)
+                    FormDopForm.dataGridView1.Rows.Add();
+                    FormDopForm.dataGridView1.Rows[i].Cells[0].Value = (i + 1);//пронумеровать (id)
                     String[] words = str.Split(new char[] { '#' }, StringSplitOptions.RemoveEmptyEntries);
                     for (int j = 1; j < 6; j++)
                     {
-                        f.dataGridView1.Rows[i].Cells[j].Value = words[j - 1];
+                        FormDopForm.dataGridView1.Rows[i].Cells[j].Value = words[j - 1];
                     }
                     i++;
                 }
@@ -259,10 +260,10 @@ namespace WindowsFormsApp1
                     //StreamWriter sw = new StreamWriter("data.dat", true);
                     using (StreamWriter sw = new StreamWriter("data.dat", true))
                    {
-                        if (f.dataGridView1.RowCount - 1 != 0)
+                        if (FormDopForm.dataGridView1.RowCount - 1 != 0)
                             sw.Write("\n");
                     sw.Write("0#" + login + "#" + pass + "#" + name + "#" + DateTime.Now.ToShortDateString()+"#");
-                       // sw.Close();
+                        sw.Close();
                    }
                    
                 }
@@ -273,14 +274,14 @@ namespace WindowsFormsApp1
 
 
                 bool sozdana = false;
-                int count_rows = f.dataGridView1.RowCount - 1;
-                f.dataGridView1.Rows.Add();
-                f.dataGridView1.Rows[count_rows].Cells[0].Value = count_rows + 1;
-                f.dataGridView1.Rows[count_rows].Cells[1].Value = 0;
-                f.dataGridView1.Rows[count_rows].Cells[2].Value = login;
-                f.dataGridView1.Rows[count_rows].Cells[3].Value = pass;
-                f.dataGridView1.Rows[count_rows].Cells[4].Value = name;
-                f.dataGridView1.Rows[count_rows].Cells[5].Value = DateTime.Now.ToShortDateString();
+                int count_rows = FormDopForm.dataGridView1.RowCount - 1;
+                FormDopForm.dataGridView1.Rows.Add();
+                FormDopForm.dataGridView1.Rows[count_rows].Cells[0].Value = count_rows + 1;
+                FormDopForm.dataGridView1.Rows[count_rows].Cells[1].Value = 0;
+                FormDopForm.dataGridView1.Rows[count_rows].Cells[2].Value = login;
+                FormDopForm.dataGridView1.Rows[count_rows].Cells[3].Value = pass;
+                FormDopForm.dataGridView1.Rows[count_rows].Cells[4].Value = name;
+                FormDopForm.dataGridView1.Rows[count_rows].Cells[5].Value = DateTime.Now.ToShortDateString();
                      sozdana = true;
                   if (sozdana)
                 {

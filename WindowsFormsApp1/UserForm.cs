@@ -19,25 +19,94 @@ namespace WindowsFormsApp1
 
         private void UserForm_Load(object sender, EventArgs e)
         {
-            FormDopForm f = new FormDopForm();
-            int right_row = 0;
-            string dat, nams;
-            int count_rows = f.dataGridView1.RowCount - 1;
+           // HelloForm j = new HelloForm();
+           // FormDopForm f = new FormDopForm();
+           // int right_row = 0;
+            //string dat, nams;
+         /*   int count_rows = FormDopForm.dataGridView1.RowCount-1;
             for (int i = 0; i < count_rows; i++)
             {
-                string dop = f.dataGridView1.Rows[i].Cells[2].Value.ToString();
+                string dop = FormDopForm.dataGridView1.Rows[i].Cells[2].Value.ToString();
+               
                 if (dop == HelloForm.LogNow)
                 { right_row = i;
+                    break;
                     }
-            }
-            //заибало уже все нахер в жопу эту хуйню
-          //  nams = f.dataGridView1.Rows[right_row].Cells[4].Value.ToString();
-          //  dat = f.dataGridView1.Rows[right_row].Cells[5].Value.ToString();
-           // textBoxName.Text = nams;
-            textBoxLog.Text = HelloForm.LogNow;
-          //  textBoxDate.Text = dat;
+            }*/
             
+            textBoxName.Text = FormDopForm.dataGridView1.Rows[HelloForm.strnum].Cells[4].Value.ToString();
+            textBoxLog.Text = HelloForm.LogNow;
+            textBoxDate.Text = FormDopForm.dataGridView1.Rows[HelloForm.strnum].Cells[5].Value.ToString();
+
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            label4.Hide();
+            label6.Hide();
+            label8.Hide();
+            string name = textBoxName.Text;
+            bool noEmpty = true;
+            if (String.IsNullOrWhiteSpace(name) || name == "") //на пустоту и пробелы 
+            {
+                label4.Show();
+                noEmpty = false;
+            }
+            else
+           if (name.Length < 4 || name.Length > 20)//на дилнну имени
+            {
+                label6.Show();
+                noEmpty = false;
+            }
+            else
+               if (name.Contains("#") || name.Contains("%") || name.Contains("$"))
+            {
+                label8.Show();
+                noEmpty = false;
+            }
+            if (noEmpty == true)
+            {
+                FormDopForm.dataGridView1.Rows[HelloForm.strnum].Cells[4].Value = textBoxName.Text;
+
+            }
+        }
+
+        private void UserForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+            FormDopForm.writefile();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            label5.Hide();
+            label7.Hide();
+            label9.Hide();
+            string name = textBoxLog.Text;
+            bool noEmpty = true;
+            if (String.IsNullOrWhiteSpace(name) || name == "") //на пустоту и пробелы 
+            {
+                label5.Show();
+                noEmpty = false;
+            }
+            else
+           if (name.Length < 4 || name.Length > 20)//на дилнну имени
+            {
+                label7.Show();
+                noEmpty = false;
+            }
+            else
+               if (name.Contains("#") || name.Contains("%") || name.Contains("$"))
+            {
+                label9.Show();
+                noEmpty = false;
+            }
+            if (noEmpty == true)
+            {
+                FormDopForm.dataGridView1.Rows[HelloForm.strnum].Cells[2].Value = textBoxLog.Text;
+
+            }
+        }
     }
 }
