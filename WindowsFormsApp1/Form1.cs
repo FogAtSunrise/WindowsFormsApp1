@@ -20,7 +20,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-       
+        FormDopForm f = new FormDopForm();
 
         private void button_help_Click(object sender, EventArgs e)
         {
@@ -38,40 +38,53 @@ namespace WindowsFormsApp1
             string ish = "ira";
             string login = textBox_loginusing.Text;
             string pass = textBox_password.Text;//введенный пароль
-            if (login == "")
+            if (login == "") // если строчка пустая
             {
                 label4.Show();
                 if (pass == "")
                     label5.Show();
                 else label3.Show();
             }
-            else
-            //ПОИСК ЛОГИНА В ТАБЛИЦЕ IF "НЕ НАЙДЕН", ТО LABEL2, ELSE:
-            if (ish == login)//это типо если логин найден
+            else // иначе производим поиск
             {
-                string ishod = "hello";//СЧИТЫВАЕМ ПАРОЛЬ ДЛЯ НАЙДЕННОГО ЛОГИНА
 
-                if (pass == "")
-                    label5.Show();
-                else
-                if (ishod == pass)//пароль верный
+                bool found_log = false;
+                int count_rows = f.dataGridView1.RowCount - 1;
+                int right_row = 0;
+
+                for(int i= 0; i< count_rows; i++)
                 {
-                    textBox_password.Clear();
-                    textBox_loginusing.Clear();
-                    Form2 y = new Form2();
-                    y.Show(this);
-                    this.Hide();
+                    string dop = f.dataGridView1.Rows[i].Cells[2].Value.ToString();
+                    if (dop == login) { found_log = true; right_row = i; }
+                }
+
+                //ПОИСК ЛОГИНА В ТАБЛИЦЕ IF "НЕ НАЙДЕН", ТО LABEL2, ELSE:
+                if (found_log)//это типо если логин найден
+                {
+                    // string ishod = "hello";//СЧИТЫВАЕМ ПАРОЛЬ ДЛЯ НАЙДЕННОГО ЛОГИНА
+
+                    if (pass == "") // если ввесли пустую строчку для пароля
+                        label5.Show();
+                    else
+                    if (pass == f.dataGridView1.Rows[right_row].Cells[3].Value.ToString())//пароль верный
+                    {
+                        textBox_password.Clear();
+                        textBox_loginusing.Clear();
+                        Form2 y = new Form2();
+                        y.Show(this);
+                        this.Hide();
+
+                    }
+                    else label3.Show();
 
                 }
-                else label3.Show();
-
-            }
-            else
-            {
-                label2.Show();
-                if (pass == "")
-                    label5.Show();
-                else label3.Show();
+                else
+                {
+                    label2.Show();
+                    if (pass == "")
+                        label5.Show();
+                    else label3.Show();
+                }
             }
         }
 
@@ -91,6 +104,7 @@ namespace WindowsFormsApp1
         private void button_reg_Click(object sender, EventArgs e)
         {
             panel_vhod.Hide();
+            panel_registr.Show();
             //очистка полей при переходе
             textBox_password.Clear();
             textBox_loginusing.Clear();
@@ -104,6 +118,7 @@ namespace WindowsFormsApp1
         private void button_vhod_reg_Click(object sender, EventArgs e)
         {
             panel_vhod.Show();
+            panel_registr.Hide();
         }
 
         //Запуск таймера для панели приветствия запуске программы... надо длобавить проверку наличия учетных записе
@@ -118,13 +133,13 @@ namespace WindowsFormsApp1
         private void HelloForm_Load(object sender, EventArgs e)
         {
             
-            FormDopForm f = new FormDopForm();
+            
             f.Show();
             string str;
 
             try {
                 StreamReader  fptr = new StreamReader("data.dat");
-          /*
+          
                 int i = 0;
                 while (!fptr.EndOfStream)
                 {
@@ -136,8 +151,8 @@ namespace WindowsFormsApp1
                     {
                         f.dataGridView1.Rows[i].Cells[j].Value = words[j - 1];
                     }
-                    i++;*/
-               // }
+                    i++;
+                }
                 
                 fptr.Close();
             }
@@ -145,6 +160,51 @@ namespace WindowsFormsApp1
             { MessageBox.Show("Ошибка данных приложения"); }
 
 
+        }
+
+        private void button_reg_new_Click(object sender, EventArgs e)
+        {
+            string name = textBox_name_reg.Text;
+            string login = textBox_log_reg.Text;
+            string pass = textBox_pass_reg.Text;
+
+            try
+            {
+                using (StreamWriter sw = new StreamWriter("data.dat", true))
+                {
+                    sw.Write("\n0#" + login + "#" + pass + "#"+name+"#"+"11.22.5555#");
+                }
+                
+            }
+            catch (Exception E)
+            {
+                MessageBox.Show("Ошибка данных приложения");
+            }
+
+            string str;
+
+            try
+            {
+                StreamReader fptr = new StreamReader("data.dat");
+
+                int i = 0;
+                while (!fptr.EndOfStream)
+                {
+                    str = fptr.ReadLine();
+                    f.dataGridView1.Rows.Add();
+                    f.dataGridView1.Rows[i].Cells[0].Value = (i + 1);//пронумеровать (id)
+                    String[] words = str.Split(new char[] { '#' }, StringSplitOptions.RemoveEmptyEntries);
+                    for (int j = 1; j < 6; j++)
+                    {
+                        f.dataGridView1.Rows[i].Cells[j].Value = words[j - 1];
+                    }
+                    i++;
+                }
+
+                fptr.Close();
+            }
+            catch (Exception E)
+            { MessageBox.Show("Ошибка данных приложения"); }
         }
     }
 }
