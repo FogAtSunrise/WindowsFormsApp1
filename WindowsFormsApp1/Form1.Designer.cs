@@ -57,6 +57,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label_molodec = new System.Windows.Forms.Label();
             this.panel_vhod.SuspendLayout();
             this.panel_registr.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -77,10 +78,10 @@
             this.panel_vhod.Controls.Add(this.label_vhod);
             this.panel_vhod.Controls.Add(this.textBox_password);
             this.panel_vhod.Controls.Add(this.textBox_loginusing);
-            this.panel_vhod.Location = new System.Drawing.Point(212, 35);
+            this.panel_vhod.Location = new System.Drawing.Point(229, 62);
             this.panel_vhod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel_vhod.Name = "panel_vhod";
-            this.panel_vhod.Size = new System.Drawing.Size(463, 401);
+            this.panel_vhod.Size = new System.Drawing.Size(461, 401);
             this.panel_vhod.TabIndex = 0;
             this.panel_vhod.Visible = false;
             // 
@@ -209,6 +210,7 @@
             // panel_registr
             // 
             this.panel_registr.BackColor = System.Drawing.SystemColors.Control;
+            this.panel_registr.Controls.Add(this.label_molodec);
             this.panel_registr.Controls.Add(this.button_vhod_reg);
             this.panel_registr.Controls.Add(this.label_name_reg);
             this.panel_registr.Controls.Add(this.textBox_name_reg);
@@ -218,7 +220,7 @@
             this.panel_registr.Controls.Add(this.label_reg_reg);
             this.panel_registr.Controls.Add(this.textBox_pass_reg);
             this.panel_registr.Controls.Add(this.textBox_log_reg);
-            this.panel_registr.Location = new System.Drawing.Point(210, 37);
+            this.panel_registr.Location = new System.Drawing.Point(229, 62);
             this.panel_registr.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel_registr.Name = "panel_registr";
             this.panel_registr.Size = new System.Drawing.Size(463, 401);
@@ -335,7 +337,7 @@
             // 
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(42, 421);
+            this.panel1.Location = new System.Drawing.Point(44, 64);
             this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(820, 420);
@@ -369,6 +371,18 @@
             this.timer1.Enabled = true;
             this.timer1.Interval = 3000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label_molodec
+            // 
+            this.label_molodec.AutoSize = true;
+            this.label_molodec.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_molodec.ForeColor = System.Drawing.Color.Green;
+            this.label_molodec.Location = new System.Drawing.Point(164, 305);
+            this.label_molodec.Name = "label_molodec";
+            this.label_molodec.Size = new System.Drawing.Size(173, 16);
+            this.label_molodec.TabIndex = 11;
+            this.label_molodec.Text = "Учетная запись создана!";
+            this.label_molodec.Visible = false;
             // 
             // HelloForm
             // 
@@ -423,6 +437,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label_molodec;
     }
 }
 

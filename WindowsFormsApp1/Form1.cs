@@ -52,7 +52,7 @@ namespace WindowsFormsApp1
                 int count_rows = f.dataGridView1.RowCount - 1;
                 int right_row = 0;
 
-                for(int i= 0; i< count_rows; i++)
+                for(int i= 0; i < count_rows; i++)
                 {
                     string dop = f.dataGridView1.Rows[i].Cells[2].Value.ToString();
                     if (dop == login) { found_log = true; right_row = i; }
@@ -125,8 +125,9 @@ namespace WindowsFormsApp1
         private void timer1_Tick(object sender, EventArgs e)
         {
             panel1.Hide();
+            panel_registr.Hide();
             panel_vhod.Show(); //ПРОВЕРКА ФЛАГА, В ЗАВИСИМОСТИ ОТ НЕГО ОТПРАВЛЯТЬ СРАЗУ В РЕГИСТРАЦИ  ИЛИ НЕТ
-           timer1.Stop();
+            timer1.Stop();
 
         }
 
@@ -181,17 +182,30 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Ошибка данных приложения");
             }
 
-            string str;
-
-            try
+           
+            bool sozdana = false;
+            int count_rows = f.dataGridView1.RowCount - 1;
+            f.dataGridView1.Rows.Add();
+            f.dataGridView1.Rows[count_rows].Cells[0].Value = count_rows+1;
+            f.dataGridView1.Rows[count_rows].Cells[1].Value = 0;
+            f.dataGridView1.Rows[count_rows].Cells[2].Value = login;
+            f.dataGridView1.Rows[count_rows].Cells[3].Value = pass;
+            f.dataGridView1.Rows[count_rows].Cells[4].Value = name;
+            f.dataGridView1.Rows[count_rows].Cells[5].Value = "11.22.5555";
+           // 
+            sozdana = true;
+           // f.dataGridView1.Rows.Add();
+           // f.dataGridView1.Rows[count_rows+1].Cells[0].Value = "";
+            /*try
             {
+                
                 StreamReader fptr = new StreamReader("data.dat");
 
                 int i = 0;
                 while (!fptr.EndOfStream)
                 {
                     str = fptr.ReadLine();
-                    f.dataGridView1.Rows.Add();
+                    
                     f.dataGridView1.Rows[i].Cells[0].Value = (i + 1);//пронумеровать (id)
                     String[] words = str.Split(new char[] { '#' }, StringSplitOptions.RemoveEmptyEntries);
                     for (int j = 1; j < 6; j++)
@@ -200,11 +214,20 @@ namespace WindowsFormsApp1
                     }
                     i++;
                 }
-
+               // f.dataGridView1.Rows.Add();
+               // sozdana = true;
                 fptr.Close();
             }
             catch (Exception E)
-            { MessageBox.Show("Ошибка данных приложения"); }
+            { MessageBox.Show("Ошибка данных приложения");  }*/
+
+            if (sozdana)
+            {
+                label_molodec.Visible = true;
+                textBox_log_reg.Text = "";
+                textBox_name_reg.Text = "";
+                textBox_pass_reg.Text = "";
+            }
         }
     }
 }
