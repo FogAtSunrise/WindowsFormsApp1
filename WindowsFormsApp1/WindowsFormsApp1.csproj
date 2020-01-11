@@ -70,6 +70,12 @@
     <Compile Include="FormAddTask.Designer.cs">
       <DependentUpon>FormAddTask.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDopForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDopForm.Designer.cs">
+      <DependentUpon>FormDopForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserForm.cs">
@@ -89,6 +95,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAddTask.resx">
       <DependentUpon>FormAddTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDopForm.resx">
+      <DependentUpon>FormDopForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -114,6 +123,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data.dat" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
