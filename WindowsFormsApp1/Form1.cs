@@ -15,6 +15,8 @@ namespace WindowsFormsApp1
 {
     public partial class HelloForm : Form
     {
+
+        public static string LogNow;
         public HelloForm()
         {
             InitializeComponent();
@@ -35,7 +37,7 @@ namespace WindowsFormsApp1
             label4.Hide();
             label5.Hide();
 
-            string ish = "ira";
+            // string ish = "ira";
             string login = textBox_loginusing.Text;
             string pass = textBox_password.Text;//введенный пароль
             if (login == "") // если строчка пустая
@@ -51,41 +53,43 @@ namespace WindowsFormsApp1
                 bool found_log = false;
                 int count_rows = f.dataGridView1.RowCount - 1;
                 int right_row = 0;
-
-                for(int i= 0; i < count_rows; i++)
-                {
-                    string dop = f.dataGridView1.Rows[i].Cells[2].Value.ToString();
-                    if (dop == login) { found_log = true; right_row = i; }
-                }
-
-                //ПОИСК ЛОГИНА В ТАБЛИЦЕ IF "НЕ НАЙДЕН", ТО LABEL2, ELSE:
-                if (found_log)//это типо если логин найден
-                {
-                    // string ishod = "hello";//СЧИТЫВАЕМ ПАРОЛЬ ДЛЯ НАЙДЕННОГО ЛОГИНА
-
-                    if (pass == "") // если ввесли пустую строчку для пароля
-                        label5.Show();
-                    else
-                    if (pass == f.dataGridView1.Rows[right_row].Cells[3].Value.ToString())//пароль верный
+                
+                    for (int i = 0; i < count_rows; i++)
                     {
-                        textBox_password.Clear();
-                        textBox_loginusing.Clear();
-                        Form2 y = new Form2();
-                        y.Show(this);
-                        this.Hide();
+                        string dop = f.dataGridView1.Rows[i].Cells[2].Value.ToString();
+                        if (dop == login) { found_log = true; right_row = i; }
+                    }
+
+                    //ПОИСК ЛОГИНА В ТАБЛИЦЕ IF "НЕ НАЙДЕН", ТО LABEL2, ELSE:
+                    if (found_log)//это типо если логин найден
+                    {
+                        // string ishod = "hello";//СЧИТЫВАЕМ ПАРОЛЬ ДЛЯ НАЙДЕННОГО ЛОГИНА
+
+                        if (pass == "") // если ввесли пустую строчку для пароля
+                            label5.Show();
+                        else
+                        if (pass == f.dataGridView1.Rows[right_row].Cells[3].Value.ToString())//пароль верный
+                        {
+                            textBox_password.Clear();
+                            textBox_loginusing.Clear();
+                            Form2 y = new Form2();
+                            y.Show(this);
+                            LogNow = login;
+                            this.Hide();
+
+                        }
+                        else label3.Show();
 
                     }
-                    else label3.Show();
-
+                    else
+                    {
+                        label2.Show();
+                        if (pass == "")
+                            label5.Show();
+                        else label3.Show();
+                    }
                 }
-                else
-                {
-                    label2.Show();
-                    if (pass == "")
-                        label5.Show();
-                    else label3.Show();
-                }
-            }
+            
         }
 
         private void button_help_reg_Click(object sender, EventArgs e)
@@ -93,7 +97,7 @@ namespace WindowsFormsApp1
             MessageBox.Show("Описание");
         }
 
-      
+
 
         private void HelloForm_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -106,8 +110,9 @@ namespace WindowsFormsApp1
             panel_vhod.Hide();
             panel_registr.Show();
             //очистка полей при переходе
-            textBox_password.Clear();
             textBox_loginusing.Clear();
+            textBox_password.Clear();
+
             //скрываем все ошибки
             label3.Hide();
             label2.Hide();
@@ -119,6 +124,19 @@ namespace WindowsFormsApp1
         {
             panel_vhod.Show();
             panel_registr.Hide();
+            textBox_log_reg.Clear();
+            textBox_name_reg.Clear();
+            textBox_pass_reg.Clear();
+            label_molodec.Visible = false;
+            label6.Hide();
+            label7.Hide();
+            label8.Hide();
+            label9.Hide();
+            label10.Hide();
+            label11.Hide();
+            label12.Hide();
+            label13.Hide();
+            label14.Hide();
         }
 
         //Запуск таймера для панели приветствия запуске программы... надо длобавить проверку наличия учетных записе
@@ -133,28 +151,29 @@ namespace WindowsFormsApp1
 
         private void HelloForm_Load(object sender, EventArgs e)
         {
-            
-            
-          //  f.Show();
+
+
+            //  f.Show();
             string str;
 
-            try {
-                StreamReader  fptr = new StreamReader("data.dat");
-          
+            try
+            {
+                StreamReader fptr = new StreamReader("data.dat");
+
                 int i = 0;
                 while (!fptr.EndOfStream)
                 {
                     str = fptr.ReadLine();
                     f.dataGridView1.Rows.Add();
                     f.dataGridView1.Rows[i].Cells[0].Value = (i + 1);//пронумеровать (id)
-                    String[] words = str.Split(new char[] {'#'}, StringSplitOptions.RemoveEmptyEntries);
+                    String[] words = str.Split(new char[] { '#' }, StringSplitOptions.RemoveEmptyEntries);
                     for (int j = 1; j < 6; j++)
                     {
                         f.dataGridView1.Rows[i].Cells[j].Value = words[j - 1];
                     }
                     i++;
                 }
-                
+
                 fptr.Close();
             }
             catch (Exception E)
@@ -165,69 +184,114 @@ namespace WindowsFormsApp1
 
         private void button_reg_new_Click(object sender, EventArgs e)
         {
+            label6.Hide();
+            label7.Hide();
+            label8.Hide();
+            label9.Hide();
+            label10.Hide();
+            label11.Hide();
+            label12.Hide();
+            label13.Hide();
+            label14.Hide();
             string name = textBox_name_reg.Text;
             string login = textBox_log_reg.Text;
             string pass = textBox_pass_reg.Text;
+            bool noEmpty = true;
 
-            try
+            if (String.IsNullOrWhiteSpace(name) || name == "") //на пустоту и пробелы 
             {
-                using (StreamWriter sw = new StreamWriter("data.dat", true))
+                label6.Show();
+                noEmpty = false;
+            }
+            else
+            if (name.Length < 4 || name.Length > 20)//на дилнну имени
+            {
+                label9.Show();
+                noEmpty = false;
+            }
+            else
+                if (name.Contains("#") || name.Contains("%") || name.Contains("$"))
+            {
+                label12.Show();
+                noEmpty = false;
+            }
+
+
+                if (String.IsNullOrWhiteSpace(login) ||login == "")//на пустоту и пробелы
+            {
+                label7.Show();
+                noEmpty = false;
+            }
+            else
+            if (login.Length < 4 || login.Length > 20)//на длину логина
+            {
+                label10.Show();
+                noEmpty = false;
+            }
+            else
+                if (login.Contains("#") || login.Contains("%") || login.Contains("$"))
+            {
+                label13.Show();
+                noEmpty = false;
+            }
+
+            if (String.IsNullOrWhiteSpace(pass) || pass == "")//на пустоту и пробелы
+            {
+                label8.Show();
+                noEmpty = false;
+            }
+            else
+            if (pass.Length < 4 || pass.Length > 20)//на длину пароля
+            {
+                label11.Show();
+                noEmpty = false;
+            }
+            else
+                if (pass.Contains("#") || pass.Contains("%") || pass.Contains("$"))
+            {
+                label14.Show();
+                noEmpty = false;
+            }
+            if (noEmpty == true)  //no empty and mistake
+            {
+                try
                 {
-                    sw.Write("\n0#" + login + "#" + pass + "#"+name+"#"+"11.22.5555#");
+                    //StreamWriter sw = new StreamWriter("data.dat", true);
+                    using (StreamWriter sw = new StreamWriter("data.dat", true))
+                   {
+                        if (f.dataGridView1.RowCount - 1 != 0)
+                            sw.Write("\n");
+                    sw.Write("0#" + login + "#" + pass + "#" + name + "#" + DateTime.Now.ToShortDateString()+"#");
+                       // sw.Close();
+                   }
+                   
                 }
-                
-            }
-            catch (Exception E)
-            {
-                MessageBox.Show("Ошибка данных приложения");
-            }
-
-           
-            bool sozdana = false;
-            int count_rows = f.dataGridView1.RowCount - 1;
-            f.dataGridView1.Rows.Add();
-            f.dataGridView1.Rows[count_rows].Cells[0].Value = count_rows+1;
-            f.dataGridView1.Rows[count_rows].Cells[1].Value = 0;
-            f.dataGridView1.Rows[count_rows].Cells[2].Value = login;
-            f.dataGridView1.Rows[count_rows].Cells[3].Value = pass;
-            f.dataGridView1.Rows[count_rows].Cells[4].Value = name;
-            f.dataGridView1.Rows[count_rows].Cells[5].Value = "11.22.5555";
-           // 
-            sozdana = true;
-           // f.dataGridView1.Rows.Add();
-           // f.dataGridView1.Rows[count_rows+1].Cells[0].Value = "";
-            /*try
-            {
-                
-                StreamReader fptr = new StreamReader("data.dat");
-
-                int i = 0;
-                while (!fptr.EndOfStream)
+                catch (Exception E)
                 {
-                    str = fptr.ReadLine();
-                    
-                    f.dataGridView1.Rows[i].Cells[0].Value = (i + 1);//пронумеровать (id)
-                    String[] words = str.Split(new char[] { '#' }, StringSplitOptions.RemoveEmptyEntries);
-                    for (int j = 1; j < 6; j++)
-                    {
-                        f.dataGridView1.Rows[i].Cells[j].Value = words[j - 1];
-                    }
-                    i++;
+                    MessageBox.Show("Ошибка данных приложения");
                 }
-               // f.dataGridView1.Rows.Add();
-               // sozdana = true;
-                fptr.Close();
-            }
-            catch (Exception E)
-            { MessageBox.Show("Ошибка данных приложения");  }*/
 
-            if (sozdana)
-            {
-                label_molodec.Visible = true;
-                textBox_log_reg.Text = "";
-                textBox_name_reg.Text = "";
-                textBox_pass_reg.Text = "";
+
+                bool sozdana = false;
+                int count_rows = f.dataGridView1.RowCount - 1;
+                f.dataGridView1.Rows.Add();
+                f.dataGridView1.Rows[count_rows].Cells[0].Value = count_rows + 1;
+                f.dataGridView1.Rows[count_rows].Cells[1].Value = 0;
+                f.dataGridView1.Rows[count_rows].Cells[2].Value = login;
+                f.dataGridView1.Rows[count_rows].Cells[3].Value = pass;
+                f.dataGridView1.Rows[count_rows].Cells[4].Value = name;
+                f.dataGridView1.Rows[count_rows].Cells[5].Value = DateTime.Now.ToShortDateString();
+                     sozdana = true;
+                  if (sozdana)
+                {
+                    label_molodec.Visible = true;
+                    textBox_log_reg.Text = "";
+                    textBox_name_reg.Text = "";
+                    textBox_pass_reg.Text = "";
+                }
             }
+            
+
         }
     }
 }
