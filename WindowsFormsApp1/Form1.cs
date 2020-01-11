@@ -135,7 +135,7 @@ namespace WindowsFormsApp1
         {
             
             
-            f.Show();
+          //  f.Show();
             string str;
 
             try {

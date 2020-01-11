@@ -39,12 +39,14 @@
             this.textBox_minutes = new System.Windows.Forms.TextBox();
             this.checkBox_notifications = new System.Windows.Forms.CheckBox();
             this.panel_notifications_on = new System.Windows.Forms.Panel();
-            this.checkBox_notification_minute = new System.Windows.Forms.CheckBox();
-            this.checkBox_repeat = new System.Windows.Forms.CheckBox();
-            this.checkBox_interval = new System.Windows.Forms.CheckBox();
-            this.textBox_notification_minute = new System.Windows.Forms.TextBox();
-            this.textBox_repeat_times = new System.Windows.Forms.TextBox();
             this.textBox_interval_minutes = new System.Windows.Forms.TextBox();
+            this.textBox_repeat_times = new System.Windows.Forms.TextBox();
+            this.textBox_notification_minute = new System.Windows.Forms.TextBox();
+            this.checkBox_interval = new System.Windows.Forms.CheckBox();
+            this.checkBox_repeat = new System.Windows.Forms.CheckBox();
+            this.checkBox_notification_minute = new System.Windows.Forms.CheckBox();
+            this.label_error_time = new System.Windows.Forms.Label();
+            this.button_add = new System.Windows.Forms.Button();
             this.panel_notifications_on.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +55,7 @@
             this.label_add_task.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_add_task.AutoSize = true;
             this.label_add_task.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_add_task.Location = new System.Drawing.Point(62, 22);
+            this.label_add_task.Location = new System.Drawing.Point(62, 35);
             this.label_add_task.Name = "label_add_task";
             this.label_add_task.Size = new System.Drawing.Size(215, 24);
             this.label_add_task.TabIndex = 0;
@@ -61,13 +63,15 @@
             // 
             // comboBox_dnm
             // 
+            this.comboBox_dnm.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
             this.comboBox_dnm.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBox_dnm.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_dnm.FormattingEnabled = true;
             this.comboBox_dnm.Items.AddRange(new object[] {
             "День",
             "Неделя",
             "Месяц"});
-            this.comboBox_dnm.Location = new System.Drawing.Point(331, 27);
+            this.comboBox_dnm.Location = new System.Drawing.Point(331, 40);
             this.comboBox_dnm.Name = "comboBox_dnm";
             this.comboBox_dnm.Size = new System.Drawing.Size(121, 21);
             this.comboBox_dnm.TabIndex = 1;
@@ -77,7 +81,7 @@
             this.label_article.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_article.AutoSize = true;
             this.label_article.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_article.Location = new System.Drawing.Point(94, 107);
+            this.label_article.Location = new System.Drawing.Point(94, 120);
             this.label_article.Name = "label_article";
             this.label_article.Size = new System.Drawing.Size(54, 24);
             this.label_article.TabIndex = 2;
@@ -88,7 +92,7 @@
             this.label_description.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_description.AutoSize = true;
             this.label_description.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_description.Location = new System.Drawing.Point(53, 139);
+            this.label_description.Location = new System.Drawing.Point(53, 152);
             this.label_description.Name = "label_description";
             this.label_description.Size = new System.Drawing.Size(100, 24);
             this.label_description.TabIndex = 3;
@@ -98,7 +102,7 @@
             // 
             this.textBox_article.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox_article.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_article.Location = new System.Drawing.Point(177, 104);
+            this.textBox_article.Location = new System.Drawing.Point(177, 117);
             this.textBox_article.Name = "textBox_article";
             this.textBox_article.Size = new System.Drawing.Size(100, 29);
             this.textBox_article.TabIndex = 4;
@@ -107,7 +111,7 @@
             // 
             this.textBox_description.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox_description.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_description.Location = new System.Drawing.Point(177, 139);
+            this.textBox_description.Location = new System.Drawing.Point(177, 152);
             this.textBox_description.Multiline = true;
             this.textBox_description.Name = "textBox_description";
             this.textBox_description.Size = new System.Drawing.Size(275, 65);
@@ -118,7 +122,7 @@
             this.label_add_time.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_add_time.AutoSize = true;
             this.label_add_time.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_add_time.Location = new System.Drawing.Point(86, 66);
+            this.label_add_time.Location = new System.Drawing.Point(86, 79);
             this.label_add_time.Name = "label_add_time";
             this.label_add_time.Size = new System.Drawing.Size(67, 24);
             this.label_add_time.TabIndex = 6;
@@ -128,7 +132,7 @@
             // 
             this.textBox_hour.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox_hour.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_hour.Location = new System.Drawing.Point(177, 66);
+            this.textBox_hour.Location = new System.Drawing.Point(177, 79);
             this.textBox_hour.Name = "textBox_hour";
             this.textBox_hour.Size = new System.Drawing.Size(34, 29);
             this.textBox_hour.TabIndex = 7;
@@ -137,7 +141,7 @@
             // 
             this.textBox_minutes.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox_minutes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_minutes.Location = new System.Drawing.Point(217, 66);
+            this.textBox_minutes.Location = new System.Drawing.Point(217, 79);
             this.textBox_minutes.Name = "textBox_minutes";
             this.textBox_minutes.Size = new System.Drawing.Size(35, 29);
             this.textBox_minutes.TabIndex = 8;
@@ -147,7 +151,7 @@
             this.checkBox_notifications.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.checkBox_notifications.AutoSize = true;
             this.checkBox_notifications.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox_notifications.Location = new System.Drawing.Point(66, 223);
+            this.checkBox_notifications.Location = new System.Drawing.Point(66, 236);
             this.checkBox_notifications.Name = "checkBox_notifications";
             this.checkBox_notifications.Size = new System.Drawing.Size(144, 28);
             this.checkBox_notifications.TabIndex = 9;
@@ -165,31 +169,32 @@
             this.panel_notifications_on.Controls.Add(this.checkBox_repeat);
             this.panel_notifications_on.Controls.Add(this.checkBox_notification_minute);
             this.panel_notifications_on.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.panel_notifications_on.Location = new System.Drawing.Point(66, 258);
+            this.panel_notifications_on.Location = new System.Drawing.Point(66, 271);
             this.panel_notifications_on.Name = "panel_notifications_on";
-            this.panel_notifications_on.Size = new System.Drawing.Size(537, 180);
+            this.panel_notifications_on.Size = new System.Drawing.Size(537, 131);
             this.panel_notifications_on.TabIndex = 10;
             this.panel_notifications_on.Visible = false;
             // 
-            // checkBox_notification_minute
+            // textBox_interval_minutes
             // 
-            this.checkBox_notification_minute.AutoSize = true;
-            this.checkBox_notification_minute.Location = new System.Drawing.Point(32, 24);
-            this.checkBox_notification_minute.Name = "checkBox_notification_minute";
-            this.checkBox_notification_minute.Size = new System.Drawing.Size(170, 28);
-            this.checkBox_notification_minute.TabIndex = 0;
-            this.checkBox_notification_minute.Text = "Оповестить за ";
-            this.checkBox_notification_minute.UseVisualStyleBackColor = true;
+            this.textBox_interval_minutes.Location = new System.Drawing.Point(208, 94);
+            this.textBox_interval_minutes.Name = "textBox_interval_minutes";
+            this.textBox_interval_minutes.Size = new System.Drawing.Size(100, 29);
+            this.textBox_interval_minutes.TabIndex = 5;
             // 
-            // checkBox_repeat
+            // textBox_repeat_times
             // 
-            this.checkBox_repeat.AutoSize = true;
-            this.checkBox_repeat.Location = new System.Drawing.Point(32, 59);
-            this.checkBox_repeat.Name = "checkBox_repeat";
-            this.checkBox_repeat.Size = new System.Drawing.Size(133, 28);
-            this.checkBox_repeat.TabIndex = 1;
-            this.checkBox_repeat.Text = "Повторить ";
-            this.checkBox_repeat.UseVisualStyleBackColor = true;
+            this.textBox_repeat_times.Location = new System.Drawing.Point(208, 59);
+            this.textBox_repeat_times.Name = "textBox_repeat_times";
+            this.textBox_repeat_times.Size = new System.Drawing.Size(100, 29);
+            this.textBox_repeat_times.TabIndex = 4;
+            // 
+            // textBox_notification_minute
+            // 
+            this.textBox_notification_minute.Location = new System.Drawing.Point(208, 22);
+            this.textBox_notification_minute.Name = "textBox_notification_minute";
+            this.textBox_notification_minute.Size = new System.Drawing.Size(100, 29);
+            this.textBox_notification_minute.TabIndex = 3;
             // 
             // checkBox_interval
             // 
@@ -201,32 +206,57 @@
             this.checkBox_interval.Text = "Интервал";
             this.checkBox_interval.UseVisualStyleBackColor = true;
             // 
-            // textBox_notification_minute
+            // checkBox_repeat
             // 
-            this.textBox_notification_minute.Location = new System.Drawing.Point(208, 22);
-            this.textBox_notification_minute.Name = "textBox_notification_minute";
-            this.textBox_notification_minute.Size = new System.Drawing.Size(100, 29);
-            this.textBox_notification_minute.TabIndex = 3;
+            this.checkBox_repeat.AutoSize = true;
+            this.checkBox_repeat.Location = new System.Drawing.Point(32, 59);
+            this.checkBox_repeat.Name = "checkBox_repeat";
+            this.checkBox_repeat.Size = new System.Drawing.Size(133, 28);
+            this.checkBox_repeat.TabIndex = 1;
+            this.checkBox_repeat.Text = "Повторить ";
+            this.checkBox_repeat.UseVisualStyleBackColor = true;
             // 
-            // textBox_repeat_times
+            // checkBox_notification_minute
             // 
-            this.textBox_repeat_times.Location = new System.Drawing.Point(208, 59);
-            this.textBox_repeat_times.Name = "textBox_repeat_times";
-            this.textBox_repeat_times.Size = new System.Drawing.Size(100, 29);
-            this.textBox_repeat_times.TabIndex = 4;
+            this.checkBox_notification_minute.AutoSize = true;
+            this.checkBox_notification_minute.Location = new System.Drawing.Point(32, 24);
+            this.checkBox_notification_minute.Name = "checkBox_notification_minute";
+            this.checkBox_notification_minute.Size = new System.Drawing.Size(170, 28);
+            this.checkBox_notification_minute.TabIndex = 0;
+            this.checkBox_notification_minute.Text = "Оповестить за ";
+            this.checkBox_notification_minute.UseVisualStyleBackColor = true;
             // 
-            // textBox_interval_minutes
+            // label_error_time
             // 
-            this.textBox_interval_minutes.Location = new System.Drawing.Point(208, 94);
-            this.textBox_interval_minutes.Name = "textBox_interval_minutes";
-            this.textBox_interval_minutes.Size = new System.Drawing.Size(100, 29);
-            this.textBox_interval_minutes.TabIndex = 5;
+            this.label_error_time.AutoSize = true;
+            this.label_error_time.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_error_time.ForeColor = System.Drawing.Color.Red;
+            this.label_error_time.Location = new System.Drawing.Point(291, 76);
+            this.label_error_time.Name = "label_error_time";
+            this.label_error_time.Size = new System.Drawing.Size(199, 16);
+            this.label_error_time.TabIndex = 11;
+            this.label_error_time.Text = "Неправильно введено время";
+            this.label_error_time.Visible = false;
+            // 
+            // button_add
+            // 
+            this.button_add.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_add.Location = new System.Drawing.Point(226, 421);
+            this.button_add.Name = "button_add";
+            this.button_add.Size = new System.Drawing.Size(137, 32);
+            this.button_add.TabIndex = 12;
+            this.button_add.Text = "Добавить";
+            this.button_add.UseVisualStyleBackColor = true;
+            this.button_add.Click += new System.EventHandler(this.button_add_Click);
             // 
             // AddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 476);
+            this.Controls.Add(this.button_add);
+            this.Controls.Add(this.label_error_time);
             this.Controls.Add(this.panel_notifications_on);
             this.Controls.Add(this.checkBox_notifications);
             this.Controls.Add(this.textBox_minutes);
@@ -266,5 +296,7 @@
         private System.Windows.Forms.CheckBox checkBox_interval;
         private System.Windows.Forms.CheckBox checkBox_repeat;
         private System.Windows.Forms.CheckBox checkBox_notification_minute;
+        private System.Windows.Forms.Label label_error_time;
+        private System.Windows.Forms.Button button_add;
     }
 }
