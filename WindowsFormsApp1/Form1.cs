@@ -243,7 +243,7 @@ namespace WindowsFormsApp1
                 noEmpty = false;
             }
 
-
+            //
                 if (String.IsNullOrWhiteSpace(login) ||login == "")//на пустоту и пробелы
             {
                 label7.Show();
