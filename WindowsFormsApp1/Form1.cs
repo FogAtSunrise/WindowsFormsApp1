@@ -155,7 +155,7 @@ namespace WindowsFormsApp1
         {
 
 
-              f.Show();
+              //f.Show();
             string str;
             int rows = -1;
 
@@ -198,12 +198,12 @@ namespace WindowsFormsApp1
             
             if (found)
             {
-                
+              
                 Form2 y = new Form2();
                 y.Show();
                 LogNow = login;
                 this.Hide();
-                
+
             }
 
 
