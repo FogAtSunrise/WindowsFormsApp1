@@ -88,7 +88,8 @@ namespace WindowsFormsApp1
         private void button_back_Click(object sender, EventArgs e)
         {
             HelloForm frm = (HelloForm)this.Owner;
-            for (int i = 0; i < HelloForm.strnum; i++) //не проходит иф
+            int count_rows = FormDopForm.dataGridView1.RowCount - 1;
+            for (int i = 0; i < count_rows; i++) 
             {
                 if (FormDopForm.dataGridView1.Rows[i].Cells[1].Value.ToString() == "1") FormDopForm.dataGridView1.Rows[i].Cells[1].Value = "0";
             }

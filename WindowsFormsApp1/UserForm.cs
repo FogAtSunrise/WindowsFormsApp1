@@ -147,7 +147,39 @@ namespace WindowsFormsApp1
 
         private void button4_Click(object sender, EventArgs e)
         {
+            int row = 0;
+            int count_row = FormDopForm.dataGridView1.RowCount - 1;
+           // bool found = false;
+            for (int i = 0; i < count_row; i++)
+            {
+                if (FormDopForm.dataGridView1.Rows[i].Cells[1].Value.ToString() == "1")
+                {
+                   // found = true;
+                    row = i;
+                }
+            }
+
+            if (row > 0 && count_row > 1)
+            {
+                for (int i = row; i < count_row - 1; i++)
+                {
+                    for (int j = 0; j < 6; j++)
+                        FormDopForm.dataGridView1.Rows[i].Cells[j].Value = FormDopForm.dataGridView1.Rows[i + 1].Cells[j].Value;
+                }
+            }
+            else if (count_row == 1) // если запись одна
+            {
+                for (int j = 0; j < 6; j++)
+                    FormDopForm.dataGridView1.Rows[0].Cells[j].Value = "";
+            }
+
+            // перезаписываем файл и открываем форму входа
+            FormDopForm.writefile();
+            HelloForm y = new HelloForm();
+            y.Show();
+            this.Hide();
             
+
         }
     }
 }

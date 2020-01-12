@@ -200,9 +200,10 @@ namespace WindowsFormsApp1
             {
                 
                 Form2 y = new Form2();
-                y.Show(this);
+                y.Show();
                 LogNow = login;
                 this.Hide();
+                
             }
 
 
