@@ -153,9 +153,9 @@ namespace WindowsFormsApp1
         
         private void HelloForm_Load(object sender, EventArgs e)
         {
+            
 
-
-              //f.Show();
+            //f.Show();
             string str;
             int rows = -1;
 
@@ -186,25 +186,32 @@ namespace WindowsFormsApp1
             bool found = false;
             //int for_log = 0;
             string login = "";
+            string pass = "";
 
             if (rows >= 0)
             {
                 for (int i = 0; i < rows; i++)
                 {
-                    if (FormDopForm.dataGridView1.Rows[i].Cells[1].Value.ToString() == "1") { found = true; login = FormDopForm.dataGridView1.Rows[i].Cells[2].Value.ToString(); }
+                    if (FormDopForm.dataGridView1.Rows[i].Cells[1].Value.ToString() == "1") { found = true; login = FormDopForm.dataGridView1.Rows[i].Cells[2].Value.ToString();
+                    pass = FormDopForm.dataGridView1.Rows[i].Cells[3].Value.ToString();
+                    }
                 }
             }
 
             
             if (found)
             {
-              
-                Form2 y = new Form2();
-                y.Show();
+                 textBox_loginusing.Text = login;
+                textBox_password.Text = pass;
                 LogNow = login;
-                this.Hide();
-
+                button_vhod_Click(this, EventArgs.Empty);
+                
+                /*  Form2 y = new Form2();
+                  y.Show();
+                  this.Hide();
+  */
             }
+            
 
 
         }
