@@ -108,5 +108,46 @@ namespace WindowsFormsApp1
 
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            label_error_old_pass.Hide();
+            label_error_new_pass.Hide();
+
+            
+            string dop = textBox_old_pass.Text;
+            int count_rows = FormDopForm.dataGridView1.RowCount - 1;
+            int row = 0;
+            bool found_pass = false;
+            for(int i = 0; i< count_rows; i++)
+            {
+                if (FormDopForm.dataGridView1.Rows[i].Cells[1].Value.ToString() == "1" && dop == FormDopForm.dataGridView1.Rows[i].Cells[3].Value.ToString())
+                {
+                    found_pass = true; row = i;
+                }
+                
+            }
+
+            if (!found_pass)
+            {
+                label_error_old_pass.Show();
+            }
+            else
+            {
+                string dop1 = textBox_new_pass.Text;
+                string dop2 = textBox_new_pass_con.Text;
+                if (dop1 == dop2) // если совпадают, то добавляем, инче показываем лейбл нового реп-исполнителя в наказание
+                {
+                    FormDopForm.dataGridView1.Rows[row].Cells[3].Value = dop1;
+                    label_pass_change.Show();
+                }
+                else label_error_new_pass.Show();
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

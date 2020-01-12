@@ -20,7 +20,8 @@ namespace WindowsFormsApp1
         public static void writefile()
         {
             StreamWriter first1 = new StreamWriter("data.dat", false);
-            first1.Write("0#" + dataGridView1.Rows[0].Cells[2].Value.ToString() + "#" + dataGridView1.Rows[0].Cells[3].Value.ToString() + "#" + dataGridView1.Rows[0].Cells[4].Value.ToString() + "#" + dataGridView1.Rows[0].Cells[5].Value.ToString() + "#");
+            //ээ тут тип перевод на строчку все ломает в файле
+            first1.Write(dataGridView1.Rows[0].Cells[1].Value.ToString() + "#" + dataGridView1.Rows[0].Cells[2].Value.ToString() + "#" + dataGridView1.Rows[0].Cells[3].Value.ToString() + "#" + dataGridView1.Rows[0].Cells[4].Value.ToString() + "#" + dataGridView1.Rows[0].Cells[5].Value.ToString() + "#");
             first1.Close();
             int cout = dataGridView1.RowCount - 1;
             //using (
@@ -28,7 +29,7 @@ namespace WindowsFormsApp1
                 for (int i = 1; i < cout; i++)
                 {
                
-                other.Write("\n0#" + dataGridView1.Rows[i].Cells[2].Value.ToString() + "#" + dataGridView1.Rows[i].Cells[3].Value.ToString() + "#" + dataGridView1.Rows[i].Cells[4].Value.ToString() + "#" + dataGridView1.Rows[i].Cells[5].Value.ToString() + "#");
+                other.Write("\n"+ dataGridView1.Rows[i].Cells[1].Value.ToString() + "#" + dataGridView1.Rows[i].Cells[2].Value.ToString() + "#" + dataGridView1.Rows[i].Cells[3].Value.ToString() + "#" + dataGridView1.Rows[i].Cells[4].Value.ToString() + "#" + dataGridView1.Rows[i].Cells[5].Value.ToString() + "#");
 
                 }
             other.Close();

@@ -71,6 +71,7 @@ namespace WindowsFormsApp1
                         else
                         if (pass == FormDopForm.dataGridView1.Rows[right_row].Cells[3].Value.ToString())//пароль верный
                         {
+                            FormDopForm.dataGridView1.Rows[right_row].Cells[1].Value = "1";
                             textBox_password.Clear();
                             textBox_loginusing.Clear();
                             Form2 y = new Form2();
@@ -149,13 +150,14 @@ namespace WindowsFormsApp1
             timer1.Stop();
 
         }
-
+        
         private void HelloForm_Load(object sender, EventArgs e)
         {
 
 
-            //  f.Show();
+              f.Show();
             string str;
+            int rows = -1;
 
             try
             {
@@ -173,12 +175,35 @@ namespace WindowsFormsApp1
                         FormDopForm.dataGridView1.Rows[i].Cells[j].Value = words[j - 1];
                     }
                     i++;
+                    rows = i;
                 }
 
                 fptr.Close();
             }
             catch (Exception E)
             { MessageBox.Show("Ошибка данных приложения"); }
+
+            bool found = false;
+            //int for_log = 0;
+            string login = "";
+
+            if (rows >= 0)
+            {
+                for (int i = 0; i < rows; i++)
+                {
+                    if (FormDopForm.dataGridView1.Rows[i].Cells[1].Value.ToString() == "1") { found = true; login = FormDopForm.dataGridView1.Rows[i].Cells[2].Value.ToString(); }
+                }
+            }
+
+            
+            if (found)
+            {
+                
+                Form2 y = new Form2();
+                y.Show(this);
+                LogNow = login;
+                this.Hide();
+            }
 
 
         }

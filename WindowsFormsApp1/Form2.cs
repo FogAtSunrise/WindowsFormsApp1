@@ -71,6 +71,7 @@ namespace WindowsFormsApp1
         //
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
         {
+            FormDopForm.writefile();
             Application.Exit();
         }
 
@@ -87,8 +88,14 @@ namespace WindowsFormsApp1
         private void button_back_Click(object sender, EventArgs e)
         {
             HelloForm frm = (HelloForm)this.Owner;
+            for (int i = 0; i < HelloForm.strnum; i++) //не проходит иф
+            {
+                if (FormDopForm.dataGridView1.Rows[i].Cells[1].Value.ToString() == "1") FormDopForm.dataGridView1.Rows[i].Cells[1].Value = "0";
+            }
             frm.Show();
             this.Hide();
+            
+            
         }
 
 
