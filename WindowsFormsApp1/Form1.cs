@@ -305,7 +305,7 @@ namespace WindowsFormsApp1
                     MessageBox.Show("Ошибка данных приложения");
                 }
 
-
+                LogNow = login;
                 bool sozdana = false;
                 int count_rows = FormDopForm.dataGridView1.RowCount - 1;
                 FormDopForm.dataGridView1.Rows.Add();
@@ -322,6 +322,8 @@ namespace WindowsFormsApp1
                     textBox_log_reg.Text = "";
                     textBox_name_reg.Text = "";
                     textBox_pass_reg.Text = "";
+                    string puty = LogNow + ".dat";
+                    File.Create(puty);
                 }
             }
             

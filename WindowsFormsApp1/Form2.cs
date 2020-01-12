@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -108,11 +109,58 @@ namespace WindowsFormsApp1
         {
 
             //Заполнение таблицы дня
+            DopDop.dataGridView1.Show();
+            // зашел пользователь и для начала заполняем глобальную таблицу, а затем только таблицу дня
+            string str;
+            int rows = -1;
+            string puty = HelloForm.LogNow + ".dat";
+            try
+            {
+                StreamReader fptr = new StreamReader(puty);
+
+                int i = 0;
+                while (!fptr.EndOfStream)
+                {
+                    str = fptr.ReadLine();
+                    DopDop.dataGridView1.Rows.Add();
+                   // FormDopForm.dataGridView1.Rows[i].Cells[0].Value = (i + 1);//пронумеровать (id)
+                    String[] words = str.Split(new char[] { '#' }, StringSplitOptions.RemoveEmptyEntries);
+                    for (int j = 0; j < 7; j++)
+                    {
+                        DopDop.dataGridView1.Rows[i].Cells[j].Value = words[j - 1];
+                    }
+                    i++;
+                    rows = i;
+                }
+
+                fptr.Close();
+            }
+            catch (Exception E)
+            { MessageBox.Show("Ошибка данных приложения в глобальной таблице"); }
 
 
+            // сначала ищем сегодняшний день
 
 
+            string today = DateTime.Today.ToString();
+            
+            int k = 0;
+            // Теперь составляем таблицу дня
+            for (int i = 0; i < rows; i++)
+            {
+                // ищем по индексу днм: д = 1, н = 2, м = 3, если находим, то выводим данные в таблицу дня
+                if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "1" && today == DopDop.dataGridView1.Rows[i].Cells[1].Value.ToString())
+                {
+                    dataGridView1.Rows[k].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
+                    dataGridView1.Rows[k].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
+                    if (DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString() == "1") // индекс активности
+                    {
+                        dataGridView1.Rows[k].Cells[0].Value = true; // поставили галочку
+                    }
+                }
+            }
 
+            // готово, епта
 
 
         }

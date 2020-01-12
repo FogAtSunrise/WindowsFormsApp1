@@ -28,96 +28,106 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.activ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.log = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.SuspendLayout();
+            dataGridView1 = new System.Windows.Forms.DataGridView();
+            id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            activ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            log = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            pas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(dataGridView1)).BeginInit();
+            SuspendLayout();
             // 
             // dataGridView1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.activ,
-            this.log,
-            this.pas,
-            this.name,
-            this.date});
-            this.dataGridView1.Location = new System.Drawing.Point(1, -7);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(786, 445);
-            this.dataGridView1.TabIndex = 1;
+            dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            id,
+            activ,
+            time,
+            log,
+            pas,
+            name,
+            date});
+            dataGridView1.Location = new System.Drawing.Point(1, -6);
+            dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.RowTemplate.Height = 24;
+            dataGridView1.Size = new System.Drawing.Size(805, 362);
+            dataGridView1.TabIndex = 1;
             // 
             // id
             // 
-            this.id.HeaderText = "индекс выполнения";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.Width = 125;
+            id.HeaderText = "индекс выполнения";
+            id.MinimumWidth = 6;
+            id.Name = "id";
+            id.Width = 125;
             // 
             // activ
             // 
-            this.activ.HeaderText = "дата";
-            this.activ.MinimumWidth = 6;
-            this.activ.Name = "activ";
-            this.activ.Width = 125;
+            activ.HeaderText = "дата";
+            activ.MinimumWidth = 6;
+            activ.Name = "activ";
+            activ.Width = 125;
+            // 
+            // time
+            // 
+            time.HeaderText = "время";
+            time.Name = "time";
             // 
             // log
             // 
-            this.log.HeaderText = "Заголовок";
-            this.log.MinimumWidth = 6;
-            this.log.Name = "log";
-            this.log.Width = 125;
+            log.HeaderText = "Заголовок";
+            log.MinimumWidth = 6;
+            log.Name = "log";
+            log.Width = 125;
             // 
             // pas
             // 
-            this.pas.HeaderText = "Описание";
-            this.pas.MinimumWidth = 6;
-            this.pas.Name = "pas";
-            this.pas.Width = 125;
+            pas.HeaderText = "Описание";
+            pas.MinimumWidth = 6;
+            pas.Name = "pas";
+            pas.Width = 125;
             // 
             // name
             // 
-            this.name.HeaderText = "информация об оповещении";
-            this.name.MinimumWidth = 6;
-            this.name.Name = "name";
-            this.name.Width = 125;
+            name.HeaderText = "информация об оповещении";
+            name.MinimumWidth = 6;
+            name.Name = "name";
+            name.Width = 125;
             // 
             // date
             // 
-            this.date.HeaderText = "dnm";
-            this.date.MinimumWidth = 6;
-            this.date.Name = "date";
-            this.date.Width = 125;
+            date.HeaderText = "dnm";
+            date.MinimumWidth = 6;
+            date.Name = "date";
+            date.Width = 125;
             // 
             // DopDop
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(786, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(817, 366);
+            this.Controls.Add(dataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "DopDop";
             this.Text = "DopDop";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        public System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn activ;
-        private System.Windows.Forms.DataGridViewTextBoxColumn log;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn date;
+        public static System.Windows.Forms.DataGridViewTextBoxColumn time;
+        public static System.Windows.Forms.DataGridView dataGridView1;
+        public static System.Windows.Forms.DataGridViewTextBoxColumn id;
+        public static System.Windows.Forms.DataGridViewTextBoxColumn activ;
+        public static System.Windows.Forms.DataGridViewTextBoxColumn log;
+        public static System.Windows.Forms.DataGridViewTextBoxColumn pas;
+        public static System.Windows.Forms.DataGridViewTextBoxColumn name;
+        public static System.Windows.Forms.DataGridViewTextBoxColumn date;
     }
 }
