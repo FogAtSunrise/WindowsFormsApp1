@@ -89,10 +89,12 @@ namespace WindowsFormsApp1
         {
             HelloForm frm = (HelloForm)this.Owner;
             int count_rows = FormDopForm.dataGridView1.RowCount - 1;
+            
             for (int i = 0; i < count_rows; i++) 
             {
                 if (FormDopForm.dataGridView1.Rows[i].Cells[1].Value.ToString() == "1") FormDopForm.dataGridView1.Rows[i].Cells[1].Value = "0";
             }
+
             frm.Show();
             this.Hide();
             

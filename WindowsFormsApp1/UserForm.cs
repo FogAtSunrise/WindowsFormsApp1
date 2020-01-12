@@ -158,27 +158,37 @@ namespace WindowsFormsApp1
                     row = i;
                 }
             }
+            FormDopForm.dataGridView1.Rows.RemoveAt(row);
 
-            if (row > 0 && count_row > 1)
-            {
-                for (int i = row; i < count_row - 1; i++)
-                {
-                    for (int j = 0; j < 6; j++)
-                        FormDopForm.dataGridView1.Rows[i].Cells[j].Value = FormDopForm.dataGridView1.Rows[i + 1].Cells[j].Value;
-                }
-            }
-            else if (count_row == 1) // если запись одна
-            {
-                for (int j = 0; j < 6; j++)
-                    FormDopForm.dataGridView1.Rows[0].Cells[j].Value = "";
-            }
 
+            /* if (count_row > 1)
+             {
+                 for (int i = row; i < count_row - 1; i++)
+                 {
+                     for (int j = 0; j < 6; j++)
+                         FormDopForm.dataGridView1.Rows[i].Cells[j].Value = FormDopForm.dataGridView1.Rows[i + 1].Cells[j].Value;
+                 }
+             }
+             else if (count_row == 1) // если запись одна
+             {
+                 for (int j = 0; j < 6; j++)
+                     FormDopForm.dataGridView1.Rows[0].Cells[j].Value = "";
+             }
+             */
             // перезаписываем файл и открываем форму входа
+
             FormDopForm.writefile();
-            HelloForm y = new HelloForm();
-            y.Show();
             this.Hide();
+
             
+
+            Form2.ActiveForm.Hide();
+            FormDopForm.ActiveForm.Hide();
+            
+            HelloForm frm = new HelloForm();
+            frm.Show();
+
+
 
         }
     }
