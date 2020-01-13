@@ -72,6 +72,7 @@ namespace WindowsFormsApp1
                             textBox_minutes.Text = "";
                             textBox_notification_minute.Text = "";
                             textBox_repeat_times.Text = "";
+                            label_error_time.Hide();
                         }
 
 
@@ -111,6 +112,7 @@ namespace WindowsFormsApp1
                     textBox_minutes.Text = "";
                     textBox_notification_minute.Text = "";
                     textBox_repeat_times.Text = "";
+                    label_error_time.Hide();
                 }
                 else  // MONTH
                 {
@@ -158,6 +160,7 @@ namespace WindowsFormsApp1
                     textBox_minutes.Text = "";
                     textBox_notification_minute.Text = "";
                     textBox_repeat_times.Text = "";
+                    label_error_time.Hide();
                 }
                // else { MessageBox.Show("ничего не выбралось"); }
 
