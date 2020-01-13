@@ -44,14 +44,15 @@ namespace WindowsFormsApp1
                     {
                         int hour = Convert.ToInt32(dop1);
                         int minutes = Convert.ToInt32(dop2);
-                        if (hour > 23 || hour < 00 || minutes > 59 || minutes < 00) label_error_time.Show();
+                        if (hour > 24 || hour < 00 || minutes > 60 || minutes < 00) label_error_time.Show();
                         else // добавляем соответствующую запись конкретно о дне
                         {
-                            
-                            int row = DopDop.dataGridView1.RowCount;
+                            string date = dateTimePicker1.ToString();
+                            String[] words_date = date.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                            int row = DopDop.dataGridView1.RowCount -1;
                             DopDop.dataGridView1.Rows.Add();
                             DopDop.dataGridView1.Rows[row].Cells[0].Value = "0";
-                            DopDop.dataGridView1.Rows[row].Cells[1].Value = dateTimePicker1.Value;
+                            DopDop.dataGridView1.Rows[row].Cells[1].Value = words_date[0];
                             DopDop.dataGridView1.Rows[row].Cells[2].Value = dop1 + ":" + dop2;
                             DopDop.dataGridView1.Rows[row].Cells[3].Value = textBox_article.Text;
                             DopDop.dataGridView1.Rows[row].Cells[4].Value = textBox_description.Text;
@@ -59,6 +60,7 @@ namespace WindowsFormsApp1
                                 DopDop.dataGridView1.Rows[row].Cells[5].Value = "1";
                             else DopDop.dataGridView1.Rows[row].Cells[5].Value = "0";
                             DopDop.dataGridView1.Rows[row].Cells[6].Value = "1"; // because day
+                           // DopDop.dataGridView1.Rows.Add();
                         }
 
 
@@ -72,10 +74,12 @@ namespace WindowsFormsApp1
             else // если время не заполнено, тогда неделя
             if (comboBox1.SelectedItem.ToString() == "Неделя")
             {
-                int row = DopDop.dataGridView1.RowCount;
+                string date = dateTimePicker1.ToString();
+                String[] words_date = date.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                int row = DopDop.dataGridView1.RowCount -1;
                 DopDop.dataGridView1.Rows.Add();
                 DopDop.dataGridView1.Rows[row].Cells[0].Value = "0";
-                DopDop.dataGridView1.Rows[row].Cells[1].Value = dateTimePicker1.Value;
+                DopDop.dataGridView1.Rows[row].Cells[1].Value = words_date[0];
                 DopDop.dataGridView1.Rows[row].Cells[2].Value = "0";
                 DopDop.dataGridView1.Rows[row].Cells[3].Value = textBox_article.Text;
                 DopDop.dataGridView1.Rows[row].Cells[4].Value = textBox_description.Text;
@@ -86,7 +90,7 @@ namespace WindowsFormsApp1
             }
             else if(comboBox1.SelectedItem.ToString() == "Месяц")
             {
-                int row = DopDop.dataGridView1.RowCount;
+                int row = DopDop.dataGridView1.RowCount-1;
                 DopDop.dataGridView1.Rows.Add();
                 DopDop.dataGridView1.Rows[row].Cells[0].Value = "0";
                 DopDop.dataGridView1.Rows[row].Cells[1].Value = dateTimePicker1.Value;

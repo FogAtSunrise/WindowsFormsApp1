@@ -71,12 +71,13 @@ namespace WindowsFormsApp1
                         else
                         if (pass == FormDopForm.dataGridView1.Rows[right_row].Cells[3].Value.ToString())//пароль верный
                         {
+                            LogNow = login;
                             FormDopForm.dataGridView1.Rows[right_row].Cells[1].Value = "1";
                             textBox_password.Clear();
                             textBox_loginusing.Clear();
                             Form2 y = new Form2();
                             y.Show(this);
-                            LogNow = login;
+                            
                             this.Hide();
 
                         }
