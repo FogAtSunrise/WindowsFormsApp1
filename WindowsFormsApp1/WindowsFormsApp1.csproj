@@ -56,6 +56,12 @@
     <Compile Include="DopDop.Designer.cs">
       <DependentUpon>DopDop.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditDelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditDelo.Designer.cs">
+      <DependentUpon>EditDelo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     </Compile>
     <EmbeddedResource Include="DopDop.resx">
       <DependentUpon>DopDop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditDelo.resx">
+      <DependentUpon>EditDelo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

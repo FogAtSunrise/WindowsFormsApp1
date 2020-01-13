@@ -246,16 +246,25 @@ namespace WindowsFormsApp1
             }
         }
 
+
+
+        static public int edit_row = -1;
+
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             int rows = dataGridView1.RowCount - 1;
             int right_row = -1;
+            int del_row = -1;
+            
             for(int i = 0; i < rows; i++)
             {
-                if (dataGridView1.Rows[i].Cells[0].Selected)
+                if (dataGridView1.Rows[i].Cells[0].Selected) // for check box
                 {
                     right_row = i;
                 }
+                if (dataGridView1.Rows[i].Cells[3].Selected) del_row = i; // for button delete 
+                //for button edit
+                if (dataGridView1.Rows[i].Cells[4].Selected) edit_row = i;
             }
             string poisk = "";
             if (right_row >= 0)
@@ -271,44 +280,75 @@ namespace WindowsFormsApp1
                         else DopDop.dataGridView1.Rows[i].Cells[0].Value = "0";
                 }
 
-/*
-                int rows1 = DopDop.dataGridView1.RowCount - 1;
-                string date_calendar = dateTimePicker1.Value.ToString();
-                String[] words_date = date_calendar.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                int k = 0;
+                
+            }
+            if (del_row >= 0) // delete str
+            {
+                poisk = dataGridView1.Rows[del_row].Cells[2].Value.ToString();
+                rows = DopDop.dataGridView1.RowCount - 1;
 
-/*
-                // cначала очистим
-                dataGridView1.Rows.Clear();
-                dataGridView1.Refresh();
-                // Теперь составляем таблицу дня
-                for (int i = 0; i < rows1; i++)
+                for (int i = 0; i < rows; i++)
                 {
-
-
-                    // ищем по индексу днм: д = 1, н = 2, м = 3, если находим, то выводим данные в таблицу дня
-                    if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "1" && words_date[0] == DopDop.dataGridView1.Rows[i].Cells[1].Value.ToString())
-                    {
-                        dataGridView1.Rows.Add();
-                        dataGridView1.Rows[k].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
-                        dataGridView1.Rows[k].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
-                        if (DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString() == "1") // индекс активности
+                    if (poisk == DopDop.dataGridView1.Rows[i].Cells[3].Value.ToString())
+                        if (rows == 1) // удаление для одной строчки
                         {
-                            dataGridView1.Rows[k].Cells[0].Value = true; // поставили галочку
+                            DopDop.dataGridView1.Rows.Clear();
+                            DopDop.dataGridView1.Refresh();
                         }
-                        //dataGridView1.Rows.Add();
-                        k++;
-                        //dataGridView1.Rows.Add();
+                        else
+                        {
+                            for (int j = del_row; i < rows - 1; i++)
+                                for (int k = 0; k < 7; k++)
+                                    DopDop.dataGridView1.Rows[i].Cells[j].Value = DopDop.dataGridView1.Rows[i+1].Cells[j].Value;
+                        }
+                }
 
+
+            }
+
+
+            rows = DopDop.dataGridView1.RowCount - 1;
+            string date_calendar = dateTimePicker1.Value.ToString();
+            String[] words_date = date_calendar.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            int lo = 0;
+
+            // cначала очистим
+            dataGridView1.Rows.Clear();
+            dataGridView1.Refresh();
+            // Теперь составляем таблицу дня
+            for (int i = 0; i < rows; i++)
+            {
+
+                // ищем по индексу днм: д = 1, н = 2, м = 3, если находим, то выводим данные в таблицу дня
+                if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "1" && words_date[0] == DopDop.dataGridView1.Rows[i].Cells[1].Value.ToString())
+                {
+                    dataGridView1.Rows.Add();
+                    dataGridView1.Rows[lo].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
+                    dataGridView1.Rows[lo].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
+                    if (DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString() == "1") // индекс активности
+                    {
+                        dataGridView1.Rows[lo].Cells[0].Value = true; // поставили галочку
                     }
+                    //dataGridView1.Rows.Add();
+                    lo++;
+                    //dataGridView1.Rows.Add();
+
+                }
 
 
-                }*/
+            }
+
+
+
+            if (edit_row >= 0) // edit str
+            {
+                EditDeloForm edit = new EditDeloForm();
+                edit.Show();
             }
         }
     }
         
 
        
-    }
+}
 
