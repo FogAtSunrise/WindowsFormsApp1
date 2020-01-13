@@ -31,7 +31,7 @@ namespace WindowsFormsApp1
             for (int i = 1; i < cout; i++)
             {
 
-                other.Write("\n" +dataGridView1.Rows[i].Cells[0].Value.ToString() + "#" + dataGridView1.Rows[i].Cells[1].Value.ToString() + "#" + dataGridView1.Rows[i].Cells[2].Value.ToString() + "#" + dataGridView1.Rows[i].Cells[3].Value.ToString() + "#" + dataGridView1.Rows[i].Cells[4].Value.ToString() + "#" + dataGridView1.Rows[i].Cells[5].Value.ToString() + "#" + dataGridView1.Rows[0].Cells[6].Value.ToString() + "#");
+                other.Write("\n" +dataGridView1.Rows[i].Cells[0].Value.ToString() + "#" + dataGridView1.Rows[i].Cells[1].Value.ToString() + "#" + dataGridView1.Rows[i].Cells[2].Value.ToString() + "#" + dataGridView1.Rows[i].Cells[3].Value.ToString() + "#" + dataGridView1.Rows[i].Cells[4].Value.ToString() + "#" + dataGridView1.Rows[i].Cells[5].Value.ToString() + "#" + dataGridView1.Rows[i].Cells[6].Value.ToString() + "#");
 
             }
             other.Close();

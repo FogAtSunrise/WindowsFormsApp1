@@ -73,6 +73,7 @@ namespace WindowsFormsApp1
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
         {
             FormDopForm.writefile();
+            DopDop.writefiledela();
             Application.Exit();
         }
 
@@ -175,6 +176,36 @@ namespace WindowsFormsApp1
             // готово, епта
 
 
+        }
+
+        private void Form2_Activated(object sender, EventArgs e)
+        {
+            int rows = DopDop.dataGridView1.RowCount - 1;
+            string today = DateTime.Today.ToString();
+            String[] words_date = today.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            int k = 0;
+            // Теперь составляем таблицу дня
+            for (int i = 0; i < rows; i++)
+            {
+
+                // ищем по индексу днм: д = 1, н = 2, м = 3, если находим, то выводим данные в таблицу дня
+                if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "1" && words_date[0] == DopDop.dataGridView1.Rows[i].Cells[1].Value.ToString())
+                {
+                    dataGridView1.Rows.Add();
+                    dataGridView1.Rows[k].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
+                    dataGridView1.Rows[k].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
+                    if (DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString() == "1") // индекс активности
+                    {
+                        dataGridView1.Rows[k].Cells[0].Value = true; // поставили галочку
+                    }
+                    //dataGridView1.Rows.Add();
+                    k++;
+                    //dataGridView1.Rows.Add();
+
+                }
+
+
+            }
         }
     }
         

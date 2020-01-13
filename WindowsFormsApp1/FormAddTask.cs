@@ -47,9 +47,9 @@ namespace WindowsFormsApp1
                         if (hour > 24 || hour < 00 || minutes > 60 || minutes < 00) label_error_time.Show();
                         else // добавляем соответствующую запись конкретно о дне
                         {
-                            string date = dateTimePicker1.ToString();
+                            string date = dateTimePicker1.Value.ToString();
                             String[] words_date = date.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                            int row = DopDop.dataGridView1.RowCount -1;
+                            int row = DopDop.dataGridView1.RowCount - 1;
                             DopDop.dataGridView1.Rows.Add();
                             DopDop.dataGridView1.Rows[row].Cells[0].Value = "0";
                             DopDop.dataGridView1.Rows[row].Cells[1].Value = words_date[0];
@@ -60,7 +60,18 @@ namespace WindowsFormsApp1
                                 DopDop.dataGridView1.Rows[row].Cells[5].Value = "1";
                             else DopDop.dataGridView1.Rows[row].Cells[5].Value = "0";
                             DopDop.dataGridView1.Rows[row].Cells[6].Value = "1"; // because day
-                           // DopDop.dataGridView1.Rows.Add();
+                                                                                 // DopDop.dataGridView1.Rows.Add();
+
+                            label_molodec.Visible = true;
+                            dateTimePicker1.Value = DateTime.Today;
+                            comboBox1.Text = "";
+                            textBox_article.Text = "";
+                            textBox_description.Text = "";
+                            textBox_hour.Text = "";
+                            textBox_interval_minutes.Text = "";
+                            textBox_minutes.Text = "";
+                            textBox_notification_minute.Text = "";
+                            textBox_repeat_times.Text = "";
                         }
 
 
@@ -71,39 +82,86 @@ namespace WindowsFormsApp1
                     }
                 }
             }
-            else // если время не заполнено, тогда неделя
-            if (comboBox1.SelectedItem.ToString() == "Неделя")
-            {
-                string date = dateTimePicker1.ToString();
-                String[] words_date = date.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                int row = DopDop.dataGridView1.RowCount -1;
-                DopDop.dataGridView1.Rows.Add();
-                DopDop.dataGridView1.Rows[row].Cells[0].Value = "0";
-                DopDop.dataGridView1.Rows[row].Cells[1].Value = words_date[0];
-                DopDop.dataGridView1.Rows[row].Cells[2].Value = "0";
-                DopDop.dataGridView1.Rows[row].Cells[3].Value = textBox_article.Text;
-                DopDop.dataGridView1.Rows[row].Cells[4].Value = textBox_description.Text;
-                if (checkBox_notifications.Checked == true)
-                    DopDop.dataGridView1.Rows[row].Cells[5].Value = "1";
-                else DopDop.dataGridView1.Rows[row].Cells[5].Value = "0";
-                DopDop.dataGridView1.Rows[row].Cells[6].Value = "2"; // because week
-            }
-            else if(comboBox1.SelectedItem.ToString() == "Месяц")
-            {
-                int row = DopDop.dataGridView1.RowCount-1;
-                DopDop.dataGridView1.Rows.Add();
-                DopDop.dataGridView1.Rows[row].Cells[0].Value = "0";
-                DopDop.dataGridView1.Rows[row].Cells[1].Value = dateTimePicker1.Value;
-                DopDop.dataGridView1.Rows[row].Cells[2].Value = "0";
-                DopDop.dataGridView1.Rows[row].Cells[3].Value = textBox_article.Text;
-                DopDop.dataGridView1.Rows[row].Cells[4].Value = textBox_description.Text;
-                if (checkBox_notifications.Checked == true)
-                    DopDop.dataGridView1.Rows[row].Cells[5].Value = "1";
-                else DopDop.dataGridView1.Rows[row].Cells[5].Value = "0";
-                DopDop.dataGridView1.Rows[row].Cells[6].Value = "3"; // because month
-            }
+            else
+            { // если время не заполнено, тогда неделя
+                if (comboBox1.Text.ToString() == String.Empty || comboBox1.Text.ToString() == "(Пусто)")
+                {
 
+                    string date = dateTimePicker1.Value.ToString();
+                    String[] words_date = date.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                    int row = DopDop.dataGridView1.RowCount - 1;
+                    DopDop.dataGridView1.Rows.Add();
+                    DopDop.dataGridView1.Rows[row].Cells[0].Value = "0";
+                    DopDop.dataGridView1.Rows[row].Cells[1].Value = words_date[0];
+                    DopDop.dataGridView1.Rows[row].Cells[2].Value = "0";
+                    DopDop.dataGridView1.Rows[row].Cells[3].Value = textBox_article.Text;
+                    DopDop.dataGridView1.Rows[row].Cells[4].Value = textBox_description.Text;
+                    if (checkBox_notifications.Checked == true)
+                        DopDop.dataGridView1.Rows[row].Cells[5].Value = "1";
+                    else DopDop.dataGridView1.Rows[row].Cells[5].Value = "0";
+                    DopDop.dataGridView1.Rows[row].Cells[6].Value = "2"; // because week
 
+                    label_molodec.Visible = true;
+                    dateTimePicker1.Value = DateTime.Today;
+                    comboBox1.Text = "";
+                    textBox_article.Text = "";
+                    textBox_description.Text = "";
+                    textBox_hour.Text = "";
+                    textBox_interval_minutes.Text = "";
+                    textBox_minutes.Text = "";
+                    textBox_notification_minute.Text = "";
+                    textBox_repeat_times.Text = "";
+                }
+                else  // MONTH
+                {
+
+                    string date = dateTimePicker1.Value.ToString();
+                    String[] words_date = date.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                    String[] words_datepath = words_date[0].Split(new char[] { '.' }, StringSplitOptions.RemoveEmptyEntries);
+                    String month = "";
+                    if (comboBox1.Text.ToString() == "Январь") month = "01";
+                    if (comboBox1.Text.ToString() == "Февраль") month = "02";
+                    if (comboBox1.Text.ToString() == "Март") month = "03";
+                    if (comboBox1.Text.ToString() == "Апрель") month = "04";
+                    if (comboBox1.Text.ToString() == "Май") month = "05";
+                    if (comboBox1.Text.ToString() == "Июнь") month = "06";
+                    if (comboBox1.Text.ToString() == "Июль") month = "07";
+                    if (comboBox1.Text.ToString() == "Август") month = "08";
+                    if (comboBox1.Text.ToString() == "Сентябрь") month = "09";
+                    if (comboBox1.Text.ToString() == "Октябрь") month = "10";
+                    if (comboBox1.Text.ToString() == "Ноябрь") month = "11";
+                    if (comboBox1.Text.ToString() == "Декабрь") month = "12";
+                    int row = DopDop.dataGridView1.RowCount - 1;
+                    DopDop.dataGridView1.Rows.Add();
+                    DopDop.dataGridView1.Rows[row].Cells[0].Value = "0";
+                    DopDop.dataGridView1.Rows[row].Cells[1].Value = words_datepath[0]+"." + month + "." + words_datepath[2];
+                    DopDop.dataGridView1.Rows[row].Cells[2].Value = "0";
+                    DopDop.dataGridView1.Rows[row].Cells[3].Value = textBox_article.Text;
+                    DopDop.dataGridView1.Rows[row].Cells[4].Value = textBox_description.Text;
+                    if (checkBox_notifications.Checked == true)
+                        DopDop.dataGridView1.Rows[row].Cells[5].Value = "1";
+                    else DopDop.dataGridView1.Rows[row].Cells[5].Value = "0";
+                    DopDop.dataGridView1.Rows[row].Cells[6].Value = "3"; // because month
+
+                    label_molodec.Visible = true;
+                    if (checkBox_notifications.Checked)
+                    {
+                        checkBox_notifications.Checked = false;
+                        panel_notifications_on.Visible = false;
+                    }
+                    dateTimePicker1.Value = DateTime.Today;
+                    comboBox1.Text = "";
+                    textBox_article.Text = "";
+                    textBox_description.Text = "";
+                    textBox_hour.Text = "";
+                    textBox_interval_minutes.Text = "";
+                    textBox_minutes.Text = "";
+                    textBox_notification_minute.Text = "";
+                    textBox_repeat_times.Text = "";
+                }
+               // else { MessageBox.Show("ничего не выбралось"); }
+
+            }
             
         }
 
@@ -121,4 +179,12 @@ namespace WindowsFormsApp1
         {
 
         }
-    } }
+
+        private void FormAddTask_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            DopDop.writefiledela();
+            
+           // Application.Exit();
+        }
+    }   
+}

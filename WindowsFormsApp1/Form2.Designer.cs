@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -39,9 +40,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel_DAY = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.DatTim = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.text_op = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.suuuukaaaaa = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label_date = new System.Windows.Forms.Label();
             this.panel_menu_dlya_paneli_day = new System.Windows.Forms.Panel();
@@ -106,11 +111,6 @@
             this.button_WEEK = new System.Windows.Forms.Button();
             this.button_MONTH = new System.Windows.Forms.Button();
             this.button_back = new System.Windows.Forms.Button();
-            this.Check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.DatTim = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.text_op = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.suuuukaaaaa = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel_DAY.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel_menu_dlya_paneli_day.SuspendLayout();
@@ -170,6 +170,60 @@
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.Size = new System.Drawing.Size(672, 436);
             this.dataGridView1.TabIndex = 4;
+            // 
+            // Check
+            // 
+            this.Check.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Check.FillWeight = 2.619312F;
+            this.Check.HeaderText = "Выполнено";
+            this.Check.MinimumWidth = 6;
+            this.Check.Name = "Check";
+            // 
+            // DatTim
+            // 
+            this.DatTim.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Format = "t";
+            dataGridViewCellStyle2.NullValue = null;
+            this.DatTim.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DatTim.FillWeight = 42.88972F;
+            this.DatTim.HeaderText = "Время";
+            this.DatTim.MinimumWidth = 6;
+            this.DatTim.Name = "DatTim";
+            this.DatTim.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.DatTim.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.DatTim.Width = 70;
+            // 
+            // text_op
+            // 
+            this.text_op.FillWeight = 2.619312F;
+            this.text_op.HeaderText = "Задача";
+            this.text_op.MinimumWidth = 6;
+            this.text_op.Name = "text_op";
+            // 
+            // Delit
+            // 
+            this.Delit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Delit.FillWeight = 320.8556F;
+            this.Delit.HeaderText = "";
+            this.Delit.MinimumWidth = 6;
+            this.Delit.Name = "Delit";
+            this.Delit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Delit.Text = "Удалить";
+            this.Delit.UseColumnTextForButtonValue = true;
+            this.Delit.Width = 120;
+            // 
+            // suuuukaaaaa
+            // 
+            this.suuuukaaaaa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.suuuukaaaaa.FillWeight = 131.0161F;
+            this.suuuukaaaaa.HeaderText = "";
+            this.suuuukaaaaa.MinimumWidth = 6;
+            this.suuuukaaaaa.Name = "suuuukaaaaa";
+            this.suuuukaaaaa.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.suuuukaaaaa.Text = "Редактировать";
+            this.suuuukaaaaa.UseColumnTextForButtonValue = true;
+            this.suuuukaaaaa.Width = 120;
             // 
             // dateTimePicker1
             // 
@@ -971,60 +1025,6 @@
             this.button_back.UseVisualStyleBackColor = true;
             this.button_back.Click += new System.EventHandler(this.button_back_Click);
             // 
-            // Check
-            // 
-            this.Check.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Check.FillWeight = 2.619312F;
-            this.Check.HeaderText = "Выполнено";
-            this.Check.MinimumWidth = 6;
-            this.Check.Name = "Check";
-            // 
-            // DatTim
-            // 
-            this.DatTim.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Format = "t";
-            dataGridViewCellStyle2.NullValue = null;
-            this.DatTim.DefaultCellStyle = dataGridViewCellStyle2;
-            this.DatTim.FillWeight = 42.88972F;
-            this.DatTim.HeaderText = "Время";
-            this.DatTim.MinimumWidth = 6;
-            this.DatTim.Name = "DatTim";
-            this.DatTim.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.DatTim.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.DatTim.Width = 70;
-            // 
-            // text_op
-            // 
-            this.text_op.FillWeight = 2.619312F;
-            this.text_op.HeaderText = "Задача";
-            this.text_op.MinimumWidth = 6;
-            this.text_op.Name = "text_op";
-            // 
-            // Delit
-            // 
-            this.Delit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Delit.FillWeight = 320.8556F;
-            this.Delit.HeaderText = "";
-            this.Delit.MinimumWidth = 6;
-            this.Delit.Name = "Delit";
-            this.Delit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Delit.Text = "Удалить";
-            this.Delit.UseColumnTextForButtonValue = true;
-            this.Delit.Width = 120;
-            // 
-            // suuuukaaaaa
-            // 
-            this.suuuukaaaaa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.suuuukaaaaa.FillWeight = 131.0161F;
-            this.suuuukaaaaa.HeaderText = "";
-            this.suuuukaaaaa.MinimumWidth = 6;
-            this.suuuukaaaaa.Name = "suuuukaaaaa";
-            this.suuuukaaaaa.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.suuuukaaaaa.Text = "Редактировать";
-            this.suuuukaaaaa.UseColumnTextForButtonValue = true;
-            this.suuuukaaaaa.Width = 120;
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1039,6 +1039,7 @@
             this.Controls.Add(this.panel_DAY);
             this.Name = "Form2";
             this.Text = "Form2";
+            this.Activated += new System.EventHandler(this.Form2_Activated);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form2_FormClosed);
             this.Load += new System.EventHandler(this.Form2_Load);
             this.panel_DAY.ResumeLayout(false);
