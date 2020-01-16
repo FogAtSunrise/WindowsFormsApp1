@@ -26,7 +26,25 @@ namespace WindowsFormsApp1
             dateTimePicker_edit.Value = DateTime.Parse(date);
             if (DopDop.dataGridView1.Rows[Form2.edit_row].Cells[5].Value.ToString() == "1")
             {
+                checkBox_notifications.Checked = true;
                 panel_notifications.Show();
+                if (DopDop.dataGridView1.Rows[Form2.edit_row].Cells[7].Value.ToString() != "0")
+                {
+                    checkBox_notif_before.Checked = true;
+                    textBox_notif_before.Text = DopDop.dataGridView1.Rows[Form2.edit_row].Cells[7].Value.ToString();
+                }
+
+                if (DopDop.dataGridView1.Rows[Form2.edit_row].Cells[8].Value.ToString() != "0")
+                {
+                    checkBox_notif_interval.Checked = true;
+                    textBox_notif_interval.Text = DopDop.dataGridView1.Rows[Form2.edit_row].Cells[8].Value.ToString();
+                }
+
+                if (DopDop.dataGridView1.Rows[Form2.edit_row].Cells[9].Value.ToString() != "0")
+                {
+                    checkBox_notif_repeat.Checked = true;
+                    textBox_notif_repeat.Text = DopDop.dataGridView1.Rows[Form2.edit_row].Cells[9].Value.ToString();
+                }
             }
 
             if (DopDop.dataGridView1.Rows[Form2.edit_row].Cells[4].Value.ToString() == "1") // for a day
@@ -91,13 +109,31 @@ namespace WindowsFormsApp1
                             DopDop.dataGridView1.Rows[row].Cells[3].Value = textBox_article.Text;
                             DopDop.dataGridView1.Rows[row].Cells[4].Value = textBox_description.Text;
                             if (checkBox_notifications.Checked == true)
+                            {
                                 DopDop.dataGridView1.Rows[row].Cells[5].Value = "1";
+                                if (checkBox_notif_before.Checked == true) DopDop.dataGridView1.Rows[row].Cells[7].Value = textBox_notif_before.Text;
+                                else DopDop.dataGridView1.Rows[row].Cells[7].Value = "0";
+
+                                if (checkBox_notif_interval.Checked == true) DopDop.dataGridView1.Rows[row].Cells[8].Value = textBox_notif_interval.Text;
+                                else DopDop.dataGridView1.Rows[row].Cells[8].Value = "0";
+
+                                if (checkBox_notif_repeat.Checked == true) DopDop.dataGridView1.Rows[row].Cells[9].Value = textBox_notif_repeat.Text;
+                                else DopDop.dataGridView1.Rows[row].Cells[9].Value = "0";
+                            }
                             else DopDop.dataGridView1.Rows[row].Cells[5].Value = "0";
                             DopDop.dataGridView1.Rows[row].Cells[6].Value = "1"; // because day
                                                                                  // DopDop.dataGridView1.Rows.Add();
 
                             label_molodec.Visible = true;
                             dateTimePicker_edit.Value = DateTime.Today;
+                            if (checkBox_notifications.Checked)
+                            {
+                                checkBox_notifications.Checked = false;
+                                panel_notifications.Visible = false;
+                                checkBox_notif_repeat.Checked = false;
+                                checkBox_notif_before.Checked = false;
+                                checkBox_notif_interval.Checked = false;
+                            }
                             comboBox_month.Text = "";
                             textBox_article.Text = "";
                             textBox_description.Text = "";
@@ -132,12 +168,30 @@ namespace WindowsFormsApp1
                     DopDop.dataGridView1.Rows[row].Cells[3].Value = textBox_article.Text;
                     DopDop.dataGridView1.Rows[row].Cells[4].Value = textBox_description.Text;
                     if (checkBox_notifications.Checked == true)
+                    {
                         DopDop.dataGridView1.Rows[row].Cells[5].Value = "1";
+                        if (checkBox_notif_before.Checked == true) DopDop.dataGridView1.Rows[row].Cells[7].Value = textBox_notif_before.Text;
+                        else DopDop.dataGridView1.Rows[row].Cells[7].Value = "0";
+
+                        if (checkBox_notif_interval.Checked == true) DopDop.dataGridView1.Rows[row].Cells[8].Value = textBox_notif_interval.Text;
+                        else DopDop.dataGridView1.Rows[row].Cells[8].Value = "0";
+
+                        if (checkBox_notif_repeat.Checked == true) DopDop.dataGridView1.Rows[row].Cells[9].Value = textBox_notif_repeat.Text;
+                        else DopDop.dataGridView1.Rows[row].Cells[9].Value = "0";
+                    }
                     else DopDop.dataGridView1.Rows[row].Cells[5].Value = "0";
                     DopDop.dataGridView1.Rows[row].Cells[6].Value = "2"; // because week
 
                     label_molodec.Visible = true;
                     dateTimePicker_edit.Value = DateTime.Today;
+                    if (checkBox_notifications.Checked)
+                    {
+                        checkBox_notifications.Checked = false;
+                        panel_notifications.Visible = false;
+                        checkBox_notif_repeat.Checked = false;
+                        checkBox_notif_before.Checked = false;
+                        checkBox_notif_interval.Checked = false;
+                    }
                     comboBox_month.Text = "";
                     textBox_article.Text = "";
                     textBox_description.Text = "";
@@ -175,7 +229,17 @@ namespace WindowsFormsApp1
                     DopDop.dataGridView1.Rows[row].Cells[3].Value = textBox_article.Text;
                     DopDop.dataGridView1.Rows[row].Cells[4].Value = textBox_description.Text;
                     if (checkBox_notifications.Checked == true)
+                    {
                         DopDop.dataGridView1.Rows[row].Cells[5].Value = "1";
+                        if (checkBox_notif_before.Checked == true) DopDop.dataGridView1.Rows[row].Cells[7].Value = textBox_notif_before.Text;
+                        else DopDop.dataGridView1.Rows[row].Cells[7].Value = "0";
+
+                        if (checkBox_notif_interval.Checked == true) DopDop.dataGridView1.Rows[row].Cells[8].Value = textBox_notif_interval.Text;
+                        else DopDop.dataGridView1.Rows[row].Cells[8].Value = "0";
+
+                        if (checkBox_notif_repeat.Checked == true) DopDop.dataGridView1.Rows[row].Cells[9].Value = textBox_notif_repeat.Text;
+                        else DopDop.dataGridView1.Rows[row].Cells[9].Value = "0";
+                    }
                     else DopDop.dataGridView1.Rows[row].Cells[5].Value = "0";
                     DopDop.dataGridView1.Rows[row].Cells[6].Value = "3"; // because month
 
@@ -184,6 +248,9 @@ namespace WindowsFormsApp1
                     {
                         checkBox_notifications.Checked = false;
                         panel_notifications.Visible = false;
+                        checkBox_notif_repeat.Checked = false;
+                        checkBox_notif_before.Checked = false;
+                        checkBox_notif_interval.Checked = false;
                     }
                     dateTimePicker_edit.Value = DateTime.Today;
                     comboBox_month.Text = "";

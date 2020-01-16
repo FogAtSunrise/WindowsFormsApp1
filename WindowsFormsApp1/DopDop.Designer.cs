@@ -36,6 +36,9 @@
             pas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            opovestitza = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            interval = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            repeat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(dataGridView1)).BeginInit();
             SuspendLayout();
             // 
@@ -49,7 +52,10 @@
             log,
             pas,
             name,
-            date});
+            date,
+            opovestitza,
+            interval,
+            repeat});
             dataGridView1.Location = new System.Drawing.Point(1, -6);
             dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             dataGridView1.Name = "dataGridView1";
@@ -57,6 +63,7 @@
             dataGridView1.RowTemplate.Height = 24;
             dataGridView1.Size = new System.Drawing.Size(805, 362);
             dataGridView1.TabIndex = 1;
+            dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // id
             // 
@@ -105,6 +112,21 @@
             date.Name = "date";
             date.Width = 125;
             // 
+            // opovestitza
+            // 
+            opovestitza.HeaderText = "оповестить за";
+            opovestitza.Name = "opovestitza";
+            // 
+            // interval
+            // 
+            interval.HeaderText = "интервал";
+            interval.Name = "interval";
+            // 
+            // repeat
+            // 
+            repeat.HeaderText = "повтор";
+            repeat.Name = "repeat";
+            // 
             // DopDop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -121,6 +143,9 @@
 
         #endregion
 
+        public static System.Windows.Forms.DataGridViewTextBoxColumn opovestitza;
+        public static System.Windows.Forms.DataGridViewTextBoxColumn interval;
+        public static System.Windows.Forms.DataGridViewTextBoxColumn repeat;
         public static System.Windows.Forms.DataGridViewTextBoxColumn time;
         public static System.Windows.Forms.DataGridView dataGridView1;
         public static System.Windows.Forms.DataGridViewTextBoxColumn id;

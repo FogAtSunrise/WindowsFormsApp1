@@ -129,7 +129,7 @@ namespace WindowsFormsApp1
                     DopDop.dataGridView1.Rows.Add();
                    // FormDopForm.dataGridView1.Rows[i].Cells[0].Value = (i + 1);//пронумеровать (id)
                     String[] words = str.Split(new char[] { '#' }, StringSplitOptions.RemoveEmptyEntries);
-                    for (int j = 0; j < 7; j++)
+                    for (int j = 0; j < 10; j++)
                     {
                         DopDop.dataGridView1.Rows[i].Cells[j].Value = words[j];
                     }
