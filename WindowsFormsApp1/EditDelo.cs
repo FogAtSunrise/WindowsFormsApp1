@@ -21,9 +21,11 @@ namespace WindowsFormsApp1
         {
             textBox_article.Text = DopDop.dataGridView1.Rows[Form2.edit_row].Cells[3].Value.ToString();
             textBox_description.Text = DopDop.dataGridView1.Rows[Form2.edit_row].Cells[4].Value.ToString();
+            if (DopDop.dataGridView1.Rows[Form2.edit_row].Cells[0].Value.ToString() == "1")
+                checkBox_done.Checked = true;
             string date;
             date = DopDop.dataGridView1.Rows[Form2.edit_row].Cells[4].Value.ToString();
-            dateTimePicker_edit.Value = DateTime.Parse(date);
+          //  dateTimePicker_edit.Value = DateTime.Parse(date);
             if (DopDop.dataGridView1.Rows[Form2.edit_row].Cells[5].Value.ToString() == "1")
             {
                 checkBox_notifications.Checked = true;
@@ -47,7 +49,7 @@ namespace WindowsFormsApp1
                 }
             }
 
-            if (DopDop.dataGridView1.Rows[Form2.edit_row].Cells[4].Value.ToString() == "1") // for a day
+            if (DopDop.dataGridView1.Rows[Form2.edit_row].Cells[6].Value.ToString() == "1") // for a day
             {
                 string hour, minutes;
                 string dop = DopDop.dataGridView1.Rows[Form2.edit_row].Cells[2].Value.ToString();
@@ -61,14 +63,14 @@ namespace WindowsFormsApp1
             }
 
             //for a week
-            if(DopDop.dataGridView1.Rows[Form2.edit_row].Cells[4].Value.ToString() == "2")
+            if(DopDop.dataGridView1.Rows[Form2.edit_row].Cells[6].Value.ToString() == "2")
             {
                 
                 
             }
 
             //for a month
-            if(DopDop.dataGridView1.Rows[Form2.edit_row].Cells[4].Value.ToString() == "3")
+            if(DopDop.dataGridView1.Rows[Form2.edit_row].Cells[6].Value.ToString() == "3")
             {
                 string dop = DopDop.dataGridView1.Rows[Form2.edit_row].Cells[1].Value.ToString();
                 String[] date_path = dop.Split(new char[] { '.' }, StringSplitOptions.RemoveEmptyEntries);
@@ -101,13 +103,16 @@ namespace WindowsFormsApp1
                         {
                             string date = dateTimePicker_edit.Value.ToString();
                             String[] words_date = date.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                            int row = DopDop.dataGridView1.RowCount - 1;
-                            DopDop.dataGridView1.Rows.Add();
-                            DopDop.dataGridView1.Rows[row].Cells[0].Value = "0";
+                            int row = Form2.edit_row;
+                         //   DopDop.dataGridView1.Rows.Add();
+                         if(checkBox_done.Checked == true)
+                            DopDop.dataGridView1.Rows[row].Cells[0].Value = "1";
+                         else DopDop.dataGridView1.Rows[row].Cells[0].Value = "0";
                             DopDop.dataGridView1.Rows[row].Cells[1].Value = words_date[0];
                             DopDop.dataGridView1.Rows[row].Cells[2].Value = dop1 + ":" + dop2;
                             DopDop.dataGridView1.Rows[row].Cells[3].Value = textBox_article.Text;
                             DopDop.dataGridView1.Rows[row].Cells[4].Value = textBox_description.Text;
+
                             if (checkBox_notifications.Checked == true)
                             {
                                 DopDop.dataGridView1.Rows[row].Cells[5].Value = "1";
@@ -160,9 +165,11 @@ namespace WindowsFormsApp1
 
                     string date = dateTimePicker_edit.Value.ToString();
                     String[] words_date = date.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                    int row = DopDop.dataGridView1.RowCount - 1;
-                    DopDop.dataGridView1.Rows.Add();
-                    DopDop.dataGridView1.Rows[row].Cells[0].Value = "0";
+                    int row = Form2.edit_row;
+                    // DopDop.dataGridView1.Rows.Add();
+                    if (checkBox_done.Checked == true)
+                        DopDop.dataGridView1.Rows[row].Cells[0].Value = "1";
+                    else DopDop.dataGridView1.Rows[row].Cells[0].Value = "0";
                     DopDop.dataGridView1.Rows[row].Cells[1].Value = words_date[0];
                     DopDop.dataGridView1.Rows[row].Cells[2].Value = "0";
                     DopDop.dataGridView1.Rows[row].Cells[3].Value = textBox_article.Text;
@@ -221,9 +228,11 @@ namespace WindowsFormsApp1
                     if (comboBox_month.Text.ToString() == "Октябрь") month = "10";
                     if (comboBox_month.Text.ToString() == "Ноябрь") month = "11";
                     if (comboBox_month.Text.ToString() == "Декабрь") month = "12";
-                    int row = DopDop.dataGridView1.RowCount - 1;
-                    DopDop.dataGridView1.Rows.Add();
-                    DopDop.dataGridView1.Rows[row].Cells[0].Value = "0";
+                    int row = Form2.edit_row;
+                    //DopDop.dataGridView1.Rows.Add();
+                    if (checkBox_done.Checked == true)
+                        DopDop.dataGridView1.Rows[row].Cells[0].Value = "1";
+                    else DopDop.dataGridView1.Rows[row].Cells[0].Value = "0";
                     DopDop.dataGridView1.Rows[row].Cells[1].Value = words_datepath[0] + "." + month + "." + words_datepath[2];
                     DopDop.dataGridView1.Rows[row].Cells[2].Value = "0";
                     DopDop.dataGridView1.Rows[row].Cells[3].Value = textBox_article.Text;
@@ -273,6 +282,13 @@ namespace WindowsFormsApp1
             DopDop.writefiledela();
 
             // Application.Exit();
+        }
+
+        private void checkBox_notifications_CheckedChanged(object sender, EventArgs e)
+        {
+            if (panel_notifications.Visible == false)
+                panel_notifications.Visible = true;
+            else panel_notifications.Visible = false;
         }
     }
 }

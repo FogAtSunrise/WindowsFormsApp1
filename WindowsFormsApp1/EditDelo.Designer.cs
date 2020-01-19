@@ -41,13 +41,14 @@
             this.textBox_hours = new System.Windows.Forms.TextBox();
             this.textBox_minutes = new System.Windows.Forms.TextBox();
             this.panel_notifications = new System.Windows.Forms.Panel();
-            this.checkBox_notif_before = new System.Windows.Forms.CheckBox();
-            this.checkBox_notif_repeat = new System.Windows.Forms.CheckBox();
-            this.checkBox_notif_interval = new System.Windows.Forms.CheckBox();
-            this.textBox_notif_before = new System.Windows.Forms.TextBox();
-            this.textBox_notif_repeat = new System.Windows.Forms.TextBox();
             this.textBox_notif_interval = new System.Windows.Forms.TextBox();
+            this.textBox_notif_repeat = new System.Windows.Forms.TextBox();
+            this.textBox_notif_before = new System.Windows.Forms.TextBox();
+            this.checkBox_notif_interval = new System.Windows.Forms.CheckBox();
+            this.checkBox_notif_repeat = new System.Windows.Forms.CheckBox();
+            this.checkBox_notif_before = new System.Windows.Forms.CheckBox();
             this.button_edit = new System.Windows.Forms.Button();
+            this.checkBox_done = new System.Windows.Forms.CheckBox();
             this.panel_notifications.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -164,6 +165,7 @@
             this.checkBox_notifications.TabIndex = 9;
             this.checkBox_notifications.Text = "Оповещения";
             this.checkBox_notifications.UseVisualStyleBackColor = true;
+            this.checkBox_notifications.CheckedChanged += new System.EventHandler(this.checkBox_notifications_CheckedChanged);
             // 
             // textBox_hours
             // 
@@ -196,25 +198,26 @@
             this.panel_notifications.TabIndex = 12;
             this.panel_notifications.Visible = false;
             // 
-            // checkBox_notif_before
+            // textBox_notif_interval
             // 
-            this.checkBox_notif_before.AutoSize = true;
-            this.checkBox_notif_before.Location = new System.Drawing.Point(12, 14);
-            this.checkBox_notif_before.Name = "checkBox_notif_before";
-            this.checkBox_notif_before.Size = new System.Drawing.Size(101, 17);
-            this.checkBox_notif_before.TabIndex = 0;
-            this.checkBox_notif_before.Text = "Оповестить за";
-            this.checkBox_notif_before.UseVisualStyleBackColor = true;
+            this.textBox_notif_interval.Location = new System.Drawing.Point(124, 83);
+            this.textBox_notif_interval.Name = "textBox_notif_interval";
+            this.textBox_notif_interval.Size = new System.Drawing.Size(100, 20);
+            this.textBox_notif_interval.TabIndex = 5;
             // 
-            // checkBox_notif_repeat
+            // textBox_notif_repeat
             // 
-            this.checkBox_notif_repeat.AutoSize = true;
-            this.checkBox_notif_repeat.Location = new System.Drawing.Point(12, 50);
-            this.checkBox_notif_repeat.Name = "checkBox_notif_repeat";
-            this.checkBox_notif_repeat.Size = new System.Drawing.Size(80, 17);
-            this.checkBox_notif_repeat.TabIndex = 1;
-            this.checkBox_notif_repeat.Text = "Повторить";
-            this.checkBox_notif_repeat.UseVisualStyleBackColor = true;
+            this.textBox_notif_repeat.Location = new System.Drawing.Point(124, 50);
+            this.textBox_notif_repeat.Name = "textBox_notif_repeat";
+            this.textBox_notif_repeat.Size = new System.Drawing.Size(100, 20);
+            this.textBox_notif_repeat.TabIndex = 4;
+            // 
+            // textBox_notif_before
+            // 
+            this.textBox_notif_before.Location = new System.Drawing.Point(124, 14);
+            this.textBox_notif_before.Name = "textBox_notif_before";
+            this.textBox_notif_before.Size = new System.Drawing.Size(100, 20);
+            this.textBox_notif_before.TabIndex = 3;
             // 
             // checkBox_notif_interval
             // 
@@ -226,26 +229,25 @@
             this.checkBox_notif_interval.Text = "Интервал";
             this.checkBox_notif_interval.UseVisualStyleBackColor = true;
             // 
-            // textBox_notif_before
+            // checkBox_notif_repeat
             // 
-            this.textBox_notif_before.Location = new System.Drawing.Point(124, 14);
-            this.textBox_notif_before.Name = "textBox_notif_before";
-            this.textBox_notif_before.Size = new System.Drawing.Size(100, 20);
-            this.textBox_notif_before.TabIndex = 3;
+            this.checkBox_notif_repeat.AutoSize = true;
+            this.checkBox_notif_repeat.Location = new System.Drawing.Point(12, 50);
+            this.checkBox_notif_repeat.Name = "checkBox_notif_repeat";
+            this.checkBox_notif_repeat.Size = new System.Drawing.Size(80, 17);
+            this.checkBox_notif_repeat.TabIndex = 1;
+            this.checkBox_notif_repeat.Text = "Повторить";
+            this.checkBox_notif_repeat.UseVisualStyleBackColor = true;
             // 
-            // textBox_notif_repeat
+            // checkBox_notif_before
             // 
-            this.textBox_notif_repeat.Location = new System.Drawing.Point(124, 50);
-            this.textBox_notif_repeat.Name = "textBox_notif_repeat";
-            this.textBox_notif_repeat.Size = new System.Drawing.Size(100, 20);
-            this.textBox_notif_repeat.TabIndex = 4;
-            // 
-            // textBox_notif_interval
-            // 
-            this.textBox_notif_interval.Location = new System.Drawing.Point(124, 83);
-            this.textBox_notif_interval.Name = "textBox_notif_interval";
-            this.textBox_notif_interval.Size = new System.Drawing.Size(100, 20);
-            this.textBox_notif_interval.TabIndex = 5;
+            this.checkBox_notif_before.AutoSize = true;
+            this.checkBox_notif_before.Location = new System.Drawing.Point(12, 14);
+            this.checkBox_notif_before.Name = "checkBox_notif_before";
+            this.checkBox_notif_before.Size = new System.Drawing.Size(101, 17);
+            this.checkBox_notif_before.TabIndex = 0;
+            this.checkBox_notif_before.Text = "Оповестить за";
+            this.checkBox_notif_before.UseVisualStyleBackColor = true;
             // 
             // button_edit
             // 
@@ -258,11 +260,23 @@
             this.button_edit.UseVisualStyleBackColor = true;
             this.button_edit.Click += new System.EventHandler(this.button_edit_Click);
             // 
+            // checkBox_done
+            // 
+            this.checkBox_done.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.checkBox_done.AutoSize = true;
+            this.checkBox_done.Location = new System.Drawing.Point(426, 118);
+            this.checkBox_done.Name = "checkBox_done";
+            this.checkBox_done.Size = new System.Drawing.Size(128, 17);
+            this.checkBox_done.TabIndex = 14;
+            this.checkBox_done.Text = "Задание выполнено";
+            this.checkBox_done.UseVisualStyleBackColor = true;
+            // 
             // EditDeloForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(812, 479);
+            this.Controls.Add(this.checkBox_done);
             this.Controls.Add(this.button_edit);
             this.Controls.Add(this.panel_notifications);
             this.Controls.Add(this.textBox_minutes);
@@ -309,5 +323,6 @@
         private System.Windows.Forms.CheckBox checkBox_notif_repeat;
         private System.Windows.Forms.CheckBox checkBox_notif_before;
         private System.Windows.Forms.Button button_edit;
+        private System.Windows.Forms.CheckBox checkBox_done;
     }
 }

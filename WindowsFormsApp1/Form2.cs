@@ -178,7 +178,7 @@ namespace WindowsFormsApp1
         private void Form2_Activated(object sender, EventArgs e)
         {
             int rows = DopDop.dataGridView1.RowCount - 1;
-            string today = DateTime.Today.ToString();
+            string today = dateTimePicker1.Value.ToString();
             String[] words_date = today.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             int k = 0;
             // cначала очистим
@@ -195,7 +195,13 @@ namespace WindowsFormsApp1
                     dataGridView1.Rows.Add();
                     dataGridView1.Rows[k].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
                     dataGridView1.Rows[k].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
-                    
+                    if ("1" == DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString())
+                    {
+
+                        dataGridView1.Rows[k].DefaultCellStyle.BackColor = Color.LightSeaGreen;
+
+                    }
+
                     //dataGridView1.Rows.Add();
                     k++;
                     //dataGridView1.Rows.Add();
@@ -463,8 +469,8 @@ namespace WindowsFormsApp1
                             if (poisk == DopDop.dataGridView1.Rows[j].Cells[3].Value.ToString())
                             {
 
-                                dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.LightSeaGreen;
-                                DopDop.dataGridView1.Rows[i].Cells[0].Value = "1";
+                               // dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.LightSeaGreen;
+                                DopDop.dataGridView1.Rows[j].Cells[0].Value = "1";
                                 
                             }
                     }
