@@ -57,6 +57,43 @@ namespace WindowsFormsApp1
                 panel_dlya_nedeliiii.Visible = true;*/
             panel_dlya_nedeliiii.Show();
             panel_dlya_mesyaca.Hide();
+
+
+            //сначала меняем  в тексте дату +6 дней
+            DateTime date2 = DateTime.Today.AddDays(6);
+            DateTime date1 = dateTimePicker2.Value;
+            string tod = date2.ToString();
+            String[] today_date = tod.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            textBox_week.Text = today_date[0];
+            //dataGridView_week_daystasks
+            int week = 0;
+            int days = 0;
+            for (int i = 0; i < DopDop.dataGridView1.RowCount - 1; i++)
+            {
+                DateTime date = DateTime.Parse(DopDop.dataGridView1.Rows[i].Cells[1].Value.ToString());
+                if(DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "2" && date >= date1 && date <= date2)
+                {
+                    dataGridView_week_weekstasks.Rows.Add();
+                    dataGridView_week_weekstasks.Rows[week].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
+                    dataGridView_week_weekstasks.Rows[week].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
+                    if ("1" == DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString())
+                    {
+                        dataGridView_week_weekstasks.Rows[week].DefaultCellStyle.BackColor = Color.LightSeaGreen;
+                    }
+                    week++;
+                }
+                if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "1" && date >= date1 && date <= date2)
+                {
+                    dataGridView_week_daystasks.Rows.Add();
+                    dataGridView_week_daystasks.Rows[days].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
+                    dataGridView_week_daystasks.Rows[days].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
+                    if ("1" == DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString())
+                    {
+                        dataGridView_week_daystasks.Rows[days].DefaultCellStyle.BackColor = Color.LightSeaGreen;
+                    }
+                    days++;
+                }
+            }
         }
 
         private void button_MONTH_Click(object sender, EventArgs e)
@@ -417,6 +454,10 @@ namespace WindowsFormsApp1
 
             }
 
+            button_del_task.Enabled = false;
+            button_edit_task.Enabled = false;
+            button_done_task.Enabled = false;
+
         }
 
         static public int edit_row = -1;
@@ -454,6 +495,10 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("Нельзя отредактировать несколько записей за раз. Выберите одну задачу и снова нажмите \"Редактировать\"");
             }
+
+            button_del_task.Enabled = false;
+            button_edit_task.Enabled = false;
+            button_done_task.Enabled = false;
         }
 
         private void button_done_task_Click(object sender, EventArgs e)
@@ -503,6 +548,295 @@ namespace WindowsFormsApp1
 
 
             }
+
+            button_del_task.Enabled = false;
+            button_edit_task.Enabled = false;
+            button_done_task.Enabled = false;
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            // cначала очистим
+            dataGridView1.Rows.Clear();
+            dataGridView1.Refresh();
+
+            //сначала меняем  в тексте дату +6 дней
+            DateTime date1 = dateTimePicker2.Value;
+            DateTime date2 = date1.AddDays(6);
+            
+            string tod = date2.ToString();
+            String[] today_date = tod.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            textBox_week.Text = today_date[0];
+            //dataGridView_week_daystasks
+            int week = 0;
+            int days = 0;
+            for (int i = 0; i < DopDop.dataGridView1.RowCount - 1; i++)
+            {
+                DateTime date = DateTime.Parse(DopDop.dataGridView1.Rows[i].Cells[1].Value.ToString());
+                if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "2" && date >= date1 && date <= date2)
+                {
+                    dataGridView_week_weekstasks.Rows.Add();
+                    dataGridView_week_weekstasks.Rows[week].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
+                    dataGridView_week_weekstasks.Rows[week].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
+                    if ("1" == DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString())
+                    {
+                        dataGridView_week_weekstasks.Rows[week].DefaultCellStyle.BackColor = Color.LightSeaGreen;
+                    }
+                    week++;
+                }
+                if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "1" && date >= date1 && date <= date2)
+                {
+                    dataGridView_week_daystasks.Rows.Add();
+                    dataGridView_week_daystasks.Rows[days].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
+                    dataGridView_week_daystasks.Rows[days].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
+                    if ("1" == DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString())
+                    {
+                        dataGridView_week_daystasks.Rows[days].DefaultCellStyle.BackColor = Color.LightSeaGreen;
+                    }
+                    days++;
+                }
+            }
+        }
+
+        private void dataGridView_week_weekstasks_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            button_week_del_task.Enabled = true;
+            button_week_edit.Enabled = true;
+            button_week_done.Enabled = true;
+        }
+
+        private void dataGridView_week_daystasks_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            button_week_del_task.Enabled = true;
+            button_week_edit.Enabled = true;
+            button_week_done.Enabled = true;
+        }
+
+        private void button_week_del_task_Click(object sender, EventArgs e)
+        {
+            int rows = dataGridView_week_weekstasks.RowCount - 1;
+            //  int[] right_row = new int[DopDop.dataGridView1.RowCount];
+
+            
+                for (int i = 0; i < rows; i++)
+                    if (Convert.ToInt32(dataGridView_week_weekstasks.Rows[i].Cells[0].Value) == 1)
+                    {
+                        int k = 1;
+                        string poisk = dataGridView_week_weekstasks.Rows[i].Cells[2].Value.ToString();
+                        for (int j = 0; j < DopDop.dataGridView1.RowCount - k; j++)
+                            if (poisk == DopDop.dataGridView1.Rows[j].Cells[3].Value.ToString())
+                            {
+
+                                DopDop.dataGridView1.Rows.RemoveAt(DopDop.dataGridView1.Rows[j].Index);
+                                k++;
+                            }
+                    }
+            int row_days = dataGridView_week_daystasks.RowCount - 1;
+            
+            for (int i = 0; i < row_days; i++)
+                if (Convert.ToInt32(dataGridView_week_daystasks.Rows[i].Cells[0].Value) == 1)
+                {
+                    int k = 1;
+                    string poisk = dataGridView_week_daystasks.Rows[i].Cells[2].Value.ToString();
+                    for (int j = 0; j < DopDop.dataGridView1.RowCount - k; j++)
+                        if (poisk == DopDop.dataGridView1.Rows[j].Cells[3].Value.ToString())
+                        {
+
+                            DopDop.dataGridView1.Rows.RemoveAt(DopDop.dataGridView1.Rows[j].Index);
+                            k++;
+                        }
+                }
+
+
+            dataGridView_week_weekstasks.Rows.Clear();
+            dataGridView_week_weekstasks.Refresh();
+            dataGridView_week_daystasks.Rows.Clear();
+            dataGridView_week_daystasks.Refresh();
+
+            //сначала меняем  в тексте дату +6 дней
+            DateTime date2 = DateTime.Today.AddDays(6);
+            DateTime date1 = dateTimePicker2.Value;
+            string tod = date2.ToString();
+            String[] today_date = tod.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            textBox_week.Text = today_date[0];
+            //dataGridView_week_daystasks
+            int week = 0;
+            int days = 0;
+            for (int i = 0; i < DopDop.dataGridView1.RowCount - 1; i++)
+            {
+                DateTime date = DateTime.Parse(DopDop.dataGridView1.Rows[i].Cells[1].Value.ToString());
+                if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "2" && date >= date1 && date <= date2)
+                {
+                    dataGridView_week_weekstasks.Rows.Add();
+                    dataGridView_week_weekstasks.Rows[week].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
+                    dataGridView_week_weekstasks.Rows[week].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
+                    if ("1" == DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString())
+                    {
+                        dataGridView_week_weekstasks.Rows[week].DefaultCellStyle.BackColor = Color.LightSeaGreen;
+                    }
+                    week++;
+                }
+                if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "1" && date >= date1 && date <= date2)
+                {
+                    dataGridView_week_daystasks.Rows.Add();
+                    dataGridView_week_daystasks.Rows[days].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
+                    dataGridView_week_daystasks.Rows[days].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
+                    if ("1" == DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString())
+                    {
+                        dataGridView_week_daystasks.Rows[days].DefaultCellStyle.BackColor = Color.LightSeaGreen;
+                    }
+                    days++;
+                }
+            }
+
+
+            button_week_del_task.Enabled = false;
+            button_week_edit.Enabled = false;
+            button_week_done.Enabled = false;
+        }
+
+        private void button_week_edit_Click(object sender, EventArgs e)
+        {
+            int rows = dataGridView_week_weekstasks.RowCount - 1;
+            int rows_days = dataGridView_week_daystasks.RowCount - 1;
+            int found_over = 0;
+            //  int[] right_row = new int[DopDop.dataGridView1.RowCount];         
+            for (int i = 0; i < rows; i++)
+                if (Convert.ToInt32(dataGridView_week_weekstasks.Rows[i].Cells[0].Value) == 1)
+                {
+                    found_over++;
+                }
+            for (int i = 0; i< rows_days; i++)
+                if (Convert.ToInt32(dataGridView_week_daystasks.Rows[i].Cells[0].Value) == 1)
+                {
+                    found_over++;
+                }
+
+            if (found_over == 1)
+            {
+                for (int i = 0; i < rows; i++)
+                
+                    if (Convert.ToInt32(dataGridView_week_weekstasks.Rows[i].Cells[0].Value) == 1)
+                    {
+
+                        string poisk = dataGridView_week_weekstasks.Rows[i].Cells[2].Value.ToString();
+                        for (int k = 0; k < DopDop.dataGridView1.RowCount - 1; k++)
+                            if (poisk == DopDop.dataGridView1.Rows[k].Cells[3].Value.ToString())
+                            {
+
+                                edit_row = k;
+                                EditDeloForm edit = new EditDeloForm();
+                                edit.Show();
+
+                            }
+                    }
+                for(int j = 0; j < rows_days; j++)
+                    if (Convert.ToInt32(dataGridView_week_daystasks.Rows[j].Cells[0].Value) == 1)
+                    {
+
+                        string poisk = dataGridView_week_daystasks.Rows[j].Cells[2].Value.ToString();
+                        for (int k = 0; k < DopDop.dataGridView1.RowCount - 1; k++)
+                            if (poisk == DopDop.dataGridView1.Rows[k].Cells[3].Value.ToString())
+                            {
+
+                                edit_row = k;
+                                EditDeloForm edit = new EditDeloForm();
+                                edit.Show();
+
+                            }
+                    }
+                
+            }
+            else
+            {
+                MessageBox.Show("Нельзя отредактировать несколько записей за раз. Выберите одну задачу и снова нажмите \"Редактировать\"");
+            }
+
+            button_week_del_task.Enabled = false;
+            button_week_edit.Enabled = false;
+            button_week_done.Enabled = false;
+        }
+
+        private void button_week_done_Click(object sender, EventArgs e)
+        {
+            int rows = dataGridView_week_weekstasks.RowCount - 1;
+            //  int[] right_row = new int[DopDop.dataGridView1.RowCount];         
+            for (int i = 0; i < rows; i++)
+                if (Convert.ToInt32(dataGridView_week_weekstasks.Rows[i].Cells[0].Value) == 1)
+                {
+
+                    string poisk = dataGridView_week_weekstasks.Rows[i].Cells[2].Value.ToString();
+                    for (int j = 0; j < DopDop.dataGridView1.RowCount - 1; j++)
+                        if (poisk == DopDop.dataGridView1.Rows[j].Cells[3].Value.ToString())
+                        {
+
+                            // dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.LightSeaGreen;
+                            DopDop.dataGridView1.Rows[j].Cells[0].Value = "1";
+
+                        }
+                }
+            int rows_days = dataGridView_week_daystasks.RowCount - 1;
+            for (int i = 0; i < rows_days; i++)
+                if (Convert.ToInt32(dataGridView_week_daystasks.Rows[i].Cells[0].Value) == 1)
+                {
+
+                    string poisk = dataGridView_week_daystasks.Rows[i].Cells[2].Value.ToString();
+                    for (int j = 0; j < DopDop.dataGridView1.RowCount - 1; j++)
+                        if (poisk == DopDop.dataGridView1.Rows[j].Cells[3].Value.ToString())
+                        {
+
+                            // dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.LightSeaGreen;
+                            DopDop.dataGridView1.Rows[j].Cells[0].Value = "1";
+
+                        }
+                }
+
+            dataGridView_week_weekstasks.Rows.Clear();
+            dataGridView_week_weekstasks.Refresh();
+            dataGridView_week_daystasks.Rows.Clear();
+            dataGridView_week_daystasks.Refresh();
+
+
+            //сначала меняем  в тексте дату +6 дней
+            DateTime date2 = DateTime.Today.AddDays(6);
+            DateTime date1 = dateTimePicker2.Value;
+            string tod = date2.ToString();
+            String[] today_date = tod.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            textBox_week.Text = today_date[0];
+            //dataGridView_week_daystasks
+            int week = 0;
+            int days = 0;
+            for (int i = 0; i < DopDop.dataGridView1.RowCount - 1; i++)
+            {
+                DateTime date = DateTime.Parse(DopDop.dataGridView1.Rows[i].Cells[1].Value.ToString());
+                if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "2" && date >= date1 && date <= date2)
+                {
+                    dataGridView_week_weekstasks.Rows.Add();
+                    dataGridView_week_weekstasks.Rows[week].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
+                    dataGridView_week_weekstasks.Rows[week].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
+                    if ("1" == DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString())
+                    {
+                        dataGridView_week_weekstasks.Rows[week].DefaultCellStyle.BackColor = Color.LightSeaGreen;
+                    }
+                    week++;
+                }
+                if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "1" && date >= date1 && date <= date2)
+                {
+                    dataGridView_week_daystasks.Rows.Add();
+                    dataGridView_week_daystasks.Rows[days].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
+                    dataGridView_week_daystasks.Rows[days].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
+                    if ("1" == DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString())
+                    {
+                        dataGridView_week_daystasks.Rows[days].DefaultCellStyle.BackColor = Color.LightSeaGreen;
+                    }
+                    days++;
+                }
+            }
+
+
+            button_week_del_task.Enabled = false;
+            button_week_edit.Enabled = false;
+            button_week_done.Enabled = false;
         }
     }
         

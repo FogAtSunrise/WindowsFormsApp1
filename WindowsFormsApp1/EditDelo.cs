@@ -24,6 +24,7 @@ namespace WindowsFormsApp1
             if (DopDop.dataGridView1.Rows[Form2.edit_row].Cells[0].Value.ToString() == "1")
                 checkBox_done.Checked = true;
             string date;
+            
             date = DopDop.dataGridView1.Rows[Form2.edit_row].Cells[1].Value.ToString();
             dateTimePicker_edit.Value = DateTime.Parse(date);
             if (DopDop.dataGridView1.Rows[Form2.edit_row].Cells[5].Value.ToString() == "1")
