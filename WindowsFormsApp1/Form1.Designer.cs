@@ -43,6 +43,15 @@
             this.textBox_password = new System.Windows.Forms.TextBox();
             this.textBox_loginusing = new System.Windows.Forms.TextBox();
             this.panel_registr = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label_molodec = new System.Windows.Forms.Label();
             this.button_vhod_reg = new System.Windows.Forms.Button();
             this.label_name_reg = new System.Windows.Forms.Label();
@@ -55,22 +64,16 @@
             this.textBox_log_reg = new System.Windows.Forms.TextBox();
             this.button_help_reg = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel_vhod.SuspendLayout();
             this.panel_registr.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_vhod
@@ -237,6 +240,105 @@
             this.panel_registr.Size = new System.Drawing.Size(617, 494);
             this.panel_registr.TabIndex = 8;
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.ForeColor = System.Drawing.Color.Red;
+            this.label14.Location = new System.Drawing.Point(226, 279);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(320, 17);
+            this.label14.TabIndex = 20;
+            this.label14.Text = "В записи не должно быть символов \"#\", \"%\", \"$\"";
+            this.label14.Visible = false;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.ForeColor = System.Drawing.Color.Red;
+            this.label13.Location = new System.Drawing.Point(226, 205);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(320, 17);
+            this.label13.TabIndex = 19;
+            this.label13.Text = "В записи не должно быть символов \"#\", \"%\", \"$\"";
+            this.label13.Visible = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.Color.Red;
+            this.label12.Location = new System.Drawing.Point(226, 148);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(320, 17);
+            this.label12.TabIndex = 18;
+            this.label12.Text = "В записи не должно быть символов \"#\", \"%\", \"$\"";
+            this.label12.Visible = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.Color.Red;
+            this.label11.Location = new System.Drawing.Point(226, 279);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(335, 17);
+            this.label11.TabIndex = 17;
+            this.label11.Text = "Должно быть не менее 4 и не более 20 символов";
+            this.label11.Visible = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.Red;
+            this.label10.Location = new System.Drawing.Point(226, 205);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(335, 17);
+            this.label10.TabIndex = 16;
+            this.label10.Text = "Должно быть не менее 4 и не более 20 символов";
+            this.label10.Visible = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.Red;
+            this.label9.Location = new System.Drawing.Point(226, 148);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(335, 17);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Должно быть не менее 4 и не более 20 символов";
+            this.label9.Visible = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(226, 279);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(91, 17);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Пустое поле";
+            this.label8.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(226, 206);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(91, 17);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Пустое поле";
+            this.label7.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(226, 148);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(91, 17);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Пустое поле";
+            this.label6.Visible = false;
+            // 
             // label_molodec
             // 
             this.label_molodec.AutoSize = true;
@@ -343,6 +445,7 @@
             // 
             // button_help_reg
             // 
+            this.button_help_reg.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button_help_reg.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button_help_reg.Location = new System.Drawing.Point(1083, 11);
             this.button_help_reg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -355,35 +458,15 @@
             // 
             // panel1
             // 
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.Controls.Add(this.pictureBox3);
+            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(45, 63);
+            this.panel1.Location = new System.Drawing.Point(2, 1);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1093, 517);
+            this.panel1.Size = new System.Drawing.Size(1181, 658);
             this.panel1.TabIndex = 9;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.ErrorImage = null;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(267, 62);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(564, 433);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(411, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(292, 32);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Добро пожаловать!";
             // 
             // timer1
             // 
@@ -391,116 +474,54 @@
             this.timer1.Interval = 3000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // label6
+            // pictureBox1
             // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(226, 148);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 17);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Пустое поле";
-            this.label6.Visible = false;
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(148, 105);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(658, 141);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
-            // label7
+            // pictureBox2
             // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(226, 206);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(91, 17);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Пустое поле";
-            this.label7.Visible = false;
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(788, 343);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(379, 298);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
             // 
-            // label8
+            // pictureBox3
             // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(226, 279);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(91, 17);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Пустое поле";
-            this.label8.Visible = false;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(226, 148);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(335, 17);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "Должно быть не менее 4 и не более 20 символов";
-            this.label9.Visible = false;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(226, 205);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(335, 17);
-            this.label10.TabIndex = 16;
-            this.label10.Text = "Должно быть не менее 4 и не более 20 символов";
-            this.label10.Visible = false;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(226, 279);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(335, 17);
-            this.label11.TabIndex = 17;
-            this.label11.Text = "Должно быть не менее 4 и не более 20 символов";
-            this.label11.Visible = false;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(226, 148);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(320, 17);
-            this.label12.TabIndex = 18;
-            this.label12.Text = "В записи не должно быть символов \"#\", \"%\", \"$\"";
-            this.label12.Visible = false;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Location = new System.Drawing.Point(226, 205);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(320, 17);
-            this.label13.TabIndex = 19;
-            this.label13.Text = "В записи не должно быть символов \"#\", \"%\", \"$\"";
-            this.label13.Visible = false;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(226, 279);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(320, 17);
-            this.label14.TabIndex = 20;
-            this.label14.Text = "В записи не должно быть символов \"#\", \"%\", \"$\"";
-            this.label14.Visible = false;
+            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(0, 389);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(444, 266);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
             // 
             // HelloForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1181, 654);
-            this.Controls.Add(this.button_help_reg);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_registr);
             this.Controls.Add(this.panel_vhod);
+            this.Controls.Add(this.button_help_reg);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MinimumSize = new System.Drawing.Size(1199, 701);
             this.Name = "HelloForm";
+            this.Text = "Планировщик дел";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HelloForm_FormClosed);
             this.Load += new System.EventHandler(this.HelloForm_Load);
             this.panel_vhod.ResumeLayout(false);
@@ -510,6 +531,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -536,13 +559,11 @@
         private System.Windows.Forms.Button button_help_reg;
         private System.Windows.Forms.Button button_vhod_reg;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label_molodec;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -553,6 +574,9 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
 
