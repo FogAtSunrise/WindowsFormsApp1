@@ -74,7 +74,8 @@ namespace WindowsFormsApp1
                 if(DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "2" && date >= date1 && date <= date2)
                 {
                     dataGridView_week_weekstasks.Rows.Add();
-                    dataGridView_week_weekstasks.Rows[week].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
+                    
+                    dataGridView_week_weekstasks.Rows[week].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[1].Value; //дата
                     dataGridView_week_weekstasks.Rows[week].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
                     if ("1" == DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString())
                     {
@@ -315,9 +316,9 @@ namespace WindowsFormsApp1
 
             }
 
-           // dataGridView1.Rows.Add();
+            // dataGridView1.Rows.Add();
             // готово, епта
-
+            // dataGridView1.Sort(dataGridView1.Columns["DatTim"], ListSortDirection.Ascending);
 
         }
 
@@ -687,7 +688,7 @@ namespace WindowsFormsApp1
                 if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "2" && date >= date1 && date <= date2)
                 {
                     dataGridView_week_weekstasks.Rows.Add();
-                    dataGridView_week_weekstasks.Rows[week].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
+                    dataGridView_week_weekstasks.Rows[week].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[1].Value; //время
                     dataGridView_week_weekstasks.Rows[week].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
                     if ("1" == DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString())
                     {
