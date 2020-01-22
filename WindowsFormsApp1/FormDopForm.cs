@@ -26,7 +26,7 @@ namespace WindowsFormsApp1
                 //ээ тут тип перевод на строчку все ломает в файле
                 first1.Write(dataGridView1.Rows[0].Cells[1].Value.ToString() + "#" + dataGridView1.Rows[0].Cells[2].Value.ToString() + "#" + dataGridView1.Rows[0].Cells[3].Value.ToString() + "#" + dataGridView1.Rows[0].Cells[4].Value.ToString() + "#" + dataGridView1.Rows[0].Cells[5].Value.ToString() + "#");
                 first1.Close();
-                if (cout > 0)//
+                if (cout > 1)//
                 { //
                     StreamWriter other = new StreamWriter("data.dat", true);
                     for (int i = 1; i < cout; i++)

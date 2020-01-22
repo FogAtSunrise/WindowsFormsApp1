@@ -69,7 +69,13 @@ namespace WindowsFormsApp1
                                 else DopDop.dataGridView1.Rows[row].Cells[9].Value = "0";
 
                             }
-                            else DopDop.dataGridView1.Rows[row].Cells[5].Value = "0";
+                            else
+                            {
+                                DopDop.dataGridView1.Rows[row].Cells[5].Value = "0";
+                                DopDop.dataGridView1.Rows[row].Cells[7].Value = "0";
+                                DopDop.dataGridView1.Rows[row].Cells[8].Value = "0";
+                                DopDop.dataGridView1.Rows[row].Cells[9].Value = "0";
+                            }
                             DopDop.dataGridView1.Rows[row].Cells[6].Value = "1"; // because day
                                                                                  // DopDop.dataGridView1.Rows.Add();
 

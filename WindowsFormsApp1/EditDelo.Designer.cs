@@ -57,7 +57,7 @@
             // 
             this.dateTimePicker_edit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dateTimePicker_edit.Location = new System.Drawing.Point(537, 37);
-            this.dateTimePicker_edit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker_edit.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker_edit.Name = "dateTimePicker_edit";
             this.dateTimePicker_edit.Size = new System.Drawing.Size(265, 22);
             this.dateTimePicker_edit.TabIndex = 0;
@@ -66,7 +66,7 @@
             // 
             this.textBox_article.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox_article.Location = new System.Drawing.Point(129, 96);
-            this.textBox_article.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_article.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_article.Name = "textBox_article";
             this.textBox_article.Size = new System.Drawing.Size(301, 22);
             this.textBox_article.TabIndex = 1;
@@ -75,7 +75,7 @@
             // 
             this.textBox_description.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox_description.Location = new System.Drawing.Point(129, 142);
-            this.textBox_description.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_description.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_description.Multiline = true;
             this.textBox_description.Name = "textBox_description";
             this.textBox_description.Size = new System.Drawing.Size(357, 112);
@@ -160,7 +160,7 @@
             "Ноябрь",
             "Декабрь"});
             this.comboBox_month.Location = new System.Drawing.Point(313, 36);
-            this.comboBox_month.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox_month.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_month.Name = "comboBox_month";
             this.comboBox_month.Size = new System.Drawing.Size(160, 24);
             this.comboBox_month.TabIndex = 8;
@@ -170,7 +170,7 @@
             this.checkBox_notifications.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.checkBox_notifications.AutoSize = true;
             this.checkBox_notifications.Location = new System.Drawing.Point(129, 284);
-            this.checkBox_notifications.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox_notifications.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox_notifications.Name = "checkBox_notifications";
             this.checkBox_notifications.Size = new System.Drawing.Size(115, 21);
             this.checkBox_notifications.TabIndex = 9;
@@ -182,7 +182,7 @@
             // 
             this.textBox_hours.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox_hours.Location = new System.Drawing.Point(129, 36);
-            this.textBox_hours.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_hours.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_hours.Name = "textBox_hours";
             this.textBox_hours.Size = new System.Drawing.Size(52, 22);
             this.textBox_hours.TabIndex = 10;
@@ -191,7 +191,7 @@
             // 
             this.textBox_minutes.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox_minutes.Location = new System.Drawing.Point(200, 36);
-            this.textBox_minutes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_minutes.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_minutes.Name = "textBox_minutes";
             this.textBox_minutes.Size = new System.Drawing.Size(51, 22);
             this.textBox_minutes.TabIndex = 11;
@@ -206,7 +206,7 @@
             this.panel_notifications.Controls.Add(this.checkBox_notif_repeat);
             this.panel_notifications.Controls.Add(this.checkBox_notif_before);
             this.panel_notifications.Location = new System.Drawing.Point(129, 327);
-            this.panel_notifications.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_notifications.Margin = new System.Windows.Forms.Padding(4);
             this.panel_notifications.Name = "panel_notifications";
             this.panel_notifications.Size = new System.Drawing.Size(408, 142);
             this.panel_notifications.TabIndex = 12;
@@ -215,7 +215,7 @@
             // textBox_notif_interval
             // 
             this.textBox_notif_interval.Location = new System.Drawing.Point(165, 102);
-            this.textBox_notif_interval.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_notif_interval.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_notif_interval.Name = "textBox_notif_interval";
             this.textBox_notif_interval.Size = new System.Drawing.Size(132, 22);
             this.textBox_notif_interval.TabIndex = 5;
@@ -223,7 +223,7 @@
             // textBox_notif_repeat
             // 
             this.textBox_notif_repeat.Location = new System.Drawing.Point(165, 62);
-            this.textBox_notif_repeat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_notif_repeat.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_notif_repeat.Name = "textBox_notif_repeat";
             this.textBox_notif_repeat.Size = new System.Drawing.Size(132, 22);
             this.textBox_notif_repeat.TabIndex = 4;
@@ -231,7 +231,7 @@
             // textBox_notif_before
             // 
             this.textBox_notif_before.Location = new System.Drawing.Point(165, 17);
-            this.textBox_notif_before.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_notif_before.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_notif_before.Name = "textBox_notif_before";
             this.textBox_notif_before.Size = new System.Drawing.Size(132, 22);
             this.textBox_notif_before.TabIndex = 3;
@@ -240,7 +240,7 @@
             // 
             this.checkBox_notif_interval.AutoSize = true;
             this.checkBox_notif_interval.Location = new System.Drawing.Point(16, 102);
-            this.checkBox_notif_interval.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox_notif_interval.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox_notif_interval.Name = "checkBox_notif_interval";
             this.checkBox_notif_interval.Size = new System.Drawing.Size(94, 21);
             this.checkBox_notif_interval.TabIndex = 2;
@@ -251,7 +251,7 @@
             // 
             this.checkBox_notif_repeat.AutoSize = true;
             this.checkBox_notif_repeat.Location = new System.Drawing.Point(16, 62);
-            this.checkBox_notif_repeat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox_notif_repeat.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox_notif_repeat.Name = "checkBox_notif_repeat";
             this.checkBox_notif_repeat.Size = new System.Drawing.Size(100, 21);
             this.checkBox_notif_repeat.TabIndex = 1;
@@ -262,7 +262,7 @@
             // 
             this.checkBox_notif_before.AutoSize = true;
             this.checkBox_notif_before.Location = new System.Drawing.Point(16, 17);
-            this.checkBox_notif_before.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox_notif_before.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox_notif_before.Name = "checkBox_notif_before";
             this.checkBox_notif_before.Size = new System.Drawing.Size(127, 21);
             this.checkBox_notif_before.TabIndex = 0;
@@ -273,7 +273,7 @@
             // 
             this.button_edit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button_edit.Location = new System.Drawing.Point(301, 516);
-            this.button_edit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_edit.Margin = new System.Windows.Forms.Padding(4);
             this.button_edit.Name = "button_edit";
             this.button_edit.Size = new System.Drawing.Size(100, 28);
             this.button_edit.TabIndex = 13;
@@ -286,7 +286,7 @@
             this.checkBox_done.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.checkBox_done.AutoSize = true;
             this.checkBox_done.Location = new System.Drawing.Point(568, 145);
-            this.checkBox_done.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox_done.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox_done.Name = "checkBox_done";
             this.checkBox_done.Size = new System.Drawing.Size(164, 21);
             this.checkBox_done.TabIndex = 14;
@@ -315,7 +315,7 @@
             this.Controls.Add(this.textBox_article);
             this.Controls.Add(this.dateTimePicker_edit);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EditDeloForm";
             this.Text = "Редактирование записи";
             this.Load += new System.EventHandler(this.EditDeloForm_Load);
