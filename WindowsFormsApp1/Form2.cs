@@ -289,11 +289,11 @@ namespace WindowsFormsApp1
             }
             catch (Exception E)
             { MessageBox.Show("Ошибка данных приложения в глобальной таблице"); }
-
+            //DopDop.dataGridView1.Sort(dataGridView1.Columns[1], ListSortDirection.Ascending);
             globaltable.Show();
             // сначала ищем сегодняшний день
 
-
+        //    DopDop.dataGridView1.Sort(dataGridView1.Columns[1], ListSortDirection.Ascending);
             string today = DateTime.Today.ToString();
             String[] words_date = today.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             int k = 0;
@@ -316,6 +316,8 @@ namespace WindowsFormsApp1
                 
 
             }
+
+            
 
             // dataGridView1.Rows.Add();
             // готово, епта
