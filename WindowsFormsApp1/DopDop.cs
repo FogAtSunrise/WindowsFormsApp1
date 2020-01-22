@@ -16,6 +16,7 @@ namespace WindowsFormsApp1
         public DopDop()
         {
             InitializeComponent();
+            Hide();
         }
         // на вход подается логин
         public static void writefiledela()

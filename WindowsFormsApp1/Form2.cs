@@ -290,7 +290,7 @@ namespace WindowsFormsApp1
             catch (Exception E)
             { MessageBox.Show("Ошибка данных приложения в глобальной таблице"); }
             //DopDop.dataGridView1.Sort(dataGridView1.Columns[1], ListSortDirection.Ascending);
-            globaltable.Show();
+           // globaltable.Show();
             // сначала ищем сегодняшний день
 
         //    DopDop.dataGridView1.Sort(dataGridView1.Columns[1], ListSortDirection.Ascending);

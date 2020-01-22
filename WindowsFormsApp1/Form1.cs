@@ -77,7 +77,6 @@ namespace WindowsFormsApp1
                             textBox_loginusing.Clear();
                             Form2 y = new Form2();
                             y.Show(this);
-                            
                             this.Hide();
 
                         }
@@ -206,7 +205,7 @@ namespace WindowsFormsApp1
                 textBox_password.Text = pass;
                 LogNow = login;
                 button_vhod_Click(this, EventArgs.Empty);
-                
+               // Hide();
                 /*  Form2 y = new Form2();
                   y.Show();
                   this.Hide();

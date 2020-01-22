@@ -16,6 +16,7 @@ namespace WindowsFormsApp1
         public FormDopForm()
         {
             InitializeComponent();
+            Hide();
         }
         public static void writefile()
         {
