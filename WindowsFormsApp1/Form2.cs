@@ -219,7 +219,7 @@ namespace WindowsFormsApp1
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
         {
             FormDopForm.writefile();
-            DopDop.writefiledela();
+           DopDop.writefiledela();
             Application.Exit();
         }
 
