@@ -134,7 +134,14 @@ namespace WindowsFormsApp1
                         if (checkBox_repeat.Checked == true) DopDop.dataGridView1.Rows[row].Cells[9].Value = textBox_repeat_times.Text;
                         else DopDop.dataGridView1.Rows[row].Cells[9].Value = "0";
                     }
-                    else DopDop.dataGridView1.Rows[row].Cells[5].Value = "0";
+                    else
+                    {
+                        DopDop.dataGridView1.Rows[row].Cells[5].Value = "0";
+                        DopDop.dataGridView1.Rows[row].Cells[7].Value = "0";
+                        DopDop.dataGridView1.Rows[row].Cells[8].Value = "0";
+                        DopDop.dataGridView1.Rows[row].Cells[9].Value = "0";
+                    }
+
                     DopDop.dataGridView1.Rows[row].Cells[6].Value = "2"; // because week
 
                     label_molodec.Visible = true;
@@ -195,7 +202,13 @@ namespace WindowsFormsApp1
                         if (checkBox_repeat.Checked == true) DopDop.dataGridView1.Rows[row].Cells[9].Value = textBox_repeat_times.Text;
                         else DopDop.dataGridView1.Rows[row].Cells[9].Value = "0";
                     }
-                    else DopDop.dataGridView1.Rows[row].Cells[5].Value = "0";
+                    else
+                    {
+                        DopDop.dataGridView1.Rows[row].Cells[5].Value = "0";
+                        DopDop.dataGridView1.Rows[row].Cells[7].Value = "0";
+                        DopDop.dataGridView1.Rows[row].Cells[8].Value = "0";
+                        DopDop.dataGridView1.Rows[row].Cells[9].Value = "0";
+                    }
                     DopDop.dataGridView1.Rows[row].Cells[6].Value = "3"; // because month
 
                     label_molodec.Visible = true;
