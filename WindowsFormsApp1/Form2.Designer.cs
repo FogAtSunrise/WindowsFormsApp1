@@ -28,21 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.panel_DAY = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.DatTim = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.text_op = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label_date = new System.Windows.Forms.Label();
             this.panel_menu_dlya_paneli_day = new System.Windows.Forms.Panel();
@@ -108,9 +112,8 @@
             this.button_WEEK = new System.Windows.Forms.Button();
             this.button_MONTH = new System.Windows.Forms.Button();
             this.button_back = new System.Windows.Forms.Button();
-            this.text_op = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DatTim = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.panel_DAY.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel_menu_dlya_paneli_day.SuspendLayout();
@@ -131,10 +134,10 @@
             this.panel_DAY.Controls.Add(this.dateTimePicker1);
             this.panel_DAY.Controls.Add(this.label_date);
             this.panel_DAY.Controls.Add(this.panel_menu_dlya_paneli_day);
-            this.panel_DAY.Location = new System.Drawing.Point(8, 71);
-            this.panel_DAY.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel_DAY.Location = new System.Drawing.Point(6, 58);
+            this.panel_DAY.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel_DAY.Name = "panel_DAY";
-            this.panel_DAY.Size = new System.Drawing.Size(1175, 593);
+            this.panel_DAY.Size = new System.Drawing.Size(881, 482);
             this.panel_DAY.TabIndex = 0;
             // 
             // dataGridView1
@@ -144,21 +147,21 @@
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle37.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle37.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle37.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle37.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle37;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Check,
             this.DatTim,
             this.text_op});
-            this.dataGridView1.Location = new System.Drawing.Point(0, 55);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 20, 3, 20);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 45);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 16, 2, 16);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -166,17 +169,48 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView1.Size = new System.Drawing.Size(896, 537);
+            this.dataGridView1.Size = new System.Drawing.Size(672, 436);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            // 
+            // Check
+            // 
+            this.Check.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Check.FillWeight = 2.619312F;
+            this.Check.HeaderText = "Выполнено";
+            this.Check.MinimumWidth = 6;
+            this.Check.Name = "Check";
+            this.Check.Width = 125;
+            // 
+            // DatTim
+            // 
+            this.DatTim.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle38.Format = "t";
+            dataGridViewCellStyle38.NullValue = null;
+            this.DatTim.DefaultCellStyle = dataGridViewCellStyle38;
+            this.DatTim.FillWeight = 42.88972F;
+            this.DatTim.HeaderText = "Время";
+            this.DatTim.MinimumWidth = 6;
+            this.DatTim.Name = "DatTim";
+            this.DatTim.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.DatTim.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.DatTim.Width = 120;
+            // 
+            // text_op
+            // 
+            this.text_op.FillWeight = 2.619312F;
+            this.text_op.HeaderText = "Задача";
+            this.text_op.MinimumWidth = 6;
+            this.text_op.Name = "text_op";
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(211, 11);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateTimePicker1.Location = new System.Drawing.Point(158, 9);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(271, 34);
+            this.dateTimePicker1.Size = new System.Drawing.Size(204, 28);
             this.dateTimePicker1.TabIndex = 3;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
@@ -184,9 +218,10 @@
             // 
             this.label_date.AutoSize = true;
             this.label_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_date.Location = new System.Drawing.Point(108, 10);
+            this.label_date.Location = new System.Drawing.Point(81, 8);
+            this.label_date.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_date.Name = "label_date";
-            this.label_date.Size = new System.Drawing.Size(67, 29);
+            this.label_date.Size = new System.Drawing.Size(54, 24);
             this.label_date.TabIndex = 2;
             this.label_date.Text = "Дата";
             // 
@@ -199,19 +234,18 @@
             this.panel_menu_dlya_paneli_day.Controls.Add(this.button3);
             this.panel_menu_dlya_paneli_day.Controls.Add(this.button_OFF_opoveschalku);
             this.panel_menu_dlya_paneli_day.Controls.Add(this.button_ON_opoveschalku);
-            this.panel_menu_dlya_paneli_day.Location = new System.Drawing.Point(897, 0);
-            this.panel_menu_dlya_paneli_day.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel_menu_dlya_paneli_day.Location = new System.Drawing.Point(673, 0);
+            this.panel_menu_dlya_paneli_day.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel_menu_dlya_paneli_day.Name = "panel_menu_dlya_paneli_day";
-            this.panel_menu_dlya_paneli_day.Size = new System.Drawing.Size(275, 593);
+            this.panel_menu_dlya_paneli_day.Size = new System.Drawing.Size(207, 482);
             this.panel_menu_dlya_paneli_day.TabIndex = 0;
             // 
             // button_done_task
             // 
             this.button_done_task.Enabled = false;
-            this.button_done_task.Location = new System.Drawing.Point(-1, 206);
-            this.button_done_task.Margin = new System.Windows.Forms.Padding(4);
+            this.button_done_task.Location = new System.Drawing.Point(-1, 167);
             this.button_done_task.Name = "button_done_task";
-            this.button_done_task.Size = new System.Drawing.Size(257, 38);
+            this.button_done_task.Size = new System.Drawing.Size(193, 31);
             this.button_done_task.TabIndex = 7;
             this.button_done_task.Text = "Выполнено";
             this.button_done_task.UseVisualStyleBackColor = true;
@@ -220,10 +254,9 @@
             // button_edit_task
             // 
             this.button_edit_task.Enabled = false;
-            this.button_edit_task.Location = new System.Drawing.Point(-1, 170);
-            this.button_edit_task.Margin = new System.Windows.Forms.Padding(4);
+            this.button_edit_task.Location = new System.Drawing.Point(-1, 138);
             this.button_edit_task.Name = "button_edit_task";
-            this.button_edit_task.Size = new System.Drawing.Size(257, 39);
+            this.button_edit_task.Size = new System.Drawing.Size(193, 32);
             this.button_edit_task.TabIndex = 6;
             this.button_edit_task.Text = "Редактировать";
             this.button_edit_task.UseVisualStyleBackColor = true;
@@ -232,10 +265,9 @@
             // button_del_task
             // 
             this.button_del_task.Enabled = false;
-            this.button_del_task.Location = new System.Drawing.Point(-1, 132);
-            this.button_del_task.Margin = new System.Windows.Forms.Padding(4);
+            this.button_del_task.Location = new System.Drawing.Point(-1, 107);
             this.button_del_task.Name = "button_del_task";
-            this.button_del_task.Size = new System.Drawing.Size(257, 42);
+            this.button_del_task.Size = new System.Drawing.Size(193, 34);
             this.button_del_task.TabIndex = 5;
             this.button_del_task.Text = "Удалить задачу";
             this.button_del_task.UseVisualStyleBackColor = true;
@@ -244,10 +276,9 @@
             // button3
             // 
             this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.Location = new System.Drawing.Point(-3, 80);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Location = new System.Drawing.Point(-2, 65);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(257, 44);
+            this.button3.Size = new System.Drawing.Size(193, 36);
             this.button3.TabIndex = 2;
             this.button3.Text = "Удалить все";
             this.button3.UseVisualStyleBackColor = true;
@@ -255,10 +286,9 @@
             // button_OFF_opoveschalku
             // 
             this.button_OFF_opoveschalku.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button_OFF_opoveschalku.Location = new System.Drawing.Point(-3, 38);
-            this.button_OFF_opoveschalku.Margin = new System.Windows.Forms.Padding(4);
+            this.button_OFF_opoveschalku.Location = new System.Drawing.Point(-2, 31);
             this.button_OFF_opoveschalku.Name = "button_OFF_opoveschalku";
-            this.button_OFF_opoveschalku.Size = new System.Drawing.Size(257, 47);
+            this.button_OFF_opoveschalku.Size = new System.Drawing.Size(193, 38);
             this.button_OFF_opoveschalku.TabIndex = 1;
             this.button_OFF_opoveschalku.Text = "Выключить все оповещения";
             this.button_OFF_opoveschalku.UseVisualStyleBackColor = true;
@@ -266,10 +296,9 @@
             // button_ON_opoveschalku
             // 
             this.button_ON_opoveschalku.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button_ON_opoveschalku.Location = new System.Drawing.Point(-3, -1);
-            this.button_ON_opoveschalku.Margin = new System.Windows.Forms.Padding(4);
+            this.button_ON_opoveschalku.Location = new System.Drawing.Point(-2, -1);
             this.button_ON_opoveschalku.Name = "button_ON_opoveschalku";
-            this.button_ON_opoveschalku.Size = new System.Drawing.Size(257, 44);
+            this.button_ON_opoveschalku.Size = new System.Drawing.Size(193, 36);
             this.button_ON_opoveschalku.TabIndex = 0;
             this.button_ON_opoveschalku.Text = "Включить все оповещения";
             this.button_ON_opoveschalku.UseVisualStyleBackColor = true;
@@ -284,19 +313,19 @@
             this.panel_dlya_nedeliiii.Controls.Add(this.label2);
             this.panel_dlya_nedeliiii.Controls.Add(this.dateTimePicker2);
             this.panel_dlya_nedeliiii.Controls.Add(this.label1);
-            this.panel_dlya_nedeliiii.Location = new System.Drawing.Point(8, 69);
-            this.panel_dlya_nedeliiii.Margin = new System.Windows.Forms.Padding(4);
+            this.panel_dlya_nedeliiii.Location = new System.Drawing.Point(6, 56);
             this.panel_dlya_nedeliiii.Name = "panel_dlya_nedeliiii";
-            this.panel_dlya_nedeliiii.Size = new System.Drawing.Size(1171, 594);
+            this.panel_dlya_nedeliiii.Size = new System.Drawing.Size(878, 483);
             this.panel_dlya_nedeliiii.TabIndex = 4;
             this.panel_dlya_nedeliiii.Visible = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(4, 322);
+            this.label5.Location = new System.Drawing.Point(3, 262);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 17);
+            this.label5.Size = new System.Drawing.Size(72, 13);
             this.label5.TabIndex = 10;
             this.label5.Text = "Подробней...";
             // 
@@ -306,21 +335,21 @@
             this.dataGridView_week_daystasks.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dataGridView_week_daystasks.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
             this.dataGridView_week_daystasks.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_week_daystasks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle39.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle39.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle39.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_week_daystasks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle39;
             this.dataGridView_week_daystasks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_week_daystasks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewCheckBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
-            this.dataGridView_week_daystasks.Location = new System.Drawing.Point(1, 343);
-            this.dataGridView_week_daystasks.Margin = new System.Windows.Forms.Padding(3, 20, 3, 20);
+            this.dataGridView_week_daystasks.Location = new System.Drawing.Point(1, 279);
+            this.dataGridView_week_daystasks.Margin = new System.Windows.Forms.Padding(2, 16, 2, 16);
             this.dataGridView_week_daystasks.MultiSelect = false;
             this.dataGridView_week_daystasks.Name = "dataGridView_week_daystasks";
             this.dataGridView_week_daystasks.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -328,7 +357,7 @@
             this.dataGridView_week_daystasks.RowHeadersWidth = 51;
             this.dataGridView_week_daystasks.RowTemplate.Height = 24;
             this.dataGridView_week_daystasks.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView_week_daystasks.Size = new System.Drawing.Size(891, 249);
+            this.dataGridView_week_daystasks.Size = new System.Drawing.Size(668, 202);
             this.dataGridView_week_daystasks.TabIndex = 9;
             this.dataGridView_week_daystasks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_week_daystasks_CellContentClick);
             // 
@@ -344,10 +373,10 @@
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Format = "g";
-            dataGridViewCellStyle4.NullValue = null;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle40.Format = "g";
+            dataGridViewCellStyle40.NullValue = null;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle40;
             this.dataGridViewTextBoxColumn3.FillWeight = 42.88972F;
             this.dataGridViewTextBoxColumn3.HeaderText = "Время и дата";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
@@ -369,29 +398,29 @@
             this.dataGridView_week_weekstasks.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dataGridView_week_weekstasks.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
             this.dataGridView_week_weekstasks.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_week_weekstasks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle41.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle41.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle41.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle41.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_week_weekstasks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle41;
             this.dataGridView_week_weekstasks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_week_weekstasks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewCheckBoxColumn1,
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_week_weekstasks.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridView_week_weekstasks.Location = new System.Drawing.Point(1, 52);
-            this.dataGridView_week_weekstasks.Margin = new System.Windows.Forms.Padding(3, 20, 3, 20);
+            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle43.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle43.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle43.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle43.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle43.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle43.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_week_weekstasks.DefaultCellStyle = dataGridViewCellStyle43;
+            this.dataGridView_week_weekstasks.Location = new System.Drawing.Point(1, 42);
+            this.dataGridView_week_weekstasks.Margin = new System.Windows.Forms.Padding(2, 16, 2, 16);
             this.dataGridView_week_weekstasks.MultiSelect = false;
             this.dataGridView_week_weekstasks.Name = "dataGridView_week_weekstasks";
             this.dataGridView_week_weekstasks.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -399,7 +428,7 @@
             this.dataGridView_week_weekstasks.RowHeadersWidth = 51;
             this.dataGridView_week_weekstasks.RowTemplate.Height = 24;
             this.dataGridView_week_weekstasks.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView_week_weekstasks.Size = new System.Drawing.Size(891, 258);
+            this.dataGridView_week_weekstasks.Size = new System.Drawing.Size(668, 210);
             this.dataGridView_week_weekstasks.TabIndex = 8;
             this.dataGridView_week_weekstasks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_week_weekstasks_CellContentClick);
             // 
@@ -415,10 +444,10 @@
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Format = "t";
-            dataGridViewCellStyle6.NullValue = null;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle42.Format = "t";
+            dataGridViewCellStyle42.NullValue = null;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle42;
             this.dataGridViewTextBoxColumn1.FillWeight = 42.88972F;
             this.dataGridViewTextBoxColumn1.HeaderText = "Дата";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
@@ -445,19 +474,17 @@
             this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.button2);
             this.panel3.Controls.Add(this.button4);
-            this.panel3.Location = new System.Drawing.Point(893, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Location = new System.Drawing.Point(670, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(278, 590);
+            this.panel3.Size = new System.Drawing.Size(209, 480);
             this.panel3.TabIndex = 0;
             // 
             // button_week_done
             // 
             this.button_week_done.Enabled = false;
-            this.button_week_done.Location = new System.Drawing.Point(-1, 308);
-            this.button_week_done.Margin = new System.Windows.Forms.Padding(4);
+            this.button_week_done.Location = new System.Drawing.Point(-1, 250);
             this.button_week_done.Name = "button_week_done";
-            this.button_week_done.Size = new System.Drawing.Size(279, 42);
+            this.button_week_done.Size = new System.Drawing.Size(209, 34);
             this.button_week_done.TabIndex = 9;
             this.button_week_done.Text = "Выполнено";
             this.button_week_done.UseVisualStyleBackColor = true;
@@ -466,10 +493,9 @@
             // button_week_edit
             // 
             this.button_week_edit.Enabled = false;
-            this.button_week_edit.Location = new System.Drawing.Point(-1, 268);
-            this.button_week_edit.Margin = new System.Windows.Forms.Padding(4);
+            this.button_week_edit.Location = new System.Drawing.Point(-1, 218);
             this.button_week_edit.Name = "button_week_edit";
-            this.button_week_edit.Size = new System.Drawing.Size(277, 41);
+            this.button_week_edit.Size = new System.Drawing.Size(208, 33);
             this.button_week_edit.TabIndex = 8;
             this.button_week_edit.Text = "Редактировать";
             this.button_week_edit.UseVisualStyleBackColor = true;
@@ -478,10 +504,9 @@
             // button_week_del_task
             // 
             this.button_week_del_task.Enabled = false;
-            this.button_week_del_task.Location = new System.Drawing.Point(-1, 231);
-            this.button_week_del_task.Margin = new System.Windows.Forms.Padding(4);
+            this.button_week_del_task.Location = new System.Drawing.Point(-1, 188);
             this.button_week_del_task.Name = "button_week_del_task";
-            this.button_week_del_task.Size = new System.Drawing.Size(279, 42);
+            this.button_week_del_task.Size = new System.Drawing.Size(209, 34);
             this.button_week_del_task.TabIndex = 7;
             this.button_week_del_task.Text = "Удалить задачу";
             this.button_week_del_task.UseVisualStyleBackColor = true;
@@ -490,10 +515,9 @@
             // button9
             // 
             this.button9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button9.Location = new System.Drawing.Point(-13, 121);
-            this.button9.Margin = new System.Windows.Forms.Padding(4);
+            this.button9.Location = new System.Drawing.Point(-10, 98);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(301, 44);
+            this.button9.Size = new System.Drawing.Size(226, 36);
             this.button9.TabIndex = 4;
             this.button9.Text = "Выключить все оповещения";
             this.button9.UseVisualStyleBackColor = true;
@@ -501,10 +525,9 @@
             // button8
             // 
             this.button8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button8.Location = new System.Drawing.Point(-20, 80);
-            this.button8.Margin = new System.Windows.Forms.Padding(4);
+            this.button8.Location = new System.Drawing.Point(-15, 65);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(308, 44);
+            this.button8.Size = new System.Drawing.Size(231, 36);
             this.button8.TabIndex = 3;
             this.button8.Text = "Включить все оповещения";
             this.button8.UseVisualStyleBackColor = true;
@@ -512,10 +535,9 @@
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Location = new System.Drawing.Point(-20, 158);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(-15, 128);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(308, 43);
+            this.button1.Size = new System.Drawing.Size(231, 35);
             this.button1.TabIndex = 2;
             this.button1.Text = "Удалить все";
             this.button1.UseVisualStyleBackColor = true;
@@ -523,10 +545,9 @@
             // button2
             // 
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.Location = new System.Drawing.Point(-20, 38);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Location = new System.Drawing.Point(-15, 31);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(308, 46);
+            this.button2.Size = new System.Drawing.Size(231, 37);
             this.button2.TabIndex = 1;
             this.button2.Text = "Выключить оповещения";
             this.button2.UseVisualStyleBackColor = true;
@@ -534,10 +555,9 @@
             // button4
             // 
             this.button4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button4.Location = new System.Drawing.Point(-20, -2);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
+            this.button4.Location = new System.Drawing.Point(-15, -2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(308, 41);
+            this.button4.Size = new System.Drawing.Size(231, 33);
             this.button4.TabIndex = 0;
             this.button4.Text = "Включить оповещения";
             this.button4.UseVisualStyleBackColor = true;
@@ -546,30 +566,27 @@
             // 
             this.textBox_week.Enabled = false;
             this.textBox_week.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_week.Location = new System.Drawing.Point(592, 14);
-            this.textBox_week.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox_week.Location = new System.Drawing.Point(444, 11);
             this.textBox_week.Name = "textBox_week";
-            this.textBox_week.Size = new System.Drawing.Size(244, 34);
+            this.textBox_week.Size = new System.Drawing.Size(184, 28);
             this.textBox_week.TabIndex = 5;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(529, 14);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(397, 11);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 29);
+            this.label2.Size = new System.Drawing.Size(32, 24);
             this.label2.TabIndex = 4;
             this.label2.Text = "по";
             // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(155, 9);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTimePicker2.Location = new System.Drawing.Point(116, 7);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(328, 34);
+            this.dateTimePicker2.Size = new System.Drawing.Size(247, 28);
             this.dateTimePicker2.TabIndex = 3;
             this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
@@ -577,10 +594,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(33, 12);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(25, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 29);
+            this.label1.Size = new System.Drawing.Size(97, 24);
             this.label1.TabIndex = 2;
             this.label1.Text = "Неделя с ";
             // 
@@ -594,19 +610,19 @@
             this.panel_dlya_mesyaca.Controls.Add(this.comboBox_month);
             this.panel_dlya_mesyaca.Controls.Add(this.label4);
             this.panel_dlya_mesyaca.Controls.Add(this.panel5);
-            this.panel_dlya_mesyaca.Location = new System.Drawing.Point(8, 69);
-            this.panel_dlya_mesyaca.Margin = new System.Windows.Forms.Padding(4);
+            this.panel_dlya_mesyaca.Location = new System.Drawing.Point(6, 56);
             this.panel_dlya_mesyaca.Name = "panel_dlya_mesyaca";
-            this.panel_dlya_mesyaca.Size = new System.Drawing.Size(1181, 594);
+            this.panel_dlya_mesyaca.Size = new System.Drawing.Size(886, 483);
             this.panel_dlya_mesyaca.TabIndex = 6;
             this.panel_dlya_mesyaca.Visible = false;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(1, 364);
+            this.label6.Location = new System.Drawing.Point(1, 296);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(94, 17);
+            this.label6.Size = new System.Drawing.Size(72, 13);
             this.label6.TabIndex = 10;
             this.label6.Text = "Подробнее...";
             // 
@@ -616,21 +632,21 @@
             this.dataGridView_month_days.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dataGridView_month_days.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
             this.dataGridView_month_days.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_month_days.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle44.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle44.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle44.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_month_days.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle44;
             this.dataGridView_month_days.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_month_days.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewCheckBoxColumn4,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
-            this.dataGridView_month_days.Location = new System.Drawing.Point(0, 383);
-            this.dataGridView_month_days.Margin = new System.Windows.Forms.Padding(3, 20, 3, 20);
+            this.dataGridView_month_days.Location = new System.Drawing.Point(0, 311);
+            this.dataGridView_month_days.Margin = new System.Windows.Forms.Padding(2, 16, 2, 16);
             this.dataGridView_month_days.MultiSelect = false;
             this.dataGridView_month_days.Name = "dataGridView_month_days";
             this.dataGridView_month_days.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -638,7 +654,7 @@
             this.dataGridView_month_days.RowHeadersWidth = 51;
             this.dataGridView_month_days.RowTemplate.Height = 24;
             this.dataGridView_month_days.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView_month_days.Size = new System.Drawing.Size(896, 206);
+            this.dataGridView_month_days.Size = new System.Drawing.Size(672, 167);
             this.dataGridView_month_days.TabIndex = 9;
             this.dataGridView_month_days.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_month_days_CellContentClick);
             // 
@@ -654,10 +670,10 @@
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.Format = "M";
-            dataGridViewCellStyle9.NullValue = null;
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle45.Format = "M";
+            dataGridViewCellStyle45.NullValue = null;
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle45;
             this.dataGridViewTextBoxColumn7.FillWeight = 42.88972F;
             this.dataGridViewTextBoxColumn7.HeaderText = "Дата";
             this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
@@ -679,21 +695,21 @@
             this.dataGridView_month_month.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dataGridView_month_month.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
             this.dataGridView_month_month.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_month_month.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle46.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle46.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle46.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle46.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle46.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle46.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_month_month.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle46;
             this.dataGridView_month_month.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_month_month.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewCheckBoxColumn3,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
-            this.dataGridView_month_month.Location = new System.Drawing.Point(0, 52);
-            this.dataGridView_month_month.Margin = new System.Windows.Forms.Padding(3, 20, 3, 20);
+            this.dataGridView_month_month.Location = new System.Drawing.Point(0, 42);
+            this.dataGridView_month_month.Margin = new System.Windows.Forms.Padding(2, 16, 2, 16);
             this.dataGridView_month_month.MultiSelect = false;
             this.dataGridView_month_month.Name = "dataGridView_month_month";
             this.dataGridView_month_month.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -701,7 +717,7 @@
             this.dataGridView_month_month.RowHeadersWidth = 51;
             this.dataGridView_month_month.RowTemplate.Height = 24;
             this.dataGridView_month_month.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView_month_month.Size = new System.Drawing.Size(896, 311);
+            this.dataGridView_month_month.Size = new System.Drawing.Size(672, 253);
             this.dataGridView_month_month.TabIndex = 8;
             this.dataGridView_month_month.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_month_month_CellContentClick);
             // 
@@ -717,11 +733,11 @@
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.Format = "M";
-            dataGridViewCellStyle11.NullValue = null;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle47.Format = "M";
+            dataGridViewCellStyle47.NullValue = null;
+            dataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle47;
             this.dataGridViewTextBoxColumn5.FillWeight = 42.88972F;
             this.dataGridViewTextBoxColumn5.HeaderText = "Дата";
             this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
@@ -732,8 +748,8 @@
             // 
             // dataGridViewTextBoxColumn6
             // 
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle48.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle48;
             this.dataGridViewTextBoxColumn6.FillWeight = 2.619312F;
             this.dataGridViewTextBoxColumn6.HeaderText = "Задача";
             this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
@@ -743,10 +759,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(416, 11);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(312, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 29);
+            this.label3.Size = new System.Drawing.Size(44, 24);
             this.label3.TabIndex = 5;
             this.label3.Text = "Год";
             // 
@@ -765,10 +780,9 @@
             "2026",
             "2027",
             "2028"});
-            this.comboBox_year.Location = new System.Drawing.Point(497, 9);
-            this.comboBox_year.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox_year.Location = new System.Drawing.Point(373, 7);
             this.comboBox_year.Name = "comboBox_year";
-            this.comboBox_year.Size = new System.Drawing.Size(147, 37);
+            this.comboBox_year.Size = new System.Drawing.Size(111, 30);
             this.comboBox_year.TabIndex = 4;
             this.comboBox_year.SelectedIndexChanged += new System.EventHandler(this.comboBox_year_SelectedIndexChanged);
             // 
@@ -790,10 +804,9 @@
             "Октябрь",
             "Ноябрь",
             "Декабрь"});
-            this.comboBox_month.Location = new System.Drawing.Point(208, 7);
-            this.comboBox_month.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox_month.Location = new System.Drawing.Point(156, 6);
             this.comboBox_month.Name = "comboBox_month";
-            this.comboBox_month.Size = new System.Drawing.Size(147, 37);
+            this.comboBox_month.Size = new System.Drawing.Size(111, 30);
             this.comboBox_month.TabIndex = 3;
             this.comboBox_month.SelectedIndexChanged += new System.EventHandler(this.comboBox_month_SelectedIndexChanged);
             // 
@@ -801,10 +814,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(67, 12);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(50, 10);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 29);
+            this.label4.Size = new System.Drawing.Size(68, 24);
             this.label4.TabIndex = 2;
             this.label4.Text = "Месяц";
             // 
@@ -819,19 +831,17 @@
             this.panel5.Controls.Add(this.button7);
             this.panel5.Controls.Add(this.button10);
             this.panel5.Controls.Add(this.button11);
-            this.panel5.Location = new System.Drawing.Point(896, 1);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4);
+            this.panel5.Location = new System.Drawing.Point(672, 1);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(278, 590);
+            this.panel5.Size = new System.Drawing.Size(209, 480);
             this.panel5.TabIndex = 0;
             // 
             // button_done_month
             // 
             this.button_done_month.Enabled = false;
-            this.button_done_month.Location = new System.Drawing.Point(-3, 324);
-            this.button_done_month.Margin = new System.Windows.Forms.Padding(4);
+            this.button_done_month.Location = new System.Drawing.Point(-2, 263);
             this.button_done_month.Name = "button_done_month";
-            this.button_done_month.Size = new System.Drawing.Size(283, 28);
+            this.button_done_month.Size = new System.Drawing.Size(212, 23);
             this.button_done_month.TabIndex = 7;
             this.button_done_month.Text = "Выполнено";
             this.button_done_month.UseVisualStyleBackColor = true;
@@ -840,10 +850,9 @@
             // button_edit_month
             // 
             this.button_edit_month.Enabled = false;
-            this.button_edit_month.Location = new System.Drawing.Point(-4, 288);
-            this.button_edit_month.Margin = new System.Windows.Forms.Padding(4);
+            this.button_edit_month.Location = new System.Drawing.Point(-3, 234);
             this.button_edit_month.Name = "button_edit_month";
-            this.button_edit_month.Size = new System.Drawing.Size(281, 28);
+            this.button_edit_month.Size = new System.Drawing.Size(211, 23);
             this.button_edit_month.TabIndex = 6;
             this.button_edit_month.Text = "Редактировать";
             this.button_edit_month.UseVisualStyleBackColor = true;
@@ -852,10 +861,9 @@
             // button_del_month
             // 
             this.button_del_month.Enabled = false;
-            this.button_del_month.Location = new System.Drawing.Point(-4, 252);
-            this.button_del_month.Margin = new System.Windows.Forms.Padding(4);
+            this.button_del_month.Location = new System.Drawing.Point(-3, 205);
             this.button_del_month.Name = "button_del_month";
-            this.button_del_month.Size = new System.Drawing.Size(281, 28);
+            this.button_del_month.Size = new System.Drawing.Size(211, 23);
             this.button_del_month.TabIndex = 5;
             this.button_del_month.Text = "Удалить задачу";
             this.button_del_month.UseVisualStyleBackColor = true;
@@ -864,10 +872,9 @@
             // button5
             // 
             this.button5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button5.Location = new System.Drawing.Point(0, 122);
-            this.button5.Margin = new System.Windows.Forms.Padding(4);
+            this.button5.Location = new System.Drawing.Point(0, 99);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(277, 53);
+            this.button5.Size = new System.Drawing.Size(208, 43);
             this.button5.TabIndex = 4;
             this.button5.Text = "Выключить все оповещения";
             this.button5.UseVisualStyleBackColor = true;
@@ -875,10 +882,9 @@
             // button6
             // 
             this.button6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button6.Location = new System.Drawing.Point(0, 81);
-            this.button6.Margin = new System.Windows.Forms.Padding(4);
+            this.button6.Location = new System.Drawing.Point(0, 66);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(277, 44);
+            this.button6.Size = new System.Drawing.Size(208, 36);
             this.button6.TabIndex = 3;
             this.button6.Text = "Включить все оповещения";
             this.button6.UseVisualStyleBackColor = true;
@@ -886,10 +892,9 @@
             // button7
             // 
             this.button7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button7.Location = new System.Drawing.Point(-1, 171);
-            this.button7.Margin = new System.Windows.Forms.Padding(4);
+            this.button7.Location = new System.Drawing.Point(-1, 139);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(277, 52);
+            this.button7.Size = new System.Drawing.Size(208, 42);
             this.button7.TabIndex = 2;
             this.button7.Text = "Удалить все";
             this.button7.UseVisualStyleBackColor = true;
@@ -897,10 +902,9 @@
             // button10
             // 
             this.button10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button10.Location = new System.Drawing.Point(-1, 41);
-            this.button10.Margin = new System.Windows.Forms.Padding(4);
+            this.button10.Location = new System.Drawing.Point(-1, 33);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(277, 46);
+            this.button10.Size = new System.Drawing.Size(208, 37);
             this.button10.TabIndex = 1;
             this.button10.Text = "Выключить оповещения";
             this.button10.UseVisualStyleBackColor = true;
@@ -908,20 +912,19 @@
             // button11
             // 
             this.button11.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button11.Location = new System.Drawing.Point(-3, 0);
-            this.button11.Margin = new System.Windows.Forms.Padding(4);
+            this.button11.Location = new System.Drawing.Point(-2, 0);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(277, 46);
+            this.button11.Size = new System.Drawing.Size(208, 37);
             this.button11.TabIndex = 0;
             this.button11.Text = "Включить оповещения";
             this.button11.UseVisualStyleBackColor = true;
             // 
             // button_user
             // 
-            this.button_user.Location = new System.Drawing.Point(852, 2);
-            this.button_user.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button_user.Location = new System.Drawing.Point(639, 2);
+            this.button_user.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_user.Name = "button_user";
-            this.button_user.Size = new System.Drawing.Size(120, 25);
+            this.button_user.Size = new System.Drawing.Size(90, 20);
             this.button_user.TabIndex = 1;
             this.button_user.Text = "Пользователь";
             this.button_user.UseVisualStyleBackColor = true;
@@ -937,44 +940,44 @@
             this.помощьToolStripMenuItem1});
             this.main_menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.main_menuStrip1.Name = "main_menuStrip1";
-            this.main_menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.main_menuStrip1.Size = new System.Drawing.Size(1237, 30);
+            this.main_menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.main_menuStrip1.Size = new System.Drawing.Size(928, 24);
             this.main_menuStrip1.TabIndex = 2;
             this.main_menuStrip1.Text = "menuStrip1";
             // 
             // добавитьЗадачуToolStripMenuItem
             // 
             this.добавитьЗадачуToolStripMenuItem.Name = "добавитьЗадачуToolStripMenuItem";
-            this.добавитьЗадачуToolStripMenuItem.Size = new System.Drawing.Size(140, 26);
+            this.добавитьЗадачуToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
             this.добавитьЗадачуToolStripMenuItem.Text = "Добавить задачу";
             this.добавитьЗадачуToolStripMenuItem.Click += new System.EventHandler(this.добавитьЗадачуToolStripMenuItem_Click_1);
             // 
             // создатьОтчетToolStripMenuItem1
             // 
             this.создатьОтчетToolStripMenuItem1.Name = "создатьОтчетToolStripMenuItem1";
-            this.создатьОтчетToolStripMenuItem1.Size = new System.Drawing.Size(119, 26);
+            this.создатьОтчетToolStripMenuItem1.Size = new System.Drawing.Size(95, 20);
             this.создатьОтчетToolStripMenuItem1.Text = "Создать отчет";
             this.создатьОтчетToolStripMenuItem1.Click += new System.EventHandler(this.создатьОтчетToolStripMenuItem1_Click);
             // 
             // настройкиToolStripMenuItem1
             // 
             this.настройкиToolStripMenuItem1.Name = "настройкиToolStripMenuItem1";
-            this.настройкиToolStripMenuItem1.Size = new System.Drawing.Size(98, 26);
+            this.настройкиToolStripMenuItem1.Size = new System.Drawing.Size(79, 20);
             this.настройкиToolStripMenuItem1.Text = "Настройки";
             // 
             // помощьToolStripMenuItem1
             // 
             this.помощьToolStripMenuItem1.Name = "помощьToolStripMenuItem1";
-            this.помощьToolStripMenuItem1.Size = new System.Drawing.Size(83, 26);
+            this.помощьToolStripMenuItem1.Size = new System.Drawing.Size(68, 20);
             this.помощьToolStripMenuItem1.Text = "Помощь";
             this.помощьToolStripMenuItem1.Click += new System.EventHandler(this.помощьToolStripMenuItem1_Click);
             // 
             // button_DAY
             // 
-            this.button_DAY.Location = new System.Drawing.Point(0, 31);
-            this.button_DAY.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button_DAY.Location = new System.Drawing.Point(0, 25);
+            this.button_DAY.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_DAY.Name = "button_DAY";
-            this.button_DAY.Size = new System.Drawing.Size(400, 36);
+            this.button_DAY.Size = new System.Drawing.Size(300, 29);
             this.button_DAY.TabIndex = 3;
             this.button_DAY.Text = "ДЕНЬ";
             this.button_DAY.UseVisualStyleBackColor = true;
@@ -982,10 +985,10 @@
             // 
             // button_WEEK
             // 
-            this.button_WEEK.Location = new System.Drawing.Point(385, 31);
-            this.button_WEEK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button_WEEK.Location = new System.Drawing.Point(289, 25);
+            this.button_WEEK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_WEEK.Name = "button_WEEK";
-            this.button_WEEK.Size = new System.Drawing.Size(400, 36);
+            this.button_WEEK.Size = new System.Drawing.Size(300, 29);
             this.button_WEEK.TabIndex = 4;
             this.button_WEEK.Text = "НЕДЕЛЯ";
             this.button_WEEK.UseVisualStyleBackColor = true;
@@ -993,10 +996,10 @@
             // 
             // button_MONTH
             // 
-            this.button_MONTH.Location = new System.Drawing.Point(783, 31);
-            this.button_MONTH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button_MONTH.Location = new System.Drawing.Point(587, 25);
+            this.button_MONTH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_MONTH.Name = "button_MONTH";
-            this.button_MONTH.Size = new System.Drawing.Size(400, 36);
+            this.button_MONTH.Size = new System.Drawing.Size(300, 29);
             this.button_MONTH.TabIndex = 5;
             this.button_MONTH.Text = "МЕСЯЦ";
             this.button_MONTH.UseVisualStyleBackColor = true;
@@ -1004,51 +1007,30 @@
             // 
             // button_back
             // 
-            this.button_back.Location = new System.Drawing.Point(973, 2);
-            this.button_back.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button_back.Location = new System.Drawing.Point(730, 2);
+            this.button_back.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_back.Name = "button_back";
-            this.button_back.Size = new System.Drawing.Size(201, 25);
+            this.button_back.Size = new System.Drawing.Size(151, 20);
             this.button_back.TabIndex = 6;
             this.button_back.Text = "Выйти из учетной записи";
             this.button_back.UseVisualStyleBackColor = true;
             this.button_back.Click += new System.EventHandler(this.button_back_Click);
             // 
-            // text_op
+            // timer1
             // 
-            this.text_op.FillWeight = 2.619312F;
-            this.text_op.HeaderText = "Задача";
-            this.text_op.MinimumWidth = 6;
-            this.text_op.Name = "text_op";
+            this.timer1.Interval = 60000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // DatTim
+            // notifyIcon1
             // 
-            this.DatTim.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Format = "t";
-            dataGridViewCellStyle2.NullValue = null;
-            this.DatTim.DefaultCellStyle = dataGridViewCellStyle2;
-            this.DatTim.FillWeight = 42.88972F;
-            this.DatTim.HeaderText = "Время";
-            this.DatTim.MinimumWidth = 6;
-            this.DatTim.Name = "DatTim";
-            this.DatTim.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.DatTim.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.DatTim.Width = 120;
-            // 
-            // Check
-            // 
-            this.Check.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Check.FillWeight = 2.619312F;
-            this.Check.HeaderText = "Выполнено";
-            this.Check.MinimumWidth = 6;
-            this.Check.Name = "Check";
-            this.Check.Width = 125;
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1237, 654);
+            this.ClientSize = new System.Drawing.Size(928, 531);
             this.Controls.Add(this.button_back);
             this.Controls.Add(this.button_MONTH);
             this.Controls.Add(this.button_WEEK);
@@ -1059,7 +1041,6 @@
             this.Controls.Add(this.main_menuStrip1);
             this.Controls.Add(this.panel_DAY);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form2";
             this.Text = "Планировщик дел";
             this.Activated += new System.EventHandler(this.Form2_Activated);
@@ -1158,5 +1139,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn Check;
         private System.Windows.Forms.DataGridViewTextBoxColumn DatTim;
         private System.Windows.Forms.DataGridViewTextBoxColumn text_op;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }

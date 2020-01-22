@@ -17,7 +17,8 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
-
+        //int[] mas_for_time = new int[1000];
+        private NotifyIcon NI = new NotifyIcon();
         private void создатьОтчетToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             CreateDoc y = new CreateDoc();
@@ -258,7 +259,7 @@ namespace WindowsFormsApp1
 
             //Заполнение таблицы дня
             // DopDop.Show();
-
+            timer1.Start();
             DopDop globaltable = new DopDop();
             
             // зашел пользователь и для начала заполняем глобальную таблицу, а затем только таблицу дня
@@ -319,7 +320,8 @@ namespace WindowsFormsApp1
             // dataGridView1.Rows.Add();
             // готово, епта
             // dataGridView1.Sort(dataGridView1.Columns["DatTim"], ListSortDirection.Ascending);
-
+            /// етот самый дата пикер
+           
         }
 
         private void Form2_Activated(object sender, EventArgs e)
@@ -1687,6 +1689,42 @@ namespace WindowsFormsApp1
                         dataGridView_month_days.Rows[days].DefaultCellStyle.BackColor = Color.LightSeaGreen;
                     }
                     days++;
+                }
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            ///просматриваем таблицу
+            ///ищем день сегодняшний, если да, то сравниваем время
+            ///если все совпало с нынешним временм, то выводим уведомление и все классно
+            ///
+            DateTime date_now = DateTime.Now.Date;
+            int time_hours_now = DateTime.Now.Hour;
+            int time_minutes_now = DateTime.Now.Minute;
+            
+            int rows = DopDop.dataGridView1.RowCount - 1;
+            for(int i = 0; i < rows; i++)
+            {
+                if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "1" && DopDop.dataGridView1.Rows[i].Cells[5].Value.ToString() == "1")
+                {
+                    DateTime date_tabl = DateTime.Parse(DopDop.dataGridView1.Rows[i].Cells[1].Value.ToString());
+                    if (date_tabl == date_now)
+                    {
+                        String[] time_tabl = DopDop.dataGridView1.Rows[i].Cells[2].Value.ToString().Split(new char[] { ':' }, StringSplitOptions.RemoveEmptyEntries);
+                        int time_hours_tabl = Convert.ToInt32(time_tabl[0]);
+                        int time_minutes_tabl = Convert.ToInt32(time_tabl[1]);
+                        if(time_hours_now == time_hours_tabl && time_minutes_now == time_minutes_tabl)
+                        {
+                            NI.BalloonTipText = DopDop.dataGridView1.Rows[i].Cells[4].Value.ToString();
+                            NI.BalloonTipTitle = DopDop.dataGridView1.Rows[i].Cells[3].Value.ToString();
+                            NI.BalloonTipIcon = ToolTipIcon.Info;
+                            NI.Icon = this.Icon;
+                            NI.Visible = true;
+                            NI.ShowBalloonTip(1000);
+                         //   timer1.Stop(); // в обяз, потому что в моем алгоритме эта сука спамится как ненормальная
+                        }
+                    }
                 }
             }
         }
