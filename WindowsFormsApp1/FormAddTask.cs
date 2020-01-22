@@ -19,9 +19,7 @@ namespace WindowsFormsApp1
 
         private void checkBox_notifications_CheckedChanged(object sender, EventArgs e)
         {
-            if (!panel_notifications_on.Visible)
-                panel_notifications_on.Visible = true;
-            else panel_notifications_on.Visible = false;
+            
         }
 
         private void button_add_Click(object sender, EventArgs e)
@@ -59,22 +57,13 @@ namespace WindowsFormsApp1
                             if (checkBox_notifications.Checked == true)
                             {
                                 DopDop.dataGridView1.Rows[row].Cells[5].Value = "1";
-                                if (checkBox_notification_minute.Checked == true) DopDop.dataGridView1.Rows[row].Cells[7].Value = textBox_minutes.Text;
-                                else DopDop.dataGridView1.Rows[row].Cells[7].Value = "0";
-
-                                if (checkBox_interval.Checked == true) DopDop.dataGridView1.Rows[row].Cells[8].Value = textBox_interval_minutes.Text;
-                                else DopDop.dataGridView1.Rows[row].Cells[8].Value = "0";
-
-                                if (checkBox_repeat.Checked == true) DopDop.dataGridView1.Rows[row].Cells[9].Value = textBox_repeat_times.Text;
-                                else DopDop.dataGridView1.Rows[row].Cells[9].Value = "0";
-
+                                
+ 
                             }
                             else
                             {
                                 DopDop.dataGridView1.Rows[row].Cells[5].Value = "0";
-                                DopDop.dataGridView1.Rows[row].Cells[7].Value = "0";
-                                DopDop.dataGridView1.Rows[row].Cells[8].Value = "0";
-                                DopDop.dataGridView1.Rows[row].Cells[9].Value = "0";
+                                
                             }
                             DopDop.dataGridView1.Rows[row].Cells[6].Value = "1"; // because day
                                                                                  // DopDop.dataGridView1.Rows.Add();
@@ -84,19 +73,15 @@ namespace WindowsFormsApp1
                             if (checkBox_notifications.Checked)
                             {
                                 checkBox_notifications.Checked = false;
-                                panel_notifications_on.Visible = false;
-                                checkBox_repeat.Checked = false;
-                                checkBox_notification_minute.Checked = false;
-                                checkBox_interval.Checked = false;
+                                
                             }
                             comboBox1.Text = "";
                             textBox_article.Text = "";
                             textBox_description.Text = "";
                             textBox_hour.Text = "";
-                            textBox_interval_minutes.Text = "";
+                            
                             textBox_minutes.Text = "";
-                            textBox_notification_minute.Text = "";
-                            textBox_repeat_times.Text = "";
+                            
                             label_error_time.Hide();
                         }
 
@@ -125,21 +110,12 @@ namespace WindowsFormsApp1
                     if (checkBox_notifications.Checked == true)
                     {
                         DopDop.dataGridView1.Rows[row].Cells[5].Value = "1";
-                        if (checkBox_notification_minute.Checked == true) DopDop.dataGridView1.Rows[row].Cells[7].Value = textBox_minutes.Text;
-                        else DopDop.dataGridView1.Rows[row].Cells[7].Value = "0";
-
-                        if (checkBox_interval.Checked == true) DopDop.dataGridView1.Rows[row].Cells[8].Value = textBox_interval_minutes.Text;
-                        else DopDop.dataGridView1.Rows[row].Cells[8].Value = "0";
-
-                        if (checkBox_repeat.Checked == true) DopDop.dataGridView1.Rows[row].Cells[9].Value = textBox_repeat_times.Text;
-                        else DopDop.dataGridView1.Rows[row].Cells[9].Value = "0";
+                        
                     }
                     else
                     {
                         DopDop.dataGridView1.Rows[row].Cells[5].Value = "0";
-                        DopDop.dataGridView1.Rows[row].Cells[7].Value = "0";
-                        DopDop.dataGridView1.Rows[row].Cells[8].Value = "0";
-                        DopDop.dataGridView1.Rows[row].Cells[9].Value = "0";
+                        
                     }
 
                     DopDop.dataGridView1.Rows[row].Cells[6].Value = "2"; // because week
@@ -148,20 +124,16 @@ namespace WindowsFormsApp1
                     if (checkBox_notifications.Checked)
                     {
                         checkBox_notifications.Checked = false;
-                        panel_notifications_on.Visible = false;
-                        checkBox_repeat.Checked = false;
-                        checkBox_notification_minute.Checked = false;
-                        checkBox_interval.Checked = false;
+                        
                     }
                     dateTimePicker1.Value = DateTime.Today;
                     comboBox1.Text = "";
                     textBox_article.Text = "";
                     textBox_description.Text = "";
                     textBox_hour.Text = "";
-                    textBox_interval_minutes.Text = "";
+                   
                     textBox_minutes.Text = "";
-                    textBox_notification_minute.Text = "";
-                    textBox_repeat_times.Text = "";
+                    
                     label_error_time.Hide();
                 }
                 else  // MONTH
@@ -193,21 +165,12 @@ namespace WindowsFormsApp1
                     if (checkBox_notifications.Checked == true)
                     {
                         DopDop.dataGridView1.Rows[row].Cells[5].Value = "1";
-                        if (checkBox_notification_minute.Checked == true) DopDop.dataGridView1.Rows[row].Cells[7].Value = textBox_minutes.Text;
-                        else DopDop.dataGridView1.Rows[row].Cells[7].Value = "0";
-
-                        if (checkBox_interval.Checked == true) DopDop.dataGridView1.Rows[row].Cells[8].Value = textBox_interval_minutes.Text;
-                        else DopDop.dataGridView1.Rows[row].Cells[8].Value = "0";
-
-                        if (checkBox_repeat.Checked == true) DopDop.dataGridView1.Rows[row].Cells[9].Value = textBox_repeat_times.Text;
-                        else DopDop.dataGridView1.Rows[row].Cells[9].Value = "0";
+                       
                     }
                     else
                     {
                         DopDop.dataGridView1.Rows[row].Cells[5].Value = "0";
-                        DopDop.dataGridView1.Rows[row].Cells[7].Value = "0";
-                        DopDop.dataGridView1.Rows[row].Cells[8].Value = "0";
-                        DopDop.dataGridView1.Rows[row].Cells[9].Value = "0";
+                        
                     }
                     DopDop.dataGridView1.Rows[row].Cells[6].Value = "3"; // because month
 
@@ -215,20 +178,16 @@ namespace WindowsFormsApp1
                     if (checkBox_notifications.Checked)
                     {
                         checkBox_notifications.Checked = false;
-                        panel_notifications_on.Visible = false;
-                        checkBox_repeat.Checked = false;
-                        checkBox_notification_minute.Checked = false;
-                        checkBox_interval.Checked = false;
+                       
                     }
                     dateTimePicker1.Value = DateTime.Today;
                     comboBox1.Text = "";
                     textBox_article.Text = "";
                     textBox_description.Text = "";
                     textBox_hour.Text = "";
-                    textBox_interval_minutes.Text = "";
+                    
                     textBox_minutes.Text = "";
-                    textBox_notification_minute.Text = "";
-                    textBox_repeat_times.Text = "";
+                    
                     label_error_time.Hide();
                 }
                // else { MessageBox.Show("ничего не выбралось"); }

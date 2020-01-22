@@ -36,11 +36,8 @@
             pas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            opovestitza = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            interval = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            repeat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(dataGridView1)).BeginInit();
-            SuspendLayout();
+            this.SuspendLayout();
             // 
             // dataGridView1
             // 
@@ -52,10 +49,7 @@
             log,
             pas,
             name,
-            date,
-            opovestitza,
-            interval,
-            repeat});
+            date});
             dataGridView1.Location = new System.Drawing.Point(1, -6);
             dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             dataGridView1.Name = "dataGridView1";
@@ -112,21 +106,6 @@
             date.Name = "date";
             date.Width = 125;
             // 
-            // opovestitza
-            // 
-            opovestitza.HeaderText = "оповестить за";
-            opovestitza.Name = "opovestitza";
-            // 
-            // interval
-            // 
-            interval.HeaderText = "интервал";
-            interval.Name = "interval";
-            // 
-            // repeat
-            // 
-            repeat.HeaderText = "повтор";
-            repeat.Name = "repeat";
-            // 
             // DopDop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -143,16 +122,13 @@
 
         #endregion
 
-        public static System.Windows.Forms.DataGridViewTextBoxColumn opovestitza;
-        public static System.Windows.Forms.DataGridViewTextBoxColumn interval;
-        public static System.Windows.Forms.DataGridViewTextBoxColumn repeat;
-        public static System.Windows.Forms.DataGridViewTextBoxColumn time;
-        public static System.Windows.Forms.DataGridView dataGridView1;
         public static System.Windows.Forms.DataGridViewTextBoxColumn id;
         public static System.Windows.Forms.DataGridViewTextBoxColumn activ;
+        public static System.Windows.Forms.DataGridViewTextBoxColumn time;
         public static System.Windows.Forms.DataGridViewTextBoxColumn log;
         public static System.Windows.Forms.DataGridViewTextBoxColumn pas;
         public static System.Windows.Forms.DataGridViewTextBoxColumn name;
         public static System.Windows.Forms.DataGridViewTextBoxColumn date;
+        public static System.Windows.Forms.DataGridView dataGridView1;
     }
 }

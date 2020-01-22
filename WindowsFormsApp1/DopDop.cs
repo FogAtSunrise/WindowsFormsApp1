@@ -26,7 +26,7 @@ namespace WindowsFormsApp1
             {//
                 StreamWriter first1 = new StreamWriter(puty, false);
                 //ээ тут тип перевод на строчку все ломает в файле
-                first1.Write(dataGridView1.Rows[0].Cells[0].Value.ToString() + "#" + dataGridView1.Rows[0].Cells[1].Value.ToString() + "#" + dataGridView1.Rows[0].Cells[2].Value.ToString() + "#" + dataGridView1.Rows[0].Cells[3].Value.ToString() + "#" + dataGridView1.Rows[0].Cells[4].Value.ToString() + "#" + dataGridView1.Rows[0].Cells[5].Value.ToString() + "#" + dataGridView1.Rows[0].Cells[6].Value.ToString() + "#" + dataGridView1.Rows[0].Cells[7].Value.ToString() + "#" + dataGridView1.Rows[0].Cells[8].Value.ToString() + "#" + dataGridView1.Rows[0].Cells[9].Value.ToString() + "#");
+                first1.Write(dataGridView1.Rows[0].Cells[0].Value.ToString() + "#" + dataGridView1.Rows[0].Cells[1].Value.ToString() + "#" + dataGridView1.Rows[0].Cells[2].Value.ToString() + "#" + dataGridView1.Rows[0].Cells[3].Value.ToString() + "#" + dataGridView1.Rows[0].Cells[4].Value.ToString() + "#" + dataGridView1.Rows[0].Cells[5].Value.ToString() + "#" + dataGridView1.Rows[0].Cells[6].Value.ToString() + "#");
                 first1.Close();
 
                 if (cout > 1)//
@@ -43,10 +43,11 @@ namespace WindowsFormsApp1
                         other.Write(dataGridView1.Rows[i].Cells[4].Value.ToString() + "#");
                         other.Write(dataGridView1.Rows[i].Cells[5].Value.ToString() + "#");
                         other.Write(dataGridView1.Rows[i].Cells[6].Value.ToString() + "#");
-                        other.Write(dataGridView1.Rows[i].Cells[7].Value.ToString() + "#");
+                      /*  other.Write(dataGridView1.Rows[i].Cells[7].Value.ToString() + "#");
                         other.Write(dataGridView1.Rows[i].Cells[8].Value.ToString() + "#");
                         other.Write(dataGridView1.Rows[i].Cells[9].Value.ToString() + "#");
-                    
+                        other.Write(dataGridView1.Rows[i].Cells[10].Value.ToString() + "#");*/
+
 
                     }
                     other.Close();
