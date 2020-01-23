@@ -30,20 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.panel_DAY = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.DatTim = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.text_op = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label_date = new System.Windows.Forms.Label();
             this.panel_menu_dlya_paneli_day = new System.Windows.Forms.Panel();
@@ -56,7 +59,13 @@
             this.panel_dlya_nedeliiii = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView_week_daystasks = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView_week_weekstasks = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button_week_done = new System.Windows.Forms.Button();
             this.button_week_edit = new System.Windows.Forms.Button();
@@ -77,6 +86,9 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView_month_month = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox_year = new System.Windows.Forms.ComboBox();
             this.comboBox_month = new System.Windows.Forms.ComboBox();
@@ -101,18 +113,6 @@
             this.button_back = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.DatTim = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.text_op = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_DAY.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel_menu_dlya_paneli_day.SuspendLayout();
@@ -172,6 +172,37 @@
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
+            // Check
+            // 
+            this.Check.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Check.FillWeight = 2.619312F;
+            this.Check.HeaderText = "Выполнено";
+            this.Check.MinimumWidth = 6;
+            this.Check.Name = "Check";
+            this.Check.Width = 125;
+            // 
+            // DatTim
+            // 
+            this.DatTim.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Format = "t";
+            dataGridViewCellStyle2.NullValue = null;
+            this.DatTim.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DatTim.FillWeight = 42.88972F;
+            this.DatTim.HeaderText = "Время";
+            this.DatTim.MinimumWidth = 6;
+            this.DatTim.Name = "DatTim";
+            this.DatTim.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.DatTim.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.DatTim.Width = 120;
+            // 
+            // text_op
+            // 
+            this.text_op.FillWeight = 2.619312F;
+            this.text_op.HeaderText = "Задача";
+            this.text_op.MinimumWidth = 6;
+            this.text_op.Name = "text_op";
+            // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -211,9 +242,9 @@
             // button_done_task
             // 
             this.button_done_task.Enabled = false;
-            this.button_done_task.Location = new System.Drawing.Point(-1, 167);
+            this.button_done_task.Location = new System.Drawing.Point(-1, 176);
             this.button_done_task.Name = "button_done_task";
-            this.button_done_task.Size = new System.Drawing.Size(193, 31);
+            this.button_done_task.Size = new System.Drawing.Size(200, 32);
             this.button_done_task.TabIndex = 7;
             this.button_done_task.Text = "Выполнено";
             this.button_done_task.UseVisualStyleBackColor = true;
@@ -222,9 +253,9 @@
             // button_edit_task
             // 
             this.button_edit_task.Enabled = false;
-            this.button_edit_task.Location = new System.Drawing.Point(-1, 138);
+            this.button_edit_task.Location = new System.Drawing.Point(-1, 145);
             this.button_edit_task.Name = "button_edit_task";
-            this.button_edit_task.Size = new System.Drawing.Size(193, 32);
+            this.button_edit_task.Size = new System.Drawing.Size(200, 32);
             this.button_edit_task.TabIndex = 6;
             this.button_edit_task.Text = "Редактировать";
             this.button_edit_task.UseVisualStyleBackColor = true;
@@ -233,9 +264,9 @@
             // button_del_task
             // 
             this.button_del_task.Enabled = false;
-            this.button_del_task.Location = new System.Drawing.Point(-1, 107);
+            this.button_del_task.Location = new System.Drawing.Point(-1, 117);
             this.button_del_task.Name = "button_del_task";
-            this.button_del_task.Size = new System.Drawing.Size(193, 34);
+            this.button_del_task.Size = new System.Drawing.Size(200, 32);
             this.button_del_task.TabIndex = 5;
             this.button_del_task.Text = "Удалить задачу";
             this.button_del_task.UseVisualStyleBackColor = true;
@@ -244,9 +275,9 @@
             // button3
             // 
             this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.Location = new System.Drawing.Point(-2, 65);
+            this.button3.Location = new System.Drawing.Point(-1, 56);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(193, 36);
+            this.button3.Size = new System.Drawing.Size(200, 32);
             this.button3.TabIndex = 2;
             this.button3.Text = "Удалить все";
             this.button3.UseVisualStyleBackColor = true;
@@ -254,9 +285,9 @@
             // button_OFF_opoveschalku
             // 
             this.button_OFF_opoveschalku.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button_OFF_opoveschalku.Location = new System.Drawing.Point(-2, 31);
+            this.button_OFF_opoveschalku.Location = new System.Drawing.Point(-1, 27);
             this.button_OFF_opoveschalku.Name = "button_OFF_opoveschalku";
-            this.button_OFF_opoveschalku.Size = new System.Drawing.Size(193, 38);
+            this.button_OFF_opoveschalku.Size = new System.Drawing.Size(200, 32);
             this.button_OFF_opoveschalku.TabIndex = 1;
             this.button_OFF_opoveschalku.Text = "Выключить все оповещения";
             this.button_OFF_opoveschalku.UseVisualStyleBackColor = true;
@@ -266,7 +297,7 @@
             this.button_ON_opoveschalku.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button_ON_opoveschalku.Location = new System.Drawing.Point(-2, -1);
             this.button_ON_opoveschalku.Name = "button_ON_opoveschalku";
-            this.button_ON_opoveschalku.Size = new System.Drawing.Size(193, 36);
+            this.button_ON_opoveschalku.Size = new System.Drawing.Size(200, 32);
             this.button_ON_opoveschalku.TabIndex = 0;
             this.button_ON_opoveschalku.Text = "Включить все оповещения";
             this.button_ON_opoveschalku.UseVisualStyleBackColor = true;
@@ -329,6 +360,38 @@
             this.dataGridView_week_daystasks.TabIndex = 9;
             this.dataGridView_week_daystasks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_week_daystasks_CellContentClick);
             // 
+            // dataGridViewCheckBoxColumn2
+            // 
+            this.dataGridViewCheckBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewCheckBoxColumn2.FillWeight = 2.619312F;
+            this.dataGridViewCheckBoxColumn2.HeaderText = "Выполнено";
+            this.dataGridViewCheckBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
+            this.dataGridViewCheckBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewCheckBoxColumn2.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Format = "g";
+            dataGridViewCellStyle4.NullValue = null;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewTextBoxColumn3.FillWeight = 42.88972F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Время и дата";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn3.Width = 160;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.FillWeight = 2.619312F;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Задача";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
             // dataGridView_week_weekstasks
             // 
             this.dataGridView_week_weekstasks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -369,6 +432,38 @@
             this.dataGridView_week_weekstasks.TabIndex = 8;
             this.dataGridView_week_weekstasks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_week_weekstasks_CellContentClick);
             // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewCheckBoxColumn1.FillWeight = 2.619312F;
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Выполнено";
+            this.dataGridViewCheckBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewCheckBoxColumn1.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.Format = "t";
+            dataGridViewCellStyle6.NullValue = null;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridViewTextBoxColumn1.FillWeight = 42.88972F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Дата";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.FillWeight = 2.619312F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Задача";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -388,9 +483,9 @@
             // button_week_done
             // 
             this.button_week_done.Enabled = false;
-            this.button_week_done.Location = new System.Drawing.Point(-1, 250);
+            this.button_week_done.Location = new System.Drawing.Point(-3, 227);
             this.button_week_done.Name = "button_week_done";
-            this.button_week_done.Size = new System.Drawing.Size(209, 34);
+            this.button_week_done.Size = new System.Drawing.Size(200, 32);
             this.button_week_done.TabIndex = 9;
             this.button_week_done.Text = "Выполнено";
             this.button_week_done.UseVisualStyleBackColor = true;
@@ -399,9 +494,9 @@
             // button_week_edit
             // 
             this.button_week_edit.Enabled = false;
-            this.button_week_edit.Location = new System.Drawing.Point(-1, 218);
+            this.button_week_edit.Location = new System.Drawing.Point(-3, 196);
             this.button_week_edit.Name = "button_week_edit";
-            this.button_week_edit.Size = new System.Drawing.Size(208, 33);
+            this.button_week_edit.Size = new System.Drawing.Size(200, 32);
             this.button_week_edit.TabIndex = 8;
             this.button_week_edit.Text = "Редактировать";
             this.button_week_edit.UseVisualStyleBackColor = true;
@@ -410,9 +505,9 @@
             // button_week_del_task
             // 
             this.button_week_del_task.Enabled = false;
-            this.button_week_del_task.Location = new System.Drawing.Point(-1, 188);
+            this.button_week_del_task.Location = new System.Drawing.Point(-3, 168);
             this.button_week_del_task.Name = "button_week_del_task";
-            this.button_week_del_task.Size = new System.Drawing.Size(209, 34);
+            this.button_week_del_task.Size = new System.Drawing.Size(200, 32);
             this.button_week_del_task.TabIndex = 7;
             this.button_week_del_task.Text = "Удалить задачу";
             this.button_week_del_task.UseVisualStyleBackColor = true;
@@ -421,9 +516,9 @@
             // button9
             // 
             this.button9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button9.Location = new System.Drawing.Point(-10, 98);
+            this.button9.Location = new System.Drawing.Point(-1, 90);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(226, 36);
+            this.button9.Size = new System.Drawing.Size(200, 32);
             this.button9.TabIndex = 4;
             this.button9.Text = "Выключить все оповещения";
             this.button9.UseVisualStyleBackColor = true;
@@ -431,9 +526,9 @@
             // button8
             // 
             this.button8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button8.Location = new System.Drawing.Point(-15, 65);
+            this.button8.Location = new System.Drawing.Point(-1, 60);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(231, 36);
+            this.button8.Size = new System.Drawing.Size(200, 32);
             this.button8.TabIndex = 3;
             this.button8.Text = "Включить все оповещения";
             this.button8.UseVisualStyleBackColor = true;
@@ -441,9 +536,9 @@
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Location = new System.Drawing.Point(-15, 128);
+            this.button1.Location = new System.Drawing.Point(-1, 119);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(231, 35);
+            this.button1.Size = new System.Drawing.Size(200, 32);
             this.button1.TabIndex = 2;
             this.button1.Text = "Удалить все";
             this.button1.UseVisualStyleBackColor = true;
@@ -451,9 +546,9 @@
             // button2
             // 
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.Location = new System.Drawing.Point(-15, 31);
+            this.button2.Location = new System.Drawing.Point(-1, 32);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(231, 37);
+            this.button2.Size = new System.Drawing.Size(200, 32);
             this.button2.TabIndex = 1;
             this.button2.Text = "Выключить оповещения";
             this.button2.UseVisualStyleBackColor = true;
@@ -461,9 +556,9 @@
             // button4
             // 
             this.button4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button4.Location = new System.Drawing.Point(-15, -2);
+            this.button4.Location = new System.Drawing.Point(-1, 1);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(231, 33);
+            this.button4.Size = new System.Drawing.Size(200, 32);
             this.button4.TabIndex = 0;
             this.button4.Text = "Включить оповещения";
             this.button4.UseVisualStyleBackColor = true;
@@ -516,7 +611,7 @@
             this.panel_dlya_mesyaca.Controls.Add(this.comboBox_month);
             this.panel_dlya_mesyaca.Controls.Add(this.label4);
             this.panel_dlya_mesyaca.Controls.Add(this.panel5);
-            this.panel_dlya_mesyaca.Location = new System.Drawing.Point(4, 57);
+            this.panel_dlya_mesyaca.Location = new System.Drawing.Point(1, 56);
             this.panel_dlya_mesyaca.Name = "panel_dlya_mesyaca";
             this.panel_dlya_mesyaca.Size = new System.Drawing.Size(886, 483);
             this.panel_dlya_mesyaca.TabIndex = 6;
@@ -627,6 +722,39 @@
             this.dataGridView_month_month.TabIndex = 8;
             this.dataGridView_month_month.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_month_month_CellContentClick);
             // 
+            // dataGridViewCheckBoxColumn3
+            // 
+            this.dataGridViewCheckBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewCheckBoxColumn3.FillWeight = 2.619312F;
+            this.dataGridViewCheckBoxColumn3.HeaderText = "Выполнено";
+            this.dataGridViewCheckBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
+            this.dataGridViewCheckBoxColumn3.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.Format = "M";
+            dataGridViewCellStyle11.NullValue = null;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dataGridViewTextBoxColumn5.FillWeight = 42.88972F;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Дата";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn5.Width = 70;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle12;
+            this.dataGridViewTextBoxColumn6.FillWeight = 2.619312F;
+            this.dataGridViewTextBoxColumn6.HeaderText = "Задача";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -713,7 +841,7 @@
             this.button_done_month.Enabled = false;
             this.button_done_month.Location = new System.Drawing.Point(-2, 263);
             this.button_done_month.Name = "button_done_month";
-            this.button_done_month.Size = new System.Drawing.Size(212, 23);
+            this.button_done_month.Size = new System.Drawing.Size(200, 32);
             this.button_done_month.TabIndex = 7;
             this.button_done_month.Text = "Выполнено";
             this.button_done_month.UseVisualStyleBackColor = true;
@@ -724,7 +852,7 @@
             this.button_edit_month.Enabled = false;
             this.button_edit_month.Location = new System.Drawing.Point(-3, 234);
             this.button_edit_month.Name = "button_edit_month";
-            this.button_edit_month.Size = new System.Drawing.Size(211, 23);
+            this.button_edit_month.Size = new System.Drawing.Size(200, 32);
             this.button_edit_month.TabIndex = 6;
             this.button_edit_month.Text = "Редактировать";
             this.button_edit_month.UseVisualStyleBackColor = true;
@@ -735,7 +863,7 @@
             this.button_del_month.Enabled = false;
             this.button_del_month.Location = new System.Drawing.Point(-3, 205);
             this.button_del_month.Name = "button_del_month";
-            this.button_del_month.Size = new System.Drawing.Size(211, 23);
+            this.button_del_month.Size = new System.Drawing.Size(200, 32);
             this.button_del_month.TabIndex = 5;
             this.button_del_month.Text = "Удалить задачу";
             this.button_del_month.UseVisualStyleBackColor = true;
@@ -744,9 +872,9 @@
             // button5
             // 
             this.button5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button5.Location = new System.Drawing.Point(0, 99);
+            this.button5.Location = new System.Drawing.Point(-1, 89);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(208, 43);
+            this.button5.Size = new System.Drawing.Size(200, 32);
             this.button5.TabIndex = 4;
             this.button5.Text = "Выключить все оповещения";
             this.button5.UseVisualStyleBackColor = true;
@@ -754,9 +882,9 @@
             // button6
             // 
             this.button6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button6.Location = new System.Drawing.Point(0, 66);
+            this.button6.Location = new System.Drawing.Point(-2, 59);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(208, 36);
+            this.button6.Size = new System.Drawing.Size(200, 32);
             this.button6.TabIndex = 3;
             this.button6.Text = "Включить все оповещения";
             this.button6.UseVisualStyleBackColor = true;
@@ -764,9 +892,9 @@
             // button7
             // 
             this.button7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button7.Location = new System.Drawing.Point(-1, 139);
+            this.button7.Location = new System.Drawing.Point(-1, 118);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(208, 42);
+            this.button7.Size = new System.Drawing.Size(200, 32);
             this.button7.TabIndex = 2;
             this.button7.Text = "Удалить все";
             this.button7.UseVisualStyleBackColor = true;
@@ -774,9 +902,9 @@
             // button10
             // 
             this.button10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button10.Location = new System.Drawing.Point(-1, 33);
+            this.button10.Location = new System.Drawing.Point(-2, 30);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(208, 37);
+            this.button10.Size = new System.Drawing.Size(200, 32);
             this.button10.TabIndex = 1;
             this.button10.Text = "Выключить оповещения";
             this.button10.UseVisualStyleBackColor = true;
@@ -786,7 +914,7 @@
             this.button11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button11.Location = new System.Drawing.Point(-2, 0);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(208, 37);
+            this.button11.Size = new System.Drawing.Size(200, 32);
             this.button11.TabIndex = 0;
             this.button11.Text = "Включить оповещения";
             this.button11.UseVisualStyleBackColor = true;
@@ -890,134 +1018,6 @@
             // 
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
-            // 
-            // dataGridViewCheckBoxColumn3
-            // 
-            this.dataGridViewCheckBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewCheckBoxColumn3.FillWeight = 2.619312F;
-            this.dataGridViewCheckBoxColumn3.HeaderText = "Выполнено";
-            this.dataGridViewCheckBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
-            this.dataGridViewCheckBoxColumn3.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.Format = "M";
-            dataGridViewCellStyle11.NullValue = null;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle11;
-            this.dataGridViewTextBoxColumn5.FillWeight = 42.88972F;
-            this.dataGridViewTextBoxColumn5.HeaderText = "Дата";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn5.Width = 70;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle12;
-            this.dataGridViewTextBoxColumn6.FillWeight = 2.619312F;
-            this.dataGridViewTextBoxColumn6.HeaderText = "Задача";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewCheckBoxColumn1.FillWeight = 2.619312F;
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Выполнено";
-            this.dataGridViewCheckBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewCheckBoxColumn1.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Format = "t";
-            dataGridViewCellStyle6.NullValue = null;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridViewTextBoxColumn1.FillWeight = 42.88972F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Дата";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.FillWeight = 2.619312F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Задача";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewCheckBoxColumn2
-            // 
-            this.dataGridViewCheckBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewCheckBoxColumn2.FillWeight = 2.619312F;
-            this.dataGridViewCheckBoxColumn2.HeaderText = "Выполнено";
-            this.dataGridViewCheckBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
-            this.dataGridViewCheckBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewCheckBoxColumn2.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Format = "g";
-            dataGridViewCellStyle4.NullValue = null;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridViewTextBoxColumn3.FillWeight = 42.88972F;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Время и дата";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn3.Width = 160;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.FillWeight = 2.619312F;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Задача";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // Check
-            // 
-            this.Check.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Check.FillWeight = 2.619312F;
-            this.Check.HeaderText = "Выполнено";
-            this.Check.MinimumWidth = 6;
-            this.Check.Name = "Check";
-            this.Check.Width = 125;
-            // 
-            // DatTim
-            // 
-            this.DatTim.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Format = "t";
-            dataGridViewCellStyle2.NullValue = null;
-            this.DatTim.DefaultCellStyle = dataGridViewCellStyle2;
-            this.DatTim.FillWeight = 42.88972F;
-            this.DatTim.HeaderText = "Время";
-            this.DatTim.MinimumWidth = 6;
-            this.DatTim.Name = "DatTim";
-            this.DatTim.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.DatTim.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.DatTim.Width = 120;
-            // 
-            // text_op
-            // 
-            this.text_op.FillWeight = 2.619312F;
-            this.text_op.HeaderText = "Задача";
-            this.text_op.MinimumWidth = 6;
-            this.text_op.Name = "text_op";
             // 
             // Form2
             // 

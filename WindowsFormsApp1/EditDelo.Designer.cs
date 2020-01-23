@@ -43,6 +43,7 @@
             this.textBox_minutes = new System.Windows.Forms.TextBox();
             this.button_edit = new System.Windows.Forms.Button();
             this.checkBox_done = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // dateTimePicker_edit
@@ -198,12 +199,23 @@
             this.checkBox_done.Text = "Задание выполнено";
             this.checkBox_done.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(720, 21);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Помощь";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // EditDeloForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(812, 479);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.checkBox_done);
             this.Controls.Add(this.button_edit);
             this.Controls.Add(this.textBox_minutes);
@@ -243,5 +255,6 @@
         private System.Windows.Forms.TextBox textBox_minutes;
         private System.Windows.Forms.Button button_edit;
         private System.Windows.Forms.CheckBox checkBox_done;
+        private System.Windows.Forms.Button button1;
     }
 }
