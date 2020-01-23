@@ -17,8 +17,8 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
-        //int[] mas_for_time = new int[1000];
-        private NotifyIcon NI = new NotifyIcon();
+        
+        private NotifyIcon NI = new NotifyIcon(); // для оповещений
         private void создатьОтчетToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             CreateDoc y = new CreateDoc();
@@ -54,6 +54,7 @@ namespace WindowsFormsApp1
         //
         //ПЕРЕКЛЮЧЕННИЕ МЕЖДУ ПАНЕЛЯМИ
         //
+        // Панель дня
         private void button_DAY_Click(object sender, EventArgs e)
         {
             
@@ -62,11 +63,9 @@ namespace WindowsFormsApp1
                 panel_dlya_mesyaca.Hide();
         }
 
+        // Панель недели
         private void button_WEEK_Click(object sender, EventArgs e)
         {
-            //  panel_DAY.Hide();
-           /* if (!panel_dlya_nedeliiii.Visible)
-                panel_dlya_nedeliiii.Visible = true;*/
             panel_dlya_nedeliiii.Show();
             panel_dlya_mesyaca.Hide();
 
@@ -77,9 +76,10 @@ namespace WindowsFormsApp1
             string tod = date2.ToString();
             String[] today_date = tod.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             textBox_week.Text = today_date[0];
-            //dataGridView_week_daystasks
+            
             int week = 0;
             int days = 0;
+            // пробегаем всю таблицу и одновременно заполняем обе таблицы панели
             for (int i = 0; i < DopDop.dataGridView1.RowCount - 1; i++)
             {
                 DateTime date = DateTime.Parse(DopDop.dataGridView1.Rows[i].Cells[1].Value.ToString());
@@ -98,7 +98,7 @@ namespace WindowsFormsApp1
                 if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "1" && date >= date1 && date <= date2)
                 {
                     dataGridView_week_daystasks.Rows.Add();
-                    dataGridView_week_daystasks.Rows[days].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
+                    dataGridView_week_daystasks.Rows[days].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[1].Value + " " + DopDop.dataGridView1.Rows[i].Cells[2].Value ; //время
                     dataGridView_week_daystasks.Rows[days].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
                     if ("1" == DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString())
                     {
@@ -109,12 +109,14 @@ namespace WindowsFormsApp1
             }
         }
 
+        // панель месяца
         private void button_MONTH_Click(object sender, EventArgs e)
         {
-         //  panel_DAY.Hide();
+         
            panel_dlya_nedeliiii.Hide();
             panel_dlya_mesyaca.Show();
 
+            // определяем, какой сейчас месяц
             string today = DateTime.Today.ToString();
             String[] month = today.Split(new char[] { '.' }, StringSplitOptions.RemoveEmptyEntries);
             String[] year1 = month[2].Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
@@ -180,18 +182,15 @@ namespace WindowsFormsApp1
                     comboBox_year.SelectedIndex = 6;
                     break;
             }
-            // dont foget about date in week
+            // определили, месяц и год
             int month2 = DateTime.Today.AddMonths(1).Month;
             int month1 = DateTime.Today.Month;
             int year_1 = DateTime.Today.Year;
             int year_2 = DateTime.Today.AddYears(1).Year;
 
-
-
-          
-            //dataGridView_week_daystasks
             int year_cyc = 0;
             int days = 0;
+            // пробегаем всю таблицу и одновременно заполняем обе таблицы панели
             for (int i = 0; i < DopDop.dataGridView1.RowCount - 1; i++)
             {
                 DateTime date = DateTime.Parse(DopDop.dataGridView1.Rows[i].Cells[1].Value.ToString());
@@ -201,7 +200,7 @@ namespace WindowsFormsApp1
                     year_tabl >= year_1 && year_tabl <= year_2)
                 {
                     dataGridView_month_month.Rows.Add();
-                    dataGridView_month_month.Rows[year_cyc].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
+                    dataGridView_month_month.Rows[year_cyc].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[1].Value; //время
                     dataGridView_month_month.Rows[year_cyc].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
                     if ("1" == DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString())
                     {
@@ -213,7 +212,7 @@ namespace WindowsFormsApp1
                     year_tabl >= year_1 && year_tabl <= year_2)
                 {
                     dataGridView_month_days.Rows.Add();
-                    dataGridView_month_days.Rows[days].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
+                    dataGridView_month_days.Rows[days].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[1].Value + " " + DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
                     dataGridView_month_days.Rows[days].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
                     if ("1" == DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString())
                     {
@@ -231,6 +230,7 @@ namespace WindowsFormsApp1
         //
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
         {
+            // записали все изменения в файл
             FormDopForm.writefile();
            DopDop.writefiledela();
             Application.Exit();
@@ -246,6 +246,7 @@ namespace WindowsFormsApp1
             y.Show();
         }
 
+        // выход из учетной записи
         private void button_back_Click(object sender, EventArgs e)
         {
             HelloForm frm = (HelloForm)this.Owner;
@@ -256,8 +257,6 @@ namespace WindowsFormsApp1
             }
             frm.Show();
             this.Hide();
-            
-            
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -269,14 +268,14 @@ namespace WindowsFormsApp1
         {
 
             //Заполнение таблицы дня
-            // DopDop.Show();
-            timer1.Start();
+            
+            timer1.Start(); // запускаем таймер, который каждую минуту проверяет оповещения
             DopDop globaltable = new DopDop();
             
             // зашел пользователь и для начала заполняем глобальную таблицу, а затем только таблицу дня
             string str;
             int rows = -1;
-            string puty = HelloForm.LogNow + ".dat";
+            string puty = HelloForm.LogNow + ".dat"; // путь файла из которого считываются данные
             try
             {
                 StreamReader fptr = new StreamReader(puty);
@@ -286,7 +285,6 @@ namespace WindowsFormsApp1
                 {
                     str = fptr.ReadLine();
                     DopDop.dataGridView1.Rows.Add();
-                   // FormDopForm.dataGridView1.Rows[i].Cells[0].Value = (i + 1);//пронумеровать (id)
                     String[] words = str.Split(new char[] { '#' }, StringSplitOptions.RemoveEmptyEntries);
                     for (int j = 0; j < 7; j++)
                     {
@@ -300,11 +298,10 @@ namespace WindowsFormsApp1
             }
             catch (Exception E)
             { MessageBox.Show("Ошибка данных приложения в глобальной таблице"); }
-            //DopDop.dataGridView1.Sort(dataGridView1.Columns[1], ListSortDirection.Ascending);
-           // globaltable.Show();
+            
             // сначала ищем сегодняшний день
 
-        //    DopDop.dataGridView1.Sort(dataGridView1.Columns[1], ListSortDirection.Ascending);
+        
             string today = DateTime.Today.ToString();
             String[] words_date = today.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             int k = 0;
@@ -318,23 +315,12 @@ namespace WindowsFormsApp1
                     dataGridView1.Rows.Add();
                     dataGridView1.Rows[k].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
                     dataGridView1.Rows[k].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
-                    
-                    //dataGridView1.Rows.Add();
                     k++;
-                    //dataGridView1.Rows.Add();
                     
                 }
                 
-
             }
 
-            
-
-            // dataGridView1.Rows.Add();
-            // готово, епта
-            // dataGridView1.Sort(dataGridView1.Columns["DatTim"], ListSortDirection.Ascending);
-            /// етот самый дата пикер
-           
         }
 
         private void Form2_Activated(object sender, EventArgs e)
@@ -363,17 +349,15 @@ namespace WindowsFormsApp1
                         dataGridView1.Rows[k].DefaultCellStyle.BackColor = Color.LightSeaGreen;
 
                     }
-
-                    //dataGridView1.Rows.Add();
                     k++;
-                    //dataGridView1.Rows.Add();
-
+                    
                 }
 
 
             }
         }
 
+        // изменили день в панели дня
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             int rows = DopDop.dataGridView1.RowCount - 1;
@@ -400,138 +384,32 @@ namespace WindowsFormsApp1
                         dataGridView1.Rows[k].DefaultCellStyle.BackColor = Color.LightSeaGreen;
                         
                     }
-
-                    //dataGridView1.Rows.Add();
                     k++;
-                    //dataGridView1.Rows.Add();
-
+                    
                 }
 
 
             }
         }
 
-
-
-       
-
+        // выделили что-то в таблице дня панели дня
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             button_del_task.Enabled = true;
             button_edit_task.Enabled = true;
             button_done_task.Enabled = true;
 
-            //в столбец
-
-
-            
-            //   int rows = dataGridView1.RowCount - 1;
-            //   int[] right_row = new int[DopDop.dataGridView1.RowCount];
-            //int[] del_row = new int[DopDop.dataGridView1.RowCount];
-
-            /*  for(int i = 0, j = 0; i < rows; i++)
-              {
-                  if (dataGridView1.Rows[i].Cells[0].Selected) // for check box
-                  {
-                      right_row[j++] = i;
-                  }
-
-              }
-              string poisk = "";
-              if (right_row >= 0)
-              {
-                  poisk = dataGridView1.Rows[right_row].Cells[2].Value.ToString();
-                  rows = DopDop.dataGridView1.RowCount - 1;
-
-                  for (int i = 0; i < rows; i++)
-                  {
-                      if (poisk == DopDop.dataGridView1.Rows[i].Cells[3].Value.ToString())
-                          if (DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString() == "0")
-                              DopDop.dataGridView1.Rows[i].Cells[0].Value = "1";
-                          else DopDop.dataGridView1.Rows[i].Cells[0].Value = "0";
-                  }
-
-
-              }
-              if (del_row >= 0) // delete str
-              {
-                  poisk = dataGridView1.Rows[del_row].Cells[2].Value.ToString();
-                  rows = DopDop.dataGridView1.RowCount - 1;
-
-                  for (int i = 0; i < rows; i++)
-                  {
-                      if (poisk == DopDop.dataGridView1.Rows[i].Cells[3].Value.ToString())
-                          if (rows == 1) // удаление для одной строчки
-                          {
-                              DopDop.dataGridView1.Rows.Clear();
-                              DopDop.dataGridView1.Refresh();
-                          }
-                          else
-                          {
-                              for (int j = del_row; i < rows - 1; i++)
-                                  for (int k = 0; k < 7; k++)
-                                      DopDop.dataGridView1.Rows[i].Cells[j].Value = DopDop.dataGridView1.Rows[i+1].Cells[j].Value;
-                          }
-                  }
-
-
-              }
-
-
-              rows = DopDop.dataGridView1.RowCount - 1;
-              string date_calendar = dateTimePicker1.Value.ToString();
-              String[] words_date = date_calendar.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-              int lo = 0;
-
-              // cначала очистим
-              dataGridView1.Rows.Clear();
-              dataGridView1.Refresh();
-              // Теперь составляем таблицу дня
-              for (int i = 0; i < rows; i++)
-              {
-
-                  // ищем по индексу днм: д = 1, н = 2, м = 3, если находим, то выводим данные в таблицу дня
-                  if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "1" && words_date[0] == DopDop.dataGridView1.Rows[i].Cells[1].Value.ToString())
-                  {
-                      dataGridView1.Rows.Add();
-                      dataGridView1.Rows[lo].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
-                      dataGridView1.Rows[lo].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
-                      if (DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString() == "1") // индекс активности
-                      {
-                          dataGridView1.Rows[lo].Cells[0].Value = true; // поставили галочку
-                      }
-                      //dataGridView1.Rows.Add();
-                      lo++;
-                      //dataGridView1.Rows.Add();
-
-                  }
-
-
-              }
-
-
-
-              if (edit_row >= 0) // edit str
-              {
-                  EditDeloForm edit = new EditDeloForm();
-                  edit.Show();
-              }
-
-      */
         }
 
+        //выделили и нажали удалить
         private void button_del_task_Click(object sender, EventArgs e)
         {
             int rows = dataGridView1.RowCount - 1;
-          //  int[] right_row = new int[DopDop.dataGridView1.RowCount];
-
+          
             if (rows == 1)
             {
                 DopDop.dataGridView1.Rows.Clear();
                 DopDop.dataGridView1.Refresh();
-
-                ///
-                
             }
             else
             {
@@ -570,10 +448,9 @@ namespace WindowsFormsApp1
                     {
                         dataGridView1.Rows[lo].DefaultCellStyle.BackColor = Color.LightSeaGreen;
                     }
-                    //dataGridView1.Rows.Add();
+                    
                     lo++;
-                    //dataGridView1.Rows.Add();
-
+                   
                 }
 
 
@@ -585,13 +462,13 @@ namespace WindowsFormsApp1
 
         }
 
-        static public int edit_row = -1;
+        static public int edit_row = -1; // для того, чтобы запомнить, какую строчку меняем в глобальной таблице
 
         private void button_edit_task_Click(object sender, EventArgs e)
         {
             int rows = dataGridView1.RowCount - 1;
             int found_over = 0;
-            //  int[] right_row = new int[DopDop.dataGridView1.RowCount];         
+                     
             for (int i = 0; i < rows; i++)
                 if (Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value) == 1)
                 {
@@ -628,8 +505,7 @@ namespace WindowsFormsApp1
 
         private void button_done_task_Click(object sender, EventArgs e)
         {
-            int rows = dataGridView1.RowCount - 1;
-            //  int[] right_row = new int[DopDop.dataGridView1.RowCount];         
+            int rows = dataGridView1.RowCount - 1;         
                 for (int i = 0; i < rows; i++)
                     if (Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value) == 1)
                     {
@@ -638,8 +514,6 @@ namespace WindowsFormsApp1
                         for (int j = 0; j < DopDop.dataGridView1.RowCount - 1; j++)
                             if (poisk == DopDop.dataGridView1.Rows[j].Cells[3].Value.ToString())
                             {
-
-                               // dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.LightSeaGreen;
                                 DopDop.dataGridView1.Rows[j].Cells[0].Value = "1";
                                 
                             }
@@ -665,10 +539,8 @@ namespace WindowsFormsApp1
                     {
                         dataGridView1.Rows[lo].DefaultCellStyle.BackColor = Color.LightSeaGreen;
                     }
-                    //dataGridView1.Rows.Add();
                     lo++;
-                    //dataGridView1.Rows.Add();
-
+                    
                 }
 
 
@@ -679,6 +551,7 @@ namespace WindowsFormsApp1
             button_done_task.Enabled = false;
         }
 
+        // изменили в неделе значение календаря
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
             // cначала очистим
@@ -714,7 +587,7 @@ namespace WindowsFormsApp1
                 if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "1" && date >= date1 && date <= date2)
                 {
                     dataGridView_week_daystasks.Rows.Add();
-                    dataGridView_week_daystasks.Rows[days].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
+                    dataGridView_week_daystasks.Rows[days].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[1].Value + " " + DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
                     dataGridView_week_daystasks.Rows[days].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
                     if ("1" == DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString())
                     {
@@ -742,9 +615,6 @@ namespace WindowsFormsApp1
         private void button_week_del_task_Click(object sender, EventArgs e)
         {
             int rows = dataGridView_week_weekstasks.RowCount - 1;
-            //  int[] right_row = new int[DopDop.dataGridView1.RowCount];
-
-            
                 for (int i = 0; i < rows; i++)
                     if (Convert.ToInt32(dataGridView_week_weekstasks.Rows[i].Cells[0].Value) == 1)
                     {
@@ -786,7 +656,7 @@ namespace WindowsFormsApp1
             string tod = date2.ToString();
             String[] today_date = tod.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             textBox_week.Text = today_date[0];
-            //dataGridView_week_daystasks
+           
             int week = 0;
             int days = 0;
             for (int i = 0; i < DopDop.dataGridView1.RowCount - 1; i++)
@@ -795,7 +665,7 @@ namespace WindowsFormsApp1
                 if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "2" && date >= date1 && date <= date2)
                 {
                     dataGridView_week_weekstasks.Rows.Add();
-                    dataGridView_week_weekstasks.Rows[week].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
+                    dataGridView_week_weekstasks.Rows[week].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[1].Value; //время
                     dataGridView_week_weekstasks.Rows[week].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
                     if ("1" == DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString())
                     {
@@ -806,7 +676,7 @@ namespace WindowsFormsApp1
                 if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "1" && date >= date1 && date <= date2)
                 {
                     dataGridView_week_daystasks.Rows.Add();
-                    dataGridView_week_daystasks.Rows[days].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
+                    dataGridView_week_daystasks.Rows[days].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[1].Value + " " + DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
                     dataGridView_week_daystasks.Rows[days].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
                     if ("1" == DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString())
                     {
@@ -827,7 +697,7 @@ namespace WindowsFormsApp1
             int rows = dataGridView_week_weekstasks.RowCount - 1;
             int rows_days = dataGridView_week_daystasks.RowCount - 1;
             int found_over = 0;
-            //  int[] right_row = new int[DopDop.dataGridView1.RowCount];         
+                    
             for (int i = 0; i < rows; i++)
                 if (Convert.ToInt32(dataGridView_week_weekstasks.Rows[i].Cells[0].Value) == 1)
                 {
@@ -869,9 +739,6 @@ namespace WindowsFormsApp1
                                 edit_row = k;
                                 EditDeloForm edit = new EditDeloForm();
                                 edit.Show();
-
-
-
                             }
                     }
                 
@@ -892,7 +759,7 @@ namespace WindowsFormsApp1
             string tod = date2.ToString();
             String[] today_date = tod.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             textBox_week.Text = today_date[0];
-            //dataGridView_week_daystasks
+            
             int week = 0;
             int days = 0;
             for (int i = 0; i < DopDop.dataGridView1.RowCount - 1; i++)
@@ -901,7 +768,7 @@ namespace WindowsFormsApp1
                 if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "2" && date >= date1 && date <= date2)
                 {
                     dataGridView_week_weekstasks.Rows.Add();
-                    dataGridView_week_weekstasks.Rows[week].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
+                    dataGridView_week_weekstasks.Rows[week].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[1].Value; //время
                     dataGridView_week_weekstasks.Rows[week].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
                     if ("1" == DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString())
                     {
@@ -912,7 +779,7 @@ namespace WindowsFormsApp1
                 if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "1" && date >= date1 && date <= date2)
                 {
                     dataGridView_week_daystasks.Rows.Add();
-                    dataGridView_week_daystasks.Rows[days].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
+                    dataGridView_week_daystasks.Rows[days].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[1].Value + " " + DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
                     dataGridView_week_daystasks.Rows[days].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
                     if ("1" == DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString())
                     {
@@ -929,8 +796,7 @@ namespace WindowsFormsApp1
 
         private void button_week_done_Click(object sender, EventArgs e)
         {
-            int rows = dataGridView_week_weekstasks.RowCount - 1;
-            //  int[] right_row = new int[DopDop.dataGridView1.RowCount];         
+            int rows = dataGridView_week_weekstasks.RowCount - 1;         
             for (int i = 0; i < rows; i++)
                 if (Convert.ToInt32(dataGridView_week_weekstasks.Rows[i].Cells[0].Value) == 1)
                 {
@@ -939,8 +805,6 @@ namespace WindowsFormsApp1
                     for (int j = 0; j < DopDop.dataGridView1.RowCount - 1; j++)
                         if (poisk == DopDop.dataGridView1.Rows[j].Cells[3].Value.ToString())
                         {
-
-                            // dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.LightSeaGreen;
                             DopDop.dataGridView1.Rows[j].Cells[0].Value = "1";
 
                         }
@@ -954,8 +818,6 @@ namespace WindowsFormsApp1
                     for (int j = 0; j < DopDop.dataGridView1.RowCount - 1; j++)
                         if (poisk == DopDop.dataGridView1.Rows[j].Cells[3].Value.ToString())
                         {
-
-                            // dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.LightSeaGreen;
                             DopDop.dataGridView1.Rows[j].Cells[0].Value = "1";
 
                         }
@@ -982,7 +844,7 @@ namespace WindowsFormsApp1
                 if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "2" && date >= date1 && date <= date2)
                 {
                     dataGridView_week_weekstasks.Rows.Add();
-                    dataGridView_week_weekstasks.Rows[week].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
+                    dataGridView_week_weekstasks.Rows[week].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[1].Value; //время
                     dataGridView_week_weekstasks.Rows[week].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
                     if ("1" == DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString())
                     {
@@ -993,7 +855,7 @@ namespace WindowsFormsApp1
                 if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "1" && date >= date1 && date <= date2)
                 {
                     dataGridView_week_daystasks.Rows.Add();
-                    dataGridView_week_daystasks.Rows[days].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
+                    dataGridView_week_daystasks.Rows[days].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[1].Value + " " + DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
                     dataGridView_week_daystasks.Rows[days].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
                     if ("1" == DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString())
                     {
@@ -1012,9 +874,7 @@ namespace WindowsFormsApp1
         private void button_del_month_Click(object sender, EventArgs e)
         {
             int rows = dataGridView_month_month.RowCount - 1;
-            //  int[] right_row = new int[DopDop.dataGridView1.RowCount];
-
-
+           
             for (int i = 0; i < rows; i++)
                 if (Convert.ToInt32(dataGridView_month_month.Rows[i].Cells[0].Value) == 1)
                 {
@@ -1140,10 +1000,6 @@ namespace WindowsFormsApp1
             
             year_2 = year_1 + 1;
 
-
-
-
-            //dataGridView_week_daystasks
             int year_cyc = 0;
             int days = 0;
             for (int i = 0; i < DopDop.dataGridView1.RowCount - 1; i++)
@@ -1155,7 +1011,7 @@ namespace WindowsFormsApp1
                     year_tabl >= year_1 && year_tabl <= year_2)
                 {
                     dataGridView_month_month.Rows.Add();
-                    dataGridView_month_month.Rows[year_cyc].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
+                    dataGridView_month_month.Rows[year_cyc].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[1].Value; //время
                     dataGridView_month_month.Rows[year_cyc].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
                     if ("1" == DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString())
                     {
@@ -1167,7 +1023,7 @@ namespace WindowsFormsApp1
                     year_tabl >= year_1 && year_tabl <= year_2)
                 {
                     dataGridView_month_days.Rows.Add();
-                    dataGridView_month_days.Rows[days].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
+                    dataGridView_month_days.Rows[days].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[1].Value + " " + DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
                     dataGridView_month_days.Rows[days].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
                     if ("1" == DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString())
                     {
@@ -1202,7 +1058,7 @@ namespace WindowsFormsApp1
             int rows = dataGridView_month_month.RowCount - 1;
             int rows_days = dataGridView_month_days.RowCount - 1;
             int found_over = 0;
-            //  int[] right_row = new int[DopDop.dataGridView1.RowCount];         
+                    
             for (int i = 0; i < rows; i++)
                 if (Convert.ToInt32(dataGridView_month_month.Rows[i].Cells[0].Value) == 1)
                 {
@@ -1261,7 +1117,7 @@ namespace WindowsFormsApp1
         private void button_done_month_Click(object sender, EventArgs e)
         {
             int rows = dataGridView_month_month.RowCount - 1;
-            //  int[] right_row = new int[DopDop.dataGridView1.RowCount];         
+                     
             for (int i = 0; i < rows; i++)
                 if (Convert.ToInt32(dataGridView_month_month.Rows[i].Cells[0].Value) == 1)
                 {
@@ -1270,8 +1126,6 @@ namespace WindowsFormsApp1
                     for (int j = 0; j < DopDop.dataGridView1.RowCount - 1; j++)
                         if (poisk == DopDop.dataGridView1.Rows[j].Cells[3].Value.ToString())
                         {
-
-                            // dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.LightSeaGreen;
                             DopDop.dataGridView1.Rows[j].Cells[0].Value = "1";
 
                         }
@@ -1285,8 +1139,6 @@ namespace WindowsFormsApp1
                     for (int j = 0; j < DopDop.dataGridView1.RowCount - 1; j++)
                         if (poisk == DopDop.dataGridView1.Rows[j].Cells[3].Value.ToString())
                         {
-
-                            // dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.LightSeaGreen;
                             DopDop.dataGridView1.Rows[j].Cells[0].Value = "1";
 
                         }
@@ -1389,10 +1241,6 @@ namespace WindowsFormsApp1
 
             year_2 = year_1 + 1;
 
-
-
-
-            //dataGridView_week_daystasks
             int year_cyc = 0;
             int days = 0;
             for (int i = 0; i < DopDop.dataGridView1.RowCount - 1; i++)
@@ -1404,7 +1252,7 @@ namespace WindowsFormsApp1
                     year_tabl >= year_1 && year_tabl <= year_2)
                 {
                     dataGridView_month_month.Rows.Add();
-                    dataGridView_month_month.Rows[year_cyc].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
+                    dataGridView_month_month.Rows[year_cyc].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[1].Value; //время
                     dataGridView_month_month.Rows[year_cyc].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
                     if ("1" == DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString())
                     {
@@ -1416,7 +1264,7 @@ namespace WindowsFormsApp1
                     year_tabl >= year_1 && year_tabl <= year_2)
                 {
                     dataGridView_month_days.Rows.Add();
-                    dataGridView_month_days.Rows[days].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
+                    dataGridView_month_days.Rows[days].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[1].Value + " " + DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
                     dataGridView_month_days.Rows[days].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
                     if ("1" == DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString())
                     {
@@ -1546,7 +1394,7 @@ namespace WindowsFormsApp1
                     year_tabl >= year_1 && year_tabl <= year_2)
                 {
                     dataGridView_month_month.Rows.Add();
-                    dataGridView_month_month.Rows[year_cyc].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
+                    dataGridView_month_month.Rows[year_cyc].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[1].Value; //время
                     dataGridView_month_month.Rows[year_cyc].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
                     if ("1" == DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString())
                     {
@@ -1558,7 +1406,7 @@ namespace WindowsFormsApp1
                     year_tabl >= year_1 && year_tabl <= year_2)
                 {
                     dataGridView_month_days.Rows.Add();
-                    dataGridView_month_days.Rows[days].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
+                    dataGridView_month_days.Rows[days].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[1].Value + " " + DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
                     dataGridView_month_days.Rows[days].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
                     if ("1" == DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString())
                     {
@@ -1683,7 +1531,7 @@ namespace WindowsFormsApp1
                     year_tabl >= year_1 && year_tabl <= year_2)
                 {
                     dataGridView_month_month.Rows.Add();
-                    dataGridView_month_month.Rows[year_cyc].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
+                    dataGridView_month_month.Rows[year_cyc].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[1].Value; //время
                     dataGridView_month_month.Rows[year_cyc].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
                     if ("1" == DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString())
                     {
@@ -1695,7 +1543,7 @@ namespace WindowsFormsApp1
                     year_tabl >= year_1 && year_tabl <= year_2)
                 {
                     dataGridView_month_days.Rows.Add();
-                    dataGridView_month_days.Rows[days].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
+                    dataGridView_month_days.Rows[days].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[1].Value + " " + DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
                     dataGridView_month_days.Rows[days].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
                     if ("1" == DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString())
                     {
@@ -1738,6 +1586,873 @@ namespace WindowsFormsApp1
                          //   timer1.Stop(); // в обяз, потому что в моем алгоритме эта сука спамится как ненормальная
                         }
                     }
+                }
+            }
+        }
+
+        private void button_ON_opoveschalku_Click(object sender, EventArgs e)
+        {
+            int rows = DopDop.dataGridView1.RowCount - 1;
+            string today = dateTimePicker1.Value.ToString();
+            String[] words_date = today.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            
+            // Теперь составляем таблицу дня
+            for (int i = 0; i < rows; i++)
+            {
+
+                // ищем по индексу днм: д = 1, н = 2, м = 3, если находим, то выводим данные в таблицу дня
+                if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "1" && words_date[0] == DopDop.dataGridView1.Rows[i].Cells[1].Value.ToString())
+                {
+                    DopDop.dataGridView1.Rows[i].Cells[5].Value = "1";
+                    
+                }
+
+            }
+        }
+
+        private void button_OFF_opoveschalku_Click(object sender, EventArgs e)
+        {
+            int rows = DopDop.dataGridView1.RowCount - 1;
+            string today = dateTimePicker1.Value.ToString();
+            String[] words_date = today.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+            // Теперь составляем таблицу дня
+            for (int i = 0; i < rows; i++)
+            {
+
+                // ищем по индексу днм: д = 1, н = 2, м = 3, если находим, то выводим данные в таблицу дня
+                if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "1" && words_date[0] == DopDop.dataGridView1.Rows[i].Cells[1].Value.ToString())
+                {
+                    DopDop.dataGridView1.Rows[i].Cells[5].Value = "0";
+
+                }
+
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int rows = DopDop.dataGridView1.RowCount;
+            string today = dateTimePicker1.Value.ToString();
+            String[] words_date = today.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            int k = 1;
+            // Тint k = 1;еперь составляем таблицу дня
+            for (int i = 0; i < rows - k; i++)
+            {
+
+                // ищем по индексу днм: д = 1, н = 2, м = 3, если находим, то выводим данные в таблицу дня
+                if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "1" && words_date[0] == DopDop.dataGridView1.Rows[i].Cells[1].Value.ToString())
+                {
+
+                            DopDop.dataGridView1.Rows.RemoveAt(DopDop.dataGridView1.Rows[i].Index);
+                            k++;
+                    i--;
+                        
+                }
+
+            }
+            dataGridView1.Rows.Clear();
+            dataGridView1.Refresh();
+
+
+                string date_calendar = dateTimePicker1.Value.ToString();
+             words_date = date_calendar.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+        int lo = 0;
+            for (int i = 0; i<DopDop.dataGridView1.RowCount - 1; i++)
+            {
+
+                // ищем по индексу днм: д = 1, н = 2, м = 3, если находим, то выводим данные в таблицу дня
+                if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "1" && words_date[0] == DopDop.dataGridView1.Rows[i].Cells[1].Value.ToString())
+                {
+                    dataGridView1.Rows.Add();
+                    dataGridView1.Rows[lo].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
+                    dataGridView1.Rows[lo].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
+                    if (DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString() == "1") // индекс активности
+                    {
+                        dataGridView1.Rows[lo].DefaultCellStyle.BackColor = Color.LightSeaGreen;
+                    }
+
+    lo++;
+                   
+                }
+
+
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int rows = DopDop.dataGridView1.RowCount - 1;
+            
+            DateTime today = dateTimePicker1.Value.Date;
+            DateTime today6 = dateTimePicker1.Value.Date.AddDays(7);
+            // Теперь составляем таблицу дня
+            for (int i = 0; i < rows; i++)
+            {
+                DateTime tabl = DateTime.Parse(DopDop.dataGridView1.Rows[i].Cells[1].Value.ToString());
+                // ищем по индексу днм: д = 1, н = 2, м = 3, если находим, то выводим данные в таблицу дня
+                if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "2" && tabl <= today6 && tabl >= today)
+                {
+                    DopDop.dataGridView1.Rows[i].Cells[5].Value = "1";
+
+                }
+
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int rows = DopDop.dataGridView1.RowCount - 1;
+
+            DateTime today = dateTimePicker1.Value.Date;
+            DateTime today6 = dateTimePicker1.Value.Date.AddDays(7);
+            // Теперь составляем таблицу дня
+            for (int i = 0; i < rows; i++)
+            {
+                DateTime tabl = DateTime.Parse(DopDop.dataGridView1.Rows[i].Cells[1].Value.ToString());
+                // ищем по индексу днм: д = 1, н = 2, м = 3, если находим, то выводим данные в таблицу дня
+                if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "2" && tabl <= today6 && tabl >= today)
+                {
+                    DopDop.dataGridView1.Rows[i].Cells[5].Value = "0";
+
+                }
+
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            int rows = DopDop.dataGridView1.RowCount - 1;
+
+            DateTime today = dateTimePicker1.Value.Date;
+            DateTime today6 = dateTimePicker1.Value.Date.AddDays(7);
+            // Теперь составляем таблицу дня
+            for (int i = 0; i < rows; i++)
+            {
+                DateTime tabl = DateTime.Parse(DopDop.dataGridView1.Rows[i].Cells[1].Value.ToString());
+                // ищем по индексу днм: д = 1, н = 2, м = 3, если находим, то выводим данные в таблицу дня
+                if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "1" || DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "2" && tabl <= today6 && tabl >= today)
+                {
+                    DopDop.dataGridView1.Rows[i].Cells[5].Value = "1";
+
+                }
+
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            int rows = DopDop.dataGridView1.RowCount - 1;
+
+            DateTime today = dateTimePicker1.Value.Date;
+            DateTime today6 = dateTimePicker1.Value.Date.AddDays(7);
+            // Теперь составляем таблицу дня
+            for (int i = 0; i < rows; i++)
+            {
+                DateTime tabl = DateTime.Parse(DopDop.dataGridView1.Rows[i].Cells[1].Value.ToString());
+                // ищем по индексу днм: д = 1, н = 2, м = 3, если находим, то выводим данные в таблицу дня
+                if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "1" || DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "2" && tabl <= today6 && tabl >= today)
+                {
+                    DopDop.dataGridView1.Rows[i].Cells[5].Value = "0";
+
+                }
+
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int rows = DopDop.dataGridView1.RowCount;
+            int k = 1;
+            DateTime today = dateTimePicker1.Value.Date;
+            DateTime today6 = dateTimePicker1.Value.Date.AddDays(7);
+            // Теперь составляем таблицу дня
+            for (int i = 0; i < rows - k; i++)
+            {
+                DateTime tabl = DateTime.Parse(DopDop.dataGridView1.Rows[i].Cells[1].Value.ToString());
+                // ищем по индексу днм: д = 1, н = 2, м = 3, если находим, то выводим данные в таблицу дня
+                if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "1" || DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "2" && tabl <= today6 && tabl >= today)
+                {
+                    DopDop.dataGridView1.Rows.RemoveAt(DopDop.dataGridView1.Rows[i].Index);
+                    k++;
+                    i--;
+                }
+
+            }
+
+            dataGridView_week_weekstasks.Rows.Clear();
+            dataGridView_week_weekstasks.Refresh();
+            dataGridView_week_daystasks.Rows.Clear();
+            dataGridView_week_daystasks.Refresh();
+
+            //сначала меняем  в тексте дату +6 дней
+            DateTime date2 = DateTime.Today.AddDays(6);
+            DateTime date1 = dateTimePicker2.Value;
+            string tod = date2.ToString();
+            String[] today_date = tod.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            textBox_week.Text = today_date[0];
+
+            int week = 0;
+            int days = 0;
+            for (int i = 0; i < DopDop.dataGridView1.RowCount - 1; i++)
+            {
+                DateTime date = DateTime.Parse(DopDop.dataGridView1.Rows[i].Cells[1].Value.ToString());
+                if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "2" && date >= date1 && date <= date2)
+                {
+                    dataGridView_week_weekstasks.Rows.Add();
+                    dataGridView_week_weekstasks.Rows[week].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[1].Value; //время
+                    dataGridView_week_weekstasks.Rows[week].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
+                    if ("1" == DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString())
+                    {
+                        dataGridView_week_weekstasks.Rows[week].DefaultCellStyle.BackColor = Color.LightSeaGreen;
+                    }
+                    week++;
+                }
+                if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "1" && date >= date1 && date <= date2)
+                {
+                    dataGridView_week_daystasks.Rows.Add();
+                    dataGridView_week_daystasks.Rows[days].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[1].Value + " " + DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
+                    dataGridView_week_daystasks.Rows[days].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
+                    if ("1" == DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString())
+                    {
+                        dataGridView_week_daystasks.Rows[days].DefaultCellStyle.BackColor = Color.LightSeaGreen;
+                    }
+                    days++;
+                }
+            }
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+
+
+            // обновляем
+
+            int month2;// = DateTime.Today.AddMonths(1).Month;
+            int month1 = 0;// = DateTime.Today.Month;
+            int year_1 = 1;// = DateTime.Today.Year;
+            int year_2;// = DateTime.Today.AddYears(1).Year;
+
+            // for first month
+
+            int choise_month = comboBox_month.SelectedIndex;
+            switch (choise_month)
+            {
+                case 0:
+                    month1 = 1;
+                    break;
+                case 1:
+                    month1 = 2;
+                    break;
+                case 2:
+                    month1 = 3;
+                    break;
+                case 3:
+                    month1 = 4;
+                    break;
+                case 4:
+                    month1 = 5;
+                    break;
+                case 5:
+                    month1 = 6;
+                    break;
+                case 6:
+                    month1 = 7;
+                    break;
+                case 7:
+                    month1 = 8;
+                    break;
+                case 8:
+                    month1 = 9;
+                    break;
+                case 9:
+                    month1 = 10;
+                    break;
+                case 10:
+                    month1 = 11;
+                    break;
+                case 11:
+                    month1 = 12;
+                    break;
+                default:
+                    MessageBox.Show("Месяц не выбран!");
+                    break;
+            }
+
+            if (month1 == 12) month2 = 1;
+            else month2 = month1 + 1;
+
+            int choise_year = comboBox_year.SelectedIndex;
+            switch (choise_year)
+            {
+                case 0:
+                    year_1 = 2020;
+                    break;
+                case 1:
+                    year_1 = 2021;
+                    break;
+                case 2:
+                    year_1 = 2022;
+                    break;
+                case 3:
+                    year_1 = 2023;
+                    break;
+                case 4:
+                    year_1 = 2024;
+                    break;
+                case 5:
+                    year_1 = 2025;
+                    break;
+                case 6:
+                    year_1 = 2026;
+                    break;
+                case 7:
+                    year_1 = 2027;
+                    break;
+
+                default:
+                    MessageBox.Show("Месяц не выбран!");
+                    break;
+            }
+
+
+            year_2 = year_1 + 1;
+
+            for (int i = 0; i < DopDop.dataGridView1.RowCount - 1; i++)
+            {
+                DateTime date = DateTime.Parse(DopDop.dataGridView1.Rows[i].Cells[1].Value.ToString());
+                int month_tabl = date.Month;
+                int year_tabl = date.Year;
+                if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "3" && month_tabl >= month1 && month_tabl <= month2 &&
+                    year_tabl >= year_1 && year_tabl <= year_2)
+                {
+                    DopDop.dataGridView1.Rows[i].Cells[5].Value = "1";
+                    
+                }
+               
+            }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            // обновляем
+
+            int month2;// = DateTime.Today.AddMonths(1).Month;
+            int month1 = 0;// = DateTime.Today.Month;
+            int year_1 = 1;// = DateTime.Today.Year;
+            int year_2;// = DateTime.Today.AddYears(1).Year;
+
+            // for first month
+
+            int choise_month = comboBox_month.SelectedIndex;
+            switch (choise_month)
+            {
+                case 0:
+                    month1 = 1;
+                    break;
+                case 1:
+                    month1 = 2;
+                    break;
+                case 2:
+                    month1 = 3;
+                    break;
+                case 3:
+                    month1 = 4;
+                    break;
+                case 4:
+                    month1 = 5;
+                    break;
+                case 5:
+                    month1 = 6;
+                    break;
+                case 6:
+                    month1 = 7;
+                    break;
+                case 7:
+                    month1 = 8;
+                    break;
+                case 8:
+                    month1 = 9;
+                    break;
+                case 9:
+                    month1 = 10;
+                    break;
+                case 10:
+                    month1 = 11;
+                    break;
+                case 11:
+                    month1 = 12;
+                    break;
+                default:
+                    MessageBox.Show("Месяц не выбран!");
+                    break;
+            }
+
+            if (month1 == 12) month2 = 1;
+            else month2 = month1 + 1;
+
+            int choise_year = comboBox_year.SelectedIndex;
+            switch (choise_year)
+            {
+                case 0:
+                    year_1 = 2020;
+                    break;
+                case 1:
+                    year_1 = 2021;
+                    break;
+                case 2:
+                    year_1 = 2022;
+                    break;
+                case 3:
+                    year_1 = 2023;
+                    break;
+                case 4:
+                    year_1 = 2024;
+                    break;
+                case 5:
+                    year_1 = 2025;
+                    break;
+                case 6:
+                    year_1 = 2026;
+                    break;
+                case 7:
+                    year_1 = 2027;
+                    break;
+
+                default:
+                    MessageBox.Show("Месяц не выбран!");
+                    break;
+            }
+
+
+            year_2 = year_1 + 1;
+
+            for (int i = 0; i < DopDop.dataGridView1.RowCount - 1; i++)
+            {
+                DateTime date = DateTime.Parse(DopDop.dataGridView1.Rows[i].Cells[1].Value.ToString());
+                int month_tabl = date.Month;
+                int year_tabl = date.Year;
+                if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "3" && month_tabl >= month1 && month_tabl <= month2 &&
+                    year_tabl >= year_1 && year_tabl <= year_2)
+                {
+                    DopDop.dataGridView1.Rows[i].Cells[5].Value = "0";
+
+                }
+
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            // для месяца
+            int month2;// = DateTime.Today.AddMonths(1).Month;
+            int month1 = 0;// = DateTime.Today.Month;
+            int year_1 = 1;// = DateTime.Today.Year;
+            int year_2;// = DateTime.Today.AddYears(1).Year;
+
+            // for first month
+
+            int choise_month = comboBox_month.SelectedIndex;
+            switch (choise_month)
+            {
+                case 0:
+                    month1 = 1;
+                    break;
+                case 1:
+                    month1 = 2;
+                    break;
+                case 2:
+                    month1 = 3;
+                    break;
+                case 3:
+                    month1 = 4;
+                    break;
+                case 4:
+                    month1 = 5;
+                    break;
+                case 5:
+                    month1 = 6;
+                    break;
+                case 6:
+                    month1 = 7;
+                    break;
+                case 7:
+                    month1 = 8;
+                    break;
+                case 8:
+                    month1 = 9;
+                    break;
+                case 9:
+                    month1 = 10;
+                    break;
+                case 10:
+                    month1 = 11;
+                    break;
+                case 11:
+                    month1 = 12;
+                    break;
+                default:
+                    MessageBox.Show("Месяц не выбран!");
+                    break;
+            }
+
+            if (month1 == 12) month2 = 1;
+            else month2 = month1 + 1;
+
+            int choise_year = comboBox_year.SelectedIndex;
+            switch (choise_year)
+            {
+                case 0:
+                    year_1 = 2020;
+                    break;
+                case 1:
+                    year_1 = 2021;
+                    break;
+                case 2:
+                    year_1 = 2022;
+                    break;
+                case 3:
+                    year_1 = 2023;
+                    break;
+                case 4:
+                    year_1 = 2024;
+                    break;
+                case 5:
+                    year_1 = 2025;
+                    break;
+                case 6:
+                    year_1 = 2026;
+                    break;
+                case 7:
+                    year_1 = 2027;
+                    break;
+
+                default:
+                    MessageBox.Show("Месяц не выбран!");
+                    break;
+            }
+
+
+            year_2 = year_1 + 1;
+
+            for (int i = 0; i < DopDop.dataGridView1.RowCount - 1; i++)
+            {
+                DateTime date = DateTime.Parse(DopDop.dataGridView1.Rows[i].Cells[1].Value.ToString());
+                int month_tabl = date.Month;
+                int year_tabl = date.Year;
+                if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "3" && month_tabl >= month1 && month_tabl <= month2 &&
+                    year_tabl >= year_1 && year_tabl <= year_2)
+                {
+                    DopDop.dataGridView1.Rows[i].Cells[5].Value = "1";
+
+                }
+
+            }
+
+
+            // а теперь для дня
+            int rows = DopDop.dataGridView1.RowCount - 1;
+
+            string nac = "01." + month1.ToString() + "." + year_1.ToString();
+            DateTime first = DateTime.Parse(nac);
+            DateTime second = first.AddMonths(1);
+            // Теперь составляем таблицу дня
+            for (int i = 0; i < rows; i++)
+            {
+                DateTime tabl = DateTime.Parse(DopDop.dataGridView1.Rows[i].Cells[1].Value.ToString());
+                // ищем по индексу днм: д = 1, н = 2, м = 3, если находим, то выводим данные в таблицу дня
+                if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "1" || DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "2" && tabl <= second && tabl >= first)
+                {
+                    DopDop.dataGridView1.Rows[i].Cells[5].Value = "1";
+
+                }
+
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            // для месяца
+            int month2;// = DateTime.Today.AddMonths(1).Month;
+            int month1 = 0;// = DateTime.Today.Month;
+            int year_1 = 1;// = DateTime.Today.Year;
+            int year_2;// = DateTime.Today.AddYears(1).Year;
+
+            // for first month
+
+            int choise_month = comboBox_month.SelectedIndex;
+            switch (choise_month)
+            {
+                case 0:
+                    month1 = 1;
+                    break;
+                case 1:
+                    month1 = 2;
+                    break;
+                case 2:
+                    month1 = 3;
+                    break;
+                case 3:
+                    month1 = 4;
+                    break;
+                case 4:
+                    month1 = 5;
+                    break;
+                case 5:
+                    month1 = 6;
+                    break;
+                case 6:
+                    month1 = 7;
+                    break;
+                case 7:
+                    month1 = 8;
+                    break;
+                case 8:
+                    month1 = 9;
+                    break;
+                case 9:
+                    month1 = 10;
+                    break;
+                case 10:
+                    month1 = 11;
+                    break;
+                case 11:
+                    month1 = 12;
+                    break;
+                default:
+                    MessageBox.Show("Месяц не выбран!");
+                    break;
+            }
+
+            if (month1 == 12) month2 = 1;
+            else month2 = month1 + 1;
+
+            int choise_year = comboBox_year.SelectedIndex;
+            switch (choise_year)
+            {
+                case 0:
+                    year_1 = 2020;
+                    break;
+                case 1:
+                    year_1 = 2021;
+                    break;
+                case 2:
+                    year_1 = 2022;
+                    break;
+                case 3:
+                    year_1 = 2023;
+                    break;
+                case 4:
+                    year_1 = 2024;
+                    break;
+                case 5:
+                    year_1 = 2025;
+                    break;
+                case 6:
+                    year_1 = 2026;
+                    break;
+                case 7:
+                    year_1 = 2027;
+                    break;
+
+                default:
+                    MessageBox.Show("Месяц не выбран!");
+                    break;
+            }
+
+
+            year_2 = year_1 + 1;
+
+            for (int i = 0; i < DopDop.dataGridView1.RowCount - 1; i++)
+            {
+                DateTime date = DateTime.Parse(DopDop.dataGridView1.Rows[i].Cells[1].Value.ToString());
+                int month_tabl = date.Month;
+                int year_tabl = date.Year;
+                if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "3" && month_tabl >= month1 && month_tabl <= month2 &&
+                    year_tabl >= year_1 && year_tabl <= year_2)
+                {
+                    DopDop.dataGridView1.Rows[i].Cells[5].Value = "0";
+
+                }
+
+            }
+
+
+            // а теперь для дня
+            int rows = DopDop.dataGridView1.RowCount - 1;
+
+            string nac = "01." + month1.ToString() + "." + year_1.ToString();
+            DateTime first = DateTime.Parse(nac);
+            DateTime second = first.AddMonths(1);
+            // Теперь составляем таблицу дня
+            for (int i = 0; i < rows; i++)
+            {
+                DateTime tabl = DateTime.Parse(DopDop.dataGridView1.Rows[i].Cells[1].Value.ToString());
+                // ищем по индексу днм: д = 1, н = 2, м = 3, если находим, то выводим данные в таблицу дня
+                if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "1" || DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "2" && tabl <= second && tabl >= first)
+                {
+                    DopDop.dataGridView1.Rows[i].Cells[5].Value = "0";
+
+                }
+
+            }
+        }
+
+        // удаление записей за месяц
+        private void button7_Click(object sender, EventArgs e)
+        {
+            int month2;// = DateTime.Today.AddMonths(1).Month;
+            int month1 = 0;// = DateTime.Today.Month;
+            int year_1 = 1;// = DateTime.Today.Year;
+            int year_2;// = DateTime.Today.AddYears(1).Year;
+
+            // for first month
+
+            int choise_month = comboBox_month.SelectedIndex;
+            switch (choise_month)
+            {
+                case 0:
+                    month1 = 1;
+                    break;
+                case 1:
+                    month1 = 2;
+                    break;
+                case 2:
+                    month1 = 3;
+                    break;
+                case 3:
+                    month1 = 4;
+                    break;
+                case 4:
+                    month1 = 5;
+                    break;
+                case 5:
+                    month1 = 6;
+                    break;
+                case 6:
+                    month1 = 7;
+                    break;
+                case 7:
+                    month1 = 8;
+                    break;
+                case 8:
+                    month1 = 9;
+                    break;
+                case 9:
+                    month1 = 10;
+                    break;
+                case 10:
+                    month1 = 11;
+                    break;
+                case 11:
+                    month1 = 12;
+                    break;
+                default:
+                    MessageBox.Show("Месяц не выбран!");
+                    break;
+            }
+
+            if (month1 == 12) month2 = 1;
+            else month2 = month1 + 1;
+
+            int choise_year = comboBox_year.SelectedIndex;
+            switch (choise_year)
+            {
+                case 0:
+                    year_1 = 2020;
+                    break;
+                case 1:
+                    year_1 = 2021;
+                    break;
+                case 2:
+                    year_1 = 2022;
+                    break;
+                case 3:
+                    year_1 = 2023;
+                    break;
+                case 4:
+                    year_1 = 2024;
+                    break;
+                case 5:
+                    year_1 = 2025;
+                    break;
+                case 6:
+                    year_1 = 2026;
+                    break;
+                case 7:
+                    year_1 = 2027;
+                    break;
+
+                default:
+                    MessageBox.Show("Месяц не выбран!");
+                    break;
+            }
+
+
+
+            string nac = "01." + month1.ToString() + "." + year_1.ToString();
+            DateTime first = DateTime.Parse(nac);
+            DateTime second = first.AddMonths(1);
+
+            int k = 1;
+            int rows = DopDop.dataGridView1.RowCount;
+            for (int i = 0; i < rows - k; i++)
+            {
+                DateTime tabl = DateTime.Parse(DopDop.dataGridView1.Rows[i].Cells[1].Value.ToString());
+                // ищем по индексу днм: д = 1, н = 2, м = 3, если находим, то выводим данные в таблицу дня
+                if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "3" || DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "1" || DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "2" && tabl <= second && tabl >= first)
+                {
+                    DopDop.dataGridView1.Rows.RemoveAt(DopDop.dataGridView1.Rows[i].Index);
+                    k++;
+                    i--;
+                }
+
+            }
+
+            // обновить таблицы
+
+            dataGridView_month_month.Rows.Clear();
+            dataGridView_month_month.Refresh();
+            dataGridView_month_days.Rows.Clear();
+            dataGridView_month_days.Refresh();
+
+            // обновляем
+
+            
+
+
+            year_2 = year_1 + 1;
+
+            int year_cyc = 0;
+            int days = 0;
+            for (int i = 0; i < DopDop.dataGridView1.RowCount - 1; i++)
+            {
+                DateTime date = DateTime.Parse(DopDop.dataGridView1.Rows[i].Cells[1].Value.ToString());
+                int month_tabl = date.Month;
+                int year_tabl = date.Year;
+                if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "3" && month_tabl >= month1 && month_tabl <= month2 &&
+                    year_tabl >= year_1 && year_tabl <= year_2)
+                {
+                    dataGridView_month_month.Rows.Add();
+                    dataGridView_month_month.Rows[year_cyc].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[1].Value; //время
+                    dataGridView_month_month.Rows[year_cyc].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
+                    if ("1" == DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString())
+                    {
+                        dataGridView_month_month.Rows[year_cyc].DefaultCellStyle.BackColor = Color.LightSeaGreen;
+                    }
+                    year_cyc++;
+                }
+                if (DopDop.dataGridView1.Rows[i].Cells[6].Value.ToString() == "1" && month_tabl >= month1 && month_tabl <= month2 &&
+                    year_tabl >= year_1 && year_tabl <= year_2)
+                {
+                    dataGridView_month_days.Rows.Add();
+                    dataGridView_month_days.Rows[days].Cells[1].Value = DopDop.dataGridView1.Rows[i].Cells[1].Value + " " + DopDop.dataGridView1.Rows[i].Cells[2].Value; //время
+                    dataGridView_month_days.Rows[days].Cells[2].Value = DopDop.dataGridView1.Rows[i].Cells[3].Value; //заголовок
+                    if ("1" == DopDop.dataGridView1.Rows[i].Cells[0].Value.ToString())
+                    {
+                        dataGridView_month_days.Rows[days].DefaultCellStyle.BackColor = Color.LightSeaGreen;
+                    }
+                    days++;
                 }
             }
         }
